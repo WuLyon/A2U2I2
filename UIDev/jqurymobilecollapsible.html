@@ -16,7 +16,7 @@
         
         function LoadDate() {
             //code
-            var url = 'http://wetennis.cn:83/WebService/WeBet.ashx?typename=GetRecentDates&jsoncallback=?';
+            var url = 'http://localhost:46755/WebService/WeBet.ashx?typename=GetRecentDates&jsoncallback=?';
             $.getJSON(url, {}, function (data) {
                 //alert(JSON.stringify(data));
                 var htm
@@ -39,7 +39,7 @@
                 //load all
                 seldate='';
              }
-             var url = 'http://wetennis.cn:83/WebService/WeBet.ashx?typename=GetBetWinList&jsoncallback=?';
+             var url = 'http://localhost:46755/WebService/WeBet.ashx?typename=GetBetWinList&jsoncallback=?';
             $.getJSON(url, {endtime:seldate}, function (data) {
                 //alert(JSON.stringify(data));
                 var html='';

@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -32,7 +32,7 @@ document.getElementById("piclist").style.overflow="hidden";
 		//alert(mem);
 		//var mem='cf78642d-0829-4c16-b998-0ec43f5d3204';
 		//判断是否是作品发起人登录
-		var url='http://wetennis.cn:83/WebService/WeTime.ashx?typename=CheckIfUploader&jsoncallback=?';
+		var url='http://localhost:46755/WebService/WeTime.ashx?typename=CheckIfUploader&jsoncallback=?';
 		$.getJSON(url,{memsys:mem},function(data){
 			//alert(JSON.stringify(data));
 			if(data.message=='yes')
@@ -59,7 +59,7 @@ document.getElementById("piclist").style.overflow="hidden";
 			$("#btnTime").toggleClass('notchoose');			
 			curtype=a;
 			page=1;
-			var url='http://wetennis.cn:83/WebService/WeTime.ashx?typename=GetPicContextList&jsoncallback=?';
+			var url='http://localhost:46755/WebService/WeTime.ashx?typename=GetPicContextList&jsoncallback=?';
 		$.getJSON(url,{pagesize:pagesize,page:page,type:a},function(data){
 			//alert(JSON.stringify(data));
 			var html='';
@@ -71,7 +71,7 @@ document.getElementById("piclist").style.overflow="hidden";
 			{
 			for(var i=0;i<data.length;i++)
 			{
-				html+='<ul class="picul" onclick="openPic(\''+data[i].SYS+'\')"><li><img src="'+data[i].EXT3+'" class="PicPositon"  alt="" /></li>	<li class="titlepanel"><li><li class="titlepos"><ul class="panelletter"><li class="panellititle">'+data[i].EXT2+'</li> <li class="panelPraiseimg"><img src="http://wetennis.cn:8080/JQ/huaqiaocheng/images/dianzan.png" class="praisImg"/></li><li class="panelPraseqty">'+data[i].EXT4+'</li></ul><li></ul>';
+				html+='<ul class="picul" onclick="openPic(\''+data[i].SYS+'\')"><li><img src="'+data[i].EXT3+'" class="PicPositon"  alt="" /></li>	<li class="titlepanel"><li><li class="titlepos"><ul class="panelletter"><li class="panellititle">'+data[i].EXT2+'</li> <li class="panelPraiseimg"><img src="http://localhost:46755/JQ/huaqiaocheng/images/dianzan.png" class="praisImg"/></li><li class="panelPraseqty">'+data[i].EXT4+'</li></ul><li></ul>';
 			}
 			$("#piclist").html(html);
 			page+=1;
@@ -82,7 +82,7 @@ document.getElementById("piclist").style.overflow="hidden";
 	
 	function LoadMorePicList()
 	{	
-		var url='http://wetennis.cn:83/WebService/WeTime.ashx?typename=GetPicContextList&jsoncallback=?';
+		var url='http://localhost:46755/WebService/WeTime.ashx?typename=GetPicContextList&jsoncallback=?';
 		$.getJSON(url,{pagesize:pagesize,page:page,type:curtype},function(data){
 			//alert(JSON.stringify(data));
 			var html='';
@@ -94,7 +94,7 @@ document.getElementById("piclist").style.overflow="hidden";
 			{
 			for(var i=0;i<data.length;i++)
 			{
-				html+='<ul class="picul" onclick="openPic(\''+data[i].SYS+'\')"><li><img src="'+data[i].EXT3+'" class="PicPositon"  alt="" /></li>	<li class="titlepanel"><li><li class="titlepos"><ul class="panelletter"><li class="panellititle">'+data[i].EXT2+'</li> <li class="panelPraiseimg"><img src="http://wetennis.cn:8080/JQ/huaqiaocheng/images/dianzan.png" class="praisImg"/></li><li class="panelPraseqty">'+data[i].EXT4+'</li></ul><li></ul>';
+				html+='<ul class="picul" onclick="openPic(\''+data[i].SYS+'\')"><li><img src="'+data[i].EXT3+'" class="PicPositon"  alt="" /></li>	<li class="titlepanel"><li><li class="titlepos"><ul class="panelletter"><li class="panellititle">'+data[i].EXT2+'</li> <li class="panelPraiseimg"><img src="http://localhost:46755/JQ/huaqiaocheng/images/dianzan.png" class="praisImg"/></li><li class="panelPraseqty">'+data[i].EXT4+'</li></ul><li></ul>';
 			}
 			$("#piclist").append(html);
 			page+=1;

@@ -178,7 +178,7 @@ function savefst()
 	$.ajax({
 		   type:"POST",
 		   async:"false",
-		   url:"http://wetennis.cn:83/WebService/WeClub.ashx",
+		   url:"http://localhost:46755/WebService/WeClub.ashx",
 		   data:{typename:"UpdateClubField",fieldname:"ClubName",keyvalue:NewName,clubsys:ClubInfo.SYSNO},
 		   success:function(data){
 			   	//alert(JSON.stringify(data));
@@ -224,7 +224,7 @@ function savesnd()
 	$.ajax({
 		 type:"POST",
 		   async:"false",
-		   url:"http://wetennis.cn:83/WebService/WeClub.ashx",
+		   url:"http://localhost:46755/WebService/WeClub.ashx",
 		   data:{typename:"UpdateClubField",fieldname:"Description",keyvalue:NewDesc,clubsys:ClubInfo.SYSNO},	  
 		   success:function(data){
 				var res=eval("("+data+")");   
@@ -267,7 +267,7 @@ function savetrd()
 	$.ajax({
 		type:"POST",
 		async:"false",
-		url:"http://wetennis.cn:83/WebService/WeClub.ashx",
+		url:"http://localhost:46755/WebService/WeClub.ashx",
 		data:{typename:"UpdateClubField",fieldname:"EXT1",keyvalue:NewAddr,clubsys:ClubInfo.SYSNO},
 		success:function(data){
 			var res=eval("("+data+")");	
@@ -311,7 +311,7 @@ function modifyfth()
 				$.ajax({
 					type:"POST",
 					async:"false",
-					url:"http://wetennis.cn:83/WebService/WeClub.ashx",
+					url:"http://localhost:46755/WebService/WeClub.ashx",
 					data:{typename:"UpdateClubField",fieldname:"EXT2",keyvalue:imgurl,clubsys:ClubInfo.SYSNO},
 					success:function(data){
 						var res=eval("("+data+")");
@@ -354,8 +354,8 @@ function modifyfth()
 		$.ajax({
 			type:"GET",
 			async:"true",
-			//url:"http://wetennis.cn:83/WebService/TourMgm.ashx",
-			url:"http://wetennis.cn:83/BackService/TourMgm.ashx",
+			//url:"http://localhost:46755/WebService/TourMgm.ashx",
+			url:"http://localhost:46755/BackService/TourMgm.ashx",
 			data:{typename:"GetTourList",ClubSys:ClubInfo.SYSNO,status:_status,tourtype:"Club"},
 			success:function(data){	
 				//alert(data);
@@ -431,7 +431,7 @@ function modifyfth()
 		if(confirm('删除赛事之后，将无法恢复！请确认是否删除赛事？'))
 		{
 			var url=location.href;
-			$.get('http://wetennis.cn:83/BackService/TourMgm.ashx',{typename:"UpdateTourStatus",sysno:toursys,status:"99"},function(data){
+			$.get('http://localhost:46755/BackService/TourMgm.ashx',{typename:"UpdateTourStatus",sysno:toursys,status:"99"},function(data){
 				location.href=url;
 			});	
 		}
@@ -440,7 +440,7 @@ function modifyfth()
 	function Enable(toursys)
 	{
 		var url=location.href;
-		$.get('http://wetennis.cn:83/BackService/TourMgm.ashx',{typename:"UpdateTourStatus",sysno:toursys,status:"1"},function(data){
+		$.get('http://localhost:46755/BackService/TourMgm.ashx',{typename:"UpdateTourStatus",sysno:toursys,status:"1"},function(data){
 			location.href=url;
 		});		
 	}
@@ -450,7 +450,7 @@ function modifyfth()
 		if(confirm('请确认是否禁用赛事？'))
 		{
 			var url=location.href;
-			$.get('http://wetennis.cn:83/BackService/TourMgm.ashx',{typename:"UpdateTourStatus",sysno:toursys,status:"-1"},function(data){
+			$.get('http://localhost:46755/BackService/TourMgm.ashx',{typename:"UpdateTourStatus",sysno:toursys,status:"-1"},function(data){
 				location.href=url;
 			});	
 		}	
@@ -475,7 +475,7 @@ function modifyfth()
 	//结束签表分配
 	function EndSign(toursys)
 	{
-			$.get('http://wetennis.cn:83/BackService/TourMgm.ashx',{typename:"UpdateTourStatus",sysno:toursys,status:"4"},function(data){
+			$.get('http://localhost:46755/BackService/TourMgm.ashx',{typename:"UpdateTourStatus",sysno:toursys,status:"4"},function(data){
 			GotobyName('资源分配');
 		});	
 	}
@@ -488,7 +488,7 @@ function modifyfth()
 		{
 			//alert(toursys);
 			var url=location.href;
-			$.get('http://wetennis.cn:83/BackService/TourMgm.ashx',{typename:"RollBackTour",sysno:toursys},function(data){
+			$.get('http://localhost:46755/BackService/TourMgm.ashx',{typename:"RollBackTour",sysno:toursys},function(data){
 				//alert(data);
 				var res=eval("("+data+")");
 				if(res.code==0)
@@ -502,7 +502,7 @@ function modifyfth()
 	//开始报名
 	function StartApply(toursys)
 	{
-		$.get('http://wetennis.cn:83/BackService/TourMgm.ashx',{typename:"UpdateTourStatus",sysno:toursys,status:"1"},function(data){
+		$.get('http://localhost:46755/BackService/TourMgm.ashx',{typename:"UpdateTourStatus",sysno:toursys,status:"1"},function(data){
 			GotobyName('赛事报名');
 		});		
 	}
@@ -548,7 +548,7 @@ function modifyfth()
 	{
 		if(confirm('是否结束赛事？'))
 		{			
-			$.get('http://wetennis.cn:83/BackService/TourMgm.ashx',{typename:"UpdateTourStatus",sysno:toursys,status:"6"},function(data){
+			$.get('http://localhost:46755/BackService/TourMgm.ashx',{typename:"UpdateTourStatus",sysno:toursys,status:"6"},function(data){
 				GotobyName('已完成');
 			});	
 		}
@@ -559,7 +559,7 @@ function modifyfth()
 	{
 		if(confirm('是否结束报名？'))
 		{			
-			$.get('http://wetennis.cn:83/BackService/TourMgm.ashx',{typename:"UpdateTourStatus",sysno:toursys,status:"2"},function(data){
+			$.get('http://localhost:46755/BackService/TourMgm.ashx',{typename:"UpdateTourStatus",sysno:toursys,status:"2"},function(data){
 				GotobyName('赛事签表');
 			});	
 		}
@@ -578,7 +578,7 @@ function modifyfth()
 	{
 		if(confirm('是否开始抽签？'))
 		{			
-			$.get('http://wetennis.cn:83/BackService/TourMgm.ashx',{typename:"UpdateTourStatus",sysno:toursys,status:"3"},function(data){
+			$.get('http://localhost:46755/BackService/TourMgm.ashx',{typename:"UpdateTourStatus",sysno:toursys,status:"3"},function(data){
 				GotobyName('赛事签表');
 			});	
 		}
@@ -613,7 +613,7 @@ function modifyfth()
 	{
 		if(confirm('是否开始比赛？'))
 		{			
-			$.get('http://wetennis.cn:83/BackService/TourMgm.ashx',{typename:"UpdateTourStatus",sysno:toursys,status:"5"},function(data){
+			$.get('http://localhost:46755/BackService/TourMgm.ashx',{typename:"UpdateTourStatus",sysno:toursys,status:"5"},function(data){
 				GotobyName('正在进行');
 			});	
 		}
@@ -665,7 +665,7 @@ function modifyfth()
 		$.ajax({
 				type:"POST",
 				async:"true",
-				url:"http://wetennis.cn:83/BackService/TourMgm.ashx?typename=CreateNewTour",
+				url:"http://localhost:46755/BackService/TourMgm.ashx?typename=CreateNewTour",
 				data:$("#frmNewTour").serialize()+'&ClubSys='+ClubInfo.SYSNO+'&memsys='+ClubInfo.EXT3,
 				success:function(data){
 					//alert(data);
@@ -688,7 +688,7 @@ function modifyfth()
 			//
 			sysno=prompt("请输入要修改赛事的sysno","");			
 		}
-		$.get('http://wetennis.cn:83/BackService/TourMgm.ashx',{typename:'GetTourInfobySys',sysno:sysno},function(data){
+		$.get('http://localhost:46755/BackService/TourMgm.ashx',{typename:'GetTourInfobySys',sysno:sysno},function(data){
 																												  
 			var ret=eval("("+data+")");
 			if(ret.code==0)
@@ -722,7 +722,7 @@ function modifyfth()
 		$.ajax({
 			type:"POST",
 			async:"false",
-			url:'http://wetennis.cn:83/BackService/TourMgm.ashx?typename=UpdateTourBasic',
+			url:'http://localhost:46755/BackService/TourMgm.ashx?typename=UpdateTourBasic',
 			data:$("#frmNewTour").serialize()+'&sysno='+sysno,
 			success:function(data){
 				//alert(data);
@@ -749,7 +749,7 @@ function modifyfth()
 		//alert(TourApp_toursys);
 		$.ajax({
 			type:"get",
-			url:"http://wetennis.cn:83/BackService/TourMgm.ashx",
+			url:"http://localhost:46755/BackService/TourMgm.ashx",
 			data:{typename:"GetTourContents",sysno:TourApp_toursys},
 			success:function(data){
 				data=eval("("+data+")");
@@ -778,7 +778,7 @@ function modifyfth()
 		var res=JSON.stringify(Apply_PlayerArr);
 		//alert(res);
 		//alert(res);
-		$.get("http://wetennis.cn:83/BackService/TourMgm.ashx",{typename:"AddDirectApply",ApplyList:res},function(data){			
+		$.get("http://localhost:46755/BackService/TourMgm.ashx",{typename:"AddDirectApply",ApplyList:res},function(data){			
 			//alert(data);
 			var res=eval("("+data+")");
 			if(res.code==0)
@@ -832,12 +832,12 @@ function modifyfth()
 		if(id!='')
 		{
 			//已有id，修改信息
-			Requrl='http://wetennis.cn:83/BackService/TourMgm.ashx?typename=UpdateTourContent';
+			Requrl='http://localhost:46755/BackService/TourMgm.ashx?typename=UpdateTourContent';
 		}
 		else
 		{
 			//无id，新增项目
-			Requrl='http://wetennis.cn:83/BackService/TourMgm.ashx?typename=CreateTourContent';
+			Requrl='http://localhost:46755/BackService/TourMgm.ashx?typename=CreateTourContent';
 		}
 		
 		var Toursys=localStorage.getItem("Current_TourSys");
@@ -877,7 +877,7 @@ function modifyfth()
 				$.ajax({
 					type:"post",
 					async:"false",
-					url:"http://wetennis.cn:83/BackService/TourMgm.ashx",
+					url:"http://localhost:46755/BackService/TourMgm.ashx",
 					data:{typename:"DeleteTourContent",id:id},
 					success:function(data){
 						//alert(data);
@@ -910,7 +910,7 @@ function modifyfth()
 	function GetTourContent()
 	{
 		var toursys=localStorage.getItem("Current_TourSys");
-		$.get("http://wetennis.cn:83/BackService/TourMgm.ashx",{typename:"GetTourContents",sysno:toursys},function(data){
+		$.get("http://localhost:46755/BackService/TourMgm.ashx",{typename:"GetTourContents",sysno:toursys},function(data){
 
 			var res=eval("("+data+")");
 			var conts=res.data;
@@ -932,7 +932,7 @@ function modifyfth()
 	{
 		$("#Tour_AddCont").show();
 		//加载信息
-		$.get("http://wetennis.cn:83/BackService/TourMgm.ashx",{typename:"GetTourContentModel",id:id},function(data){
+		$.get("http://localhost:46755/BackService/TourMgm.ashx",{typename:"GetTourContentModel",id:id},function(data){
 			var res=eval("("+data+")");
 			var cont=res.data;
 			$("#contid").val(id);
@@ -953,7 +953,7 @@ function modifyfth()
 	//赛事报名名单页面
 	function LoadTourApplicants(toursys)
 	{	
-	     $.get("http://wetennis.cn:83/BackService/TourMgm.ashx",{typename:"TourApply_GetContentApplicant",toursys:toursys},function(data){
+	     $.get("http://localhost:46755/BackService/TourMgm.ashx",{typename:"TourApply_GetContentApplicant",toursys:toursys},function(data){
 			var res=eval("("+data+")");
 			var list=res.data;
 			var html='';
@@ -972,7 +972,7 @@ function modifyfth()
 	{
 		Current_Cont=id;
 		$("#applistdiv").show();
-		$.get("http://wetennis.cn:83/BackService/TourMgm.ashx",{typename:"TourApply_GetApplistbyContid",contid:id},function(data){
+		$.get("http://localhost:46755/BackService/TourMgm.ashx",{typename:"TourApply_GetApplistbyContid",contid:id},function(data){
 			
 			var res=eval("("+data+")");
 			var list=res.data;
@@ -986,7 +986,7 @@ function modifyfth()
 		});		
 	}
 	
-	var BackServiceUrl='http://wetennis.cn:83/BackService/TourMgm.ashx';
+	var BackServiceUrl='http://localhost:46755/BackService/TourMgm.ashx';
 	
 	//5-4-2
 	//删除报名
@@ -1019,7 +1019,7 @@ function modifyfth()
 	//加载报名费统计情况
 	  function GetTourApplyFee() {
 		   var toursys=location.href.split('=')[1];
-           $.post("http://wetennis.cn:83/BackService/Tourmgm.ashx?typename=TourApplyFeeInfo&toursys=" + toursys, function (data) {	
+           $.post("http://localhost:46755/BackService/Tourmgm.ashx?typename=TourApplyFeeInfo&toursys=" + toursys, function (data) {	
                var fees = data.split('|');
                document.getElementById("lblWeTennisPay").innerHTML = fees[0];
                document.getElementById("lblUnpaidFee").innerHTML = fees[1];
@@ -1031,7 +1031,7 @@ function modifyfth()
 	//报名费用收款对账
 	 function GetTourApplyCon() {
 		 var toursys=location.href.split('=')[1];
-           $.get("http://wetennis.cn:83/BackService/Tourmgm.ashx",{typename:"GetTourApplyCon",toursys:toursys}, function (data) {																							   				
+           $.get("http://localhost:46755/BackService/Tourmgm.ashx",{typename:"GetTourApplyCon",toursys:toursys}, function (data) {																							   				
                //var items = $.parseJSON(data);
 			   var items=eval("("+data+")");
 			   if(items.code==0)
@@ -1069,7 +1069,7 @@ function modifyfth()
        function LoadTourContRes()
 		{	
 			var toursys=localStorage.getItem("Current_TourSys");
-		     $.get("http://wetennis.cn:83/BackService/TourMgm.ashx",{typename:"TourApply_GetContentApplicant",toursys:toursys},function(data){
+		     $.get("http://localhost:46755/BackService/TourMgm.ashx",{typename:"TourApply_GetContentApplicant",toursys:toursys},function(data){
 				//alert(data);
 				var res=eval("("+data+")");
 				var list=res.data;
@@ -1102,7 +1102,7 @@ function modifyfth()
 	//赛事项目页面
 	function LoadFinishTourContents(toursys)
 	{	
-	     $.get("http://wetennis.cn:83/BackService/TourMgm.ashx",{typename:"TourApply_GetContentApplicant",toursys:toursys},function(data){
+	     $.get("http://localhost:46755/BackService/TourMgm.ashx",{typename:"TourApply_GetContentApplicant",toursys:toursys},function(data){
 			var res=eval("("+data+")");
 			var list=res.data;
 			var html='';

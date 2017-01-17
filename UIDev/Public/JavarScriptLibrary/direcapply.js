@@ -9,7 +9,7 @@
 		//alert(TourApp_toursys);
 		$.ajax({
 			type:"get",
-			url:"http://wetennis.cn:83/BackService/TourMgm.ashx",
+			url:"http://localhost:46755/BackService/TourMgm.ashx",
 			data:{typename:"GetTourContents",sysno:TourApp_toursys},
 			success:function(data){
 				data=eval("("+data+")");
@@ -213,8 +213,8 @@ var Apply_Result;
 		$.ajax({
 			type:"POST",
 			contentType:"application/json;charset=utf-8",
-			//url:"http://wetennis.cn:83/BackService/TourMgm.ashx?typename=AddDirectApply2",
-			url:"http://wetennis.cn:83/API/FEservice.ashx?method=directApply",					
+			//url:"http://localhost:46755/BackService/TourMgm.ashx?typename=AddDirectApply2",
+			url:"http://localhost:46755/API/FEservice.ashx?method=directApply",					
 			data:JSON.stringify(res),
 			success:function(data)
 			{
@@ -239,7 +239,7 @@ var Apply_Result;
             $.ajax({
                 type: "POST",
                 contentType: "application/json;char-set=utf-8",
-                url: "http://wetennis.cn:83/API/FEservice.ashx?method=eventCommentLike",
+                url: "http://localhost:46755/API/FEservice.ashx?method=eventCommentLike",
                 data: JSON.stringify(reqdata),
                 success: function (data) {
                     alert(data);

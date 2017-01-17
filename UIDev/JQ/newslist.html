@@ -8,7 +8,7 @@
 <script type="text/javascript">
   $(document).ready(function() {
  //alert('haha');
- url = 'http://wetennis.cn:83/WebService/WeNews.ashx?typename=LoadNews&jsoncallback=?';
+ url = 'http://localhost:46755/WebService/WeNews.ashx?typename=LoadNews&jsoncallback=?';
  $.getJSON(url,{type:"Pro",pagesize:"5",page:"1",status:""},function(result){
   //alert(JSON.stringify(result));
   var data=result.content;

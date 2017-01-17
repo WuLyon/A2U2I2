@@ -1,7 +1,7 @@
 // JavaScript Document
 $(document).ready(function(){
 			//会员
-			$("#tbPlayer").autocomplete("http://wetennis.cn:83/BackService/AutoComp.ashx?typename=Auto_Member", {//默认参数名为q
+			$("#tbPlayer").autocomplete("http://localhost:46755/BackService/AutoComp.ashx?typename=Auto_Member", {//默认参数名为q
                     width: 200,//指定下拉框的宽度. Default: input元素的宽度；
                     dataType: "json",		
 					parse: function (data) {//ajax 返回值是json需要重写
@@ -29,7 +29,7 @@ $(document).ready(function(){
                 });
 
 		//搭档
-		$("#tbParterner").autocomplete("http://wetennis.cn:83/BackService/AutoComp.ashx?typename=Auto_Member", {//默认参数名为q
+		$("#tbParterner").autocomplete("http://localhost:46755/BackService/AutoComp.ashx?typename=Auto_Member", {//默认参数名为q
                     width: 200,//指定下拉框的宽度. Default: input元素的宽度；
                     dataType: "json",	
 					parse: function (data) {//ajax 返回值是json需要重写

@@ -1,5 +1,5 @@
 // JavaScript Document
-	var ServiceUrl='http://wetennis.cn:83/BackService/TourMgm.ashx';
+	var ServiceUrl='http://localhost:46755/BackService/TourMgm.ashx';
 
 	//设置变量，签表功能范围内通用
 	var Sign_Contid=localStorage.getItem("Current_ContId");
@@ -9,7 +9,7 @@
 	function LoadTourContApply()
 	{	
 		var toursys=localStorage.getItem("Current_TourSys");
-	     $.get("http://wetennis.cn:83/BackService/TourMgm.ashx",{typename:"TourApply_GetContentApplicant",toursys:toursys},function(data){
+	     $.get("http://localhost:46755/BackService/TourMgm.ashx",{typename:"TourApply_GetContentApplicant",toursys:toursys},function(data){
 			//alert(data);
 			var res=eval("("+data+")");
 			var list=res.data;
@@ -47,7 +47,7 @@
 	function LoadTourSign()
 	{	
 		var toursys=localStorage.getItem("Current_TourSys");
-	     $.get("http://wetennis.cn:83/BackService/TourMgm.ashx",{typename:"TourApply_GetContentApplicant",toursys:toursys},function(data){
+	     $.get("http://localhost:46755/BackService/TourMgm.ashx",{typename:"TourApply_GetContentApplicant",toursys:toursys},function(data){
 			//alert(data);
 			var res=eval("("+data+")");
 			var list=res.data;

@@ -42,7 +42,7 @@
 		}
 		else
 		{
-			url='http://wetennis.cn:83/WebService/WeChat.ashx?typename=GetAccessToken&jsoncallback=?';
+			url='http://localhost:46755/WebService/WeChat.ashx?typename=GetAccessToken&jsoncallback=?';
 			$.getJSON(url,{code:code},function(data){
 				setCookie("c_userinfo",JSON.stringify(data),30);
 				if(data.EXT10=='1')
@@ -78,7 +78,7 @@
 				$("#delpic").show();
 			}
 		}
-		url='http://wetennis.cn:83/Webservice/Wetime.ashx?typename=GetTimeOfPic&jsoncallback=?';
+		url='http://localhost:46755/Webservice/Wetime.ashx?typename=GetTimeOfPic&jsoncallback=?';
 		$.getJSON(url,{sys:sys,type:type},function(data){
 			//alert(JSON.stringify(data));
 			document.getElementById('PicSys').value=data.SYS;
@@ -96,7 +96,7 @@
 	function LoadLikeQty()
 	{
 		var picsys=document.getElementById('PicSys').value;
-		var url='http://wetennis.cn:83/WebService/WeNews.ashx?typename=GetPraiseQty&jsoncallback=?';
+		var url='http://localhost:46755/WebService/WeNews.ashx?typename=GetPraiseQty&jsoncallback=?';
 		$.getJSON(url,{type:"pic",typesys:picsys},function(data){
 			document.getElementById('LikeQty').innerHTML=data.message;
 		});		
@@ -108,7 +108,7 @@
 		var Memsys=getCookie("c_memsys");
 		//判断能否读到
 		var picsys=document.getElementById('PicSys').value;
-		var url='http://wetennis.cn:83/WebService/WeNews.ashx?typename=AddPraise&jsoncallback=?';
+		var url='http://localhost:46755/WebService/WeNews.ashx?typename=AddPraise&jsoncallback=?';
 		$.getJSON(url,{type:"pic",typesys:picsys,isgood:"1",memsys:Memsys},function(data){
 			if(data.message=="ok")
 			{
@@ -128,7 +128,7 @@
 		var picsys=document.getElementById('PicSys').value;
 		if(confirm('删除作品后可以重新上传作品，但之前所获得的支持将全部清零，确定要删除？'))
 		{
-			var url='http://wetennis.cn:83/WebService/WeTime.ashx?typename=DeletePicWork&jsoncallback=?';
+			var url='http://localhost:46755/WebService/WeTime.ashx?typename=DeletePicWork&jsoncallback=?';
 			$.getJSON(url,{sys:picsys},function(data){
 				if(data.message=='ok')
 				{
@@ -145,7 +145,7 @@
 	}
 	
 	function InitiateJSJDK(){
-		var url='http://wetennis.cn:83/WebService/WeChat.ashx?typename=GetWxConfigDetails&jsoncallback=?';
+		var url='http://localhost:46755/WebService/WeChat.ashx?typename=GetWxConfigDetails&jsoncallback=?';
 		var urlstr=location.href;
 		$.getJSON(url,{url:urlstr.split("#")[0] },function(data){
 			var list = $.parseJSON(data);
