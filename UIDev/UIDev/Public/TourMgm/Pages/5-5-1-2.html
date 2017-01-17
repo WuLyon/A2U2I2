@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>编辑赛事项目</title>
+	<link rel="stylesheet" type="text/css" href="../css/LT_Form.css">
+	<script type="text/javascript" src="../../JavarScriptLibrary/jquery-1.4.1.min.js"></script>
+	<script type="text/javascript" src="../../JavarScriptLibrary/tour_distribute.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			LoadGymCont();
+			LoadTourCont();
+		});
+	</script>
+</head>
+
+<body>
+<a href="5-5-1.html">返回</a>
+
+<p>说明</p>
+<p> 当一项赛事有多个场馆时，必须指定具体的比赛项目在哪个场馆举行。否则，系统将默认将所有项目的比赛放在一个场馆进行。</p>
+<input type="button" value="添加" onclick="showEdit2()" />
+<div id="GymCont">
+
+</div>
+
+<div id="Edit_Seed" class="hidden">
+		<div id="EditSeed_Back" onclick="hideEdit()"></div>
+		<div class="ContentMid">
+			<h3>请选择比赛项目</h3>
+			<div id="selContent">
+				
+			</div>
+			
+			<input class="submitBtn" type="button" value="提交" onclick="SubmitSelCont()"/>
+		</div>
+	</div>
+</body>
+</html>

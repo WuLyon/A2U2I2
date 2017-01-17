@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+<title>验证短信</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="http://wetennis.cn:8081/Scripts/jquery-1.8.2.min.js"></script>
+<script type="text/javascript">
+	function getQueryString(name) {
+		var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+		var r = window.location.search.substr(1).match(reg);
+		if (r != null) return unescape(r[2]); return null;
+	}
+	
+	var user=getQueryString("username");
+	var openid=getQueryString("openid");
+
+	//设定倒数秒数  
+	var t = 180;  
+	//显示倒数秒数  
+	function showTime(){  
+		t -= 1;  
+		document.getElementById('lblCountDown').innerHTML= t+'秒后可重发';  
+		if(t==0){  
+			  $("#btnGetCode").show();
+			  $("#lblCountDown").hide();
+		}  
+		//每秒执行一次,showTime()  
+		setTimeout("showTime()",1000);  
+	}  
+
+	//发送验证码
+	function SendCode()
+	{
+		var Tele=document.getElementById("tbTele").value;
+		if(Tele.length==11)
+		{
+			//发送验证码
+			var url='http://wetennis.cn:83/WebService/SMS.ashx?typename=GenerateCode&jsoncallback=?';
+			$.getJSON(url,{tele:Tele},function(data){
+				//alert(data.message);
+				if(data.message=='ok')
+				{
+					//发送短信成功
+					//按钮显示倒计时
+					$("#btnGetCode").hide();
+					$("#lblCountDown").show();
+					showTime();
+				}
+			});			
+		}
+		else
+		{
+			alert('请输入11位电话号码');
+		}		
+	}
+	
+	//验证码
+	function validateCode()
+	{
+		var Tele=document.getElementById("tbTele").value;
+		var code=document.getElementById("tbCode").value;
+		var url='http://wetennis.cn:83/WebService/SMS.ashx?typename=ValidateCode&jsoncallback=?';
+		$.getJSON(url,{tele:Tele,code:code},function(data){
+			if(data.message=='ok')
+			{
+				//验证通过
+				url='http://wetennis.cn:83/WebService/WeMember.ashx?typename=UpdateMemberTele&jsoncallback=?';
+				$.getJSON(url,{username:user,openid:openid,Tele:Tele},function(data){
+					//alert(data.message);
+					if(data.message=='ok')
+					{
+						location.href='PicList.html';
+					}
+				});
+			}
+			else
+			{
+				//验证未通过
+				alert('验证未通过，请重试！');
+				document.getElementById("tbCode").value='';
+			}
+		});
+	}
+</script>
+</head>
+
+<body>
+<ul class="typeline">
+	<li class="typelabel">电话：</li><li class="typectr"><input type="text" id="tbTele" class="typeinput" /></li>
+</ul>
+<ul class="typeline">
+	<li class="typelabel">验证码：</li><li class="width40"><input type="text" id="tbCode" class="codeinput"/></li><li class="width30"><input class="btnGetCode" id="btnGetCode" onclick="SendCode()" type="button" value="获取验证码" /><label class="hidden" id="lblCountDown"></label></li>
+</ul>
+<div class="btnSpace"><input type="button" value="提交" onclick="validateCode()"/></div>
+</body>
+</html>

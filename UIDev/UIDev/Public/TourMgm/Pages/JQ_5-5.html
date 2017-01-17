@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>赛事签表</title>
+<link rel="stylesheet" type="text/css" href="../css/LT_TourMg.css">
+<script type="text/javascript" src="../../JavarScriptLibrary/jquery-1.4.1.min.js"></script>
+<script type="text/javascript" src="../../JavarScriptLibrary/tourmanage.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		//LoadTourlistData();
+		LoadTourlistData('4');
+	});
+</script>
+</head>
+
+<body>
+<div class="search">
+	<input type="text" placeholder="输入赛事关键字" class="searchbox"> <input type="button" value="查询"/>
+</div>
+
+<div class="tourlist" id="tourlist">
+	
+</div>
+
+</body>
+</html>

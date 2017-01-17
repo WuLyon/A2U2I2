@@ -1,0 +1,51 @@
+@charset "utf-8";
+/* CSS Document */
+.nav{
+	height: 80px;
+	background-color: #CCC;
+	margin:5px 0px;
+	
+	}
+.logo{ width:50px;
+
+    height:49.8px;
+	
+	margin-top: 5px;
+	
+	margin-left: 5px;
+	
+	}
+
+.no1{
+	font-size: 20px;
+	
+	color: #03F;
+	
+	}
+.new{
+	font-size: 14px;
+	
+	position: relative;
+	
+	top: -60px;
+	
+	left: 70px;
+	
+	}
+
+	
+ul{
+	padding: 0;
+	
+	margin: 0;
+	
+	list-style: none;
+	
+	}
+	
+li{
+	list-style: none;
+	
+	color: #000;
+	
+	}

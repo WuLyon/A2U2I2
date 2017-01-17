@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>修改赛事基本信息</title>
+	<link rel="stylesheet" type="text/css" href="../css/LT_Form.css">
+	<script type="text/javascript" src="../../JavarScriptLibrary/jquery-1.4.1.min.js"></script>
+	<script type="text/javascript" src="../../JavarScriptLibrary/tourmanage.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			//根据sysno获取赛事基本信息
+			GetTourInfobySys();
+			//加载能够添加的赛事类型
+			
+			//加载俱乐部所加入的联盟名称
+			
+			//加载俱乐部所能够添加的赛事级别
+		});
+	</script>
+</head>
+
+<body>
+	<form id="frmNewTour" >
+	<p>
+		<label for="tourName">赛事名称</label>
+		<input name="tourName" type="text" />
+	</p>
+	<p>
+		<label for="tourType">赛事类型</label>
+		<select name="tourType" id="tourType"><option value="Club">俱乐部赛</option><option value="Union">联盟赛</option><option value="">公开赛</option></select>
+	</p>
+	<p>
+		<label for="unionName">联盟名称</label>
+		<select name="unionName" id="unionName"><option value="2">成都高校联盟</option><option value="1">四川网球俱乐部联盟</option><option value="3">成都四大高校网球联盟</option></select>
+	</p>
+	<p>
+		<label for="tourLevel">赛事级别</label>
+		<select name="tourLevel" id="tourLevel"><option>125</option><option>250</option><option>500</option><option>1000</option><option>2000</option></select>
+	</p>
+	<p>
+		<label for="tourDate">赛事日期</label>
+		<input name="tourDate" type="text" />
+	</p>
+	<p>
+		<label for="tourAddress">赛事地点</label>
+		<input name="tourAddress" type="text" />
+	</p>
+	<p>
+		<label for="setType">盘类型</label>
+		<select name="setType" id="setType"><option value="一盘">一盘</option><option value="三盘">三盘</option><option value="五盘">五盘</option></select>
+	</p>
+	<p>
+		<label for="ext2">每盘局数</label>
+		<select name="ext2" id="ext2" ><option value="4">4局</option><option value="6">6局</option><option value="8">8局</option></select>
+	</p>
+	<p>
+		<label for="gameType">局类型</label>
+		<select name="gameType" id="gameType"><option value="平分决胜制">平分决胜制</option><option value="金球决胜制">金球决胜制</option></select>
+	</p>
+	<p>
+		<label for="ext1">报名费</label>
+		<input name="ext1" type="text" />
+	</p>
+	<hr />
+	<p>
+		<label for="applyEnd">报名截止日期</label>
+		<input name="applyEnd" type="date" />
+	</p>
+	
+	<input type="button" onclick="UpdateTourBasic()" value="修改" />
+	</form>
+</body>
+</html>

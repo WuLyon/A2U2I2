@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>修改赛事项目</title>
+	<link rel="stylesheet" type="text/css" href="../css/LT_TourMg.css">
+	<link rel="stylesheet" type="text/css" href="../css/LT_Form.css">
+	<script type="text/javascript" src="../../JavarScriptLibrary/jquery-1.4.1.min.js"></script>
+	<script type="text/javascript" src="../../JavarScriptLibrary/tourmanage.js"></script>
+	<script type="text/javascript">
+		GetTourContent();
+	</script>
+</head>
+
+<body>
+	<div class="FloatR_Tabs">
+		<ul>
+			<li><a href="javascript:void" onclick="GotoTourMod(this)">基本信息</a></li>
+			<li><a href="javascript:void" onclick="GotoTourMod(this)">赛事规程</a></li>
+			<li><strong>比赛项目</strong></li>
+		</ul>
+	</div>
+	
+	<input type="button" value="添加" onclick="ShowAddCont()" />
+	
+	<div id="Tour_ContList">
+		
+	</div>
+	
+	<div id="Tour_AddCont" class="hidden">
+		<div id="Tour_AddCont_Back">			
+		</div>
+		<form id="Tour_AddCont_Form">
+			<p>
+			添加项目 <a href="javasrcipt:void" onmousemove="" onclick="HidAddCont()" >x</a>
+			</p>
+		
+			<div class="hidden">
+				<input type="text" id="contid" name="id" />
+			</div>
+			<p>
+				<label for="name"  class="form_label">项目名称：</label>
+				<input type="text" id="tbContName" name="name" class="form_control"/>
+			</p>
+			<p>
+				<label class="form_label">组别：</label>
+				<select name="group" id="selGroup" class="form_control"><option value="-1">--请选择--</option><option value="青年组">青年组</option><option value="中年组">中年组</option><option value="老年组">老年组</option><option value="青少年组">青少年组</option></select>
+			</p>
+			<p>
+				<label class="form_label">项目类型：</label>
+				<select name="selType" id="type" class="form_control"><option value="-1">--请选择--</option><option value="男单">男单</option><option value="男双">男双</option><option value="女单">女单</option><option value="女双">女双</option><option value="混双">混双</option><option value="团体">团体</option></select>
+			</p>
+			<p>
+				<label class="form_label">报名费（元/人）：</label>
+				<input type="text" id="tbApplyFee" name="applyfee" class="form_control"/>
+			</p>
+			<p>
+				<label class="form_label">正签数量：</label>
+				<input type="text" id="tbSignQty" name="signqty" class="form_control"/>
+			</p>
+			<p>
+				<label class="form_label">是否设置小组赛：</label>
+				<select name="allowgroup" id="selAllowGroup" class="form_control"><option value="-1">--请选择--</option><option value="1">是</option><option value="0">否</option></select>
+			</p>
+			<p id="groupQty" calss="temp_hide" >
+				<label for="grouptype" class="form_label">小组人数：</label>
+				<select name="grouptype" id="selGroupQty" class="form_control"><option value="-1">--请选择--</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select>
+			</p>
+			<input type="button" value="保存" onclick="TourContent_Save()"/>
+			<input type="button" value="删除" onclick="TourContent_Delete()"/>
+		</form>
+	</div>
+</body>
+</html>

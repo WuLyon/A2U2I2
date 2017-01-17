@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link rel="stylesheet" type="text/css" href="../css/HL_style.css">
+<link rel="stylesheet" type="text/css" href="../css/LT_TourMg.css">
+	<script type="text/javascript" src="../../JavarScriptLibrary/tourmanage.js" ></script>
+	<script type="text/javascript" src="../../JavarScriptLibrary/jquery-1.4.1.min.js" ></script>
+	<script type="text/javascript" src="../../JavarScriptLibrary/ImageUpload.js"></script>
+	<script type="text/javascript">
+		window.onload=function(){
+			LoadClubInfo();
+		}
+	</script>
+</head>
+
+<body>
+	<ul class="EntityItem"><li><label for="clubname">俱乐部名称：</label></li><li><label id="lblClubName"></label><input type="text"  name="clubname" class="hidden" id="tbClubName" /></li><li><img id="modify1" src="http://wetennis.cn/ico/modify.png" alt="修改" onclick="modifyfst()"/><input id="save1" type="button" value="保存" class="hidden"  onclick="savefst()"/></li></ul>
+	
+	<ul class="EntityItem"><li><label >俱乐部简介：</label></li><li><label id="lblClubDesc" class="fontsmall"></label><input type="text"  class="hidden" id="tbClubDesc" /></li><li><img id="modify2" src="http://wetennis.cn/ico/modify.png" alt="修改" onclick="modifysnd()"/><input id="save2" type="button" value="保存" class="hidden"  onclick="savesnd()"/></li></ul>
+	
+	<ul class="EntityItem"><li><label>俱乐部地址：</label></li><li><label id="lblClubAddr"></label><input type="text"  name="clubname" class="hidden" id="tbClubAddr" /></li><li><img id="modify3" src="http://wetennis.cn/ico/modify.png" alt="修改" onclick="modifytrd()"/><input id="save3" type="button" value="保存" class="hidden"  onclick="savetrd()"/></li></ul>
+	
+	<ul  class="EntityItem"><li><label for="clubname">俱乐部logo：</label></li><li><input type="file" class="hidden" onchange="setImagePreview('clubImgUp','imgClub','myCanvas')" id="clubImgUp"/><br /><img id="imgClub" class="logoimg" src="" alt="俱乐部logo" /><canvas id="myCanvas" style="display:none" width="200" height="200"></canvas></li><li><img id="modify4" src="http://wetennis.cn/ico/modify.png" onclick="modifyfth()" alt="修改" /><input id="save4" type="button" value="保存" class="hidden" onclick="UpdateImg()"/></li></ul>
+
+</body>
+</html>

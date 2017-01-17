@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>修改项目设置</title>
+<link rel="stylesheet" type="text/css" href="../css/LT_TourMg.css">
+<link rel="stylesheet" type="text/css" href="../css/LT_Form.css">
+<script type="text/javascript" src="../../JavarScriptLibrary/jquery-1.4.1.min.js"></script>
+<script type="text/javascript" src="../../JavarScriptLibrary/tour_sign.js"></script>
+<script type="text/javascript">		
+		 LoadTourContent();
+	</script>
+</head>
+
+<body>
+<a href="5-3-nav.html"><h3>返回项目列表</h3></a>
+<div class="FloatR_Tabs">
+		<ul>
+		<li><strong>项目信息</strong></li>
+		<li><a href="5-3-2.html">种子设置</a></li>
+		<li><a href="5-3-3.html">签表设置</a></li>
+		<li><a href="5-3-4.html">比赛</a></li>		
+		</ul>
+	</div>
+	<hr />
+	<form id="frmNewTour">
+		<p>项目名称：<label id="ContName"></label></p>
+		<p>项目组别：<label id="ContLevel"></label></p>
+		<p>项目类型：<label id="ContType"></label></p>
+		<p>正签数量：<select id="selSignQty" name="signqty"><option value="1">1</option><option value="4">4</option><option value="8">8</option><option value="16">16</option><option value="32">32</option><option value="64">64</option><option value="128">128</option></select></p>
+		<p>是否包含小组赛：<select id="selAllowG" name="allowgroup"><option value="1">是</option><option value="0">否</option></select></p>
+		<p>小组人数：<select id="selGroupQty" name="grouptype"><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option></select></p>
+		<p><input type="button" value="保存修改"  onclick="UpdateContSet()"/></p>
+	</form>
+</body>
+</html>

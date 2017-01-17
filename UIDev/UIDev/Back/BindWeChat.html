@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+<title>无标题文档</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="http://wetennis.cn:8081/Scripts/jquery-1.8.2.min.js"></script>
+<script src="http://wetennis.cn/Scripts/jsCookie.js"></script>
+<script type="text/javascript">
+	function BindWeChat()
+	{
+		var openid=getCookie("c_Openid");
+		//var openid='123';
+		var user=document.getElementById('tbUserName').value;
+		var pass=document.getElementById('tbPass').value;
+		if(user!=''&&pass!='')
+		{
+		var xhr=new XMLHttpRequest();//定义HTTPrequest
+		var url='http://wetennis.cn:83/WebService/WeMember.ashx?typename=ValideMemberInfo';
+		xhr.open("POST",url,true);
+		xhr.setRequestHeader("CONTENT-TYPE", "application/x-www-form-urlencoded");
+		xhr.onloadstart=function(){
+			$("#loadingimg").show();
+		};		
+		xhr.onreadystatechange=function(){
+			if(xhr.readyState==4)
+			{
+				//alert(xhr.responseText);
+				if(xhr.responseText=='ok')
+				{
+					//alert('绑定信息成功');
+					location.href='PicList.html';
+				}	
+				else if(xhr.responseText=='ok1')
+				{
+					//需要验证用户手机号
+					var url1='CheckTel.html?username='+user;
+					location.href=url1;
+				}
+							
+			}			
+		};
+		xhr.send("username="+user+"&pass="+pass+"&openid="+openid);
+		}
+	}
+	//以微信注册
+	function RegisterNew(){
+		var UserInfo=getCookie("c_userinfo");
+		
+		UserInfo=eval("("+UserInfo+")");
+		//注册新用户
+		var xhr=new XMLHttpRequest();
+		var url='http://wetennis.cn:83/WebService/WeMember.ashx?typename=RegisterNewMember';
+		xhr.open("POST",url,true);
+		xhr.setRequestHeader("CONTENT-TYPE", "application/x-www-form-urlencoded");
+		xhr.onloadstart=function(){
+			$("#loadingimg").show();
+		};	
+		xhr.onreadystatechange=function(){
+			if(xhr.readyState==4)
+			{
+				//alert(xhr.responseText);
+				if(xhr.responseText=='ok')
+				{
+					//alert('绑定信息成功');
+					location.href='CheckTel.html?openid='+UserInfo.openid;
+				}				
+			}			
+		};
+		xhr.send("nickname="+UserInfo.nickname+"&sex="+UserInfo.sex+"&province="+UserInfo.province+"&City="+UserInfo.City+"&headimgurl="+UserInfo.headimgurl+"&openid="+UserInfo.openid);
+	}
+</script>
+</head>
+
+<body>
+<div class="btnSpace">使用微信绑定微网球账号</div>
+<div>
+	
+</div>
+<div>
+	<p class="workDescript">如果您已是微网球会员，请输入您的微网球账号及密码，以绑定当前微信号与微网球账号</p>
+	<ul >
+		<li>
+			<ul class="typeline"><li class="typelabel">用户名</li><li class="typectr"><input type="text"  class="typeinput" id="tbUserName"/></li></ul>
+		</li>
+		<li>
+			<ul class="typeline"><li class="typelabel">密码</li><li class="typectr"><input type="password"  class="typeinput" id="tbPass"/></li></ul>
+		</li>
+	</ul>
+	<p class="btnSpace"><input type="button" class="btn2" value="绑定"  onclick="BindWeChat()"/></p>
+	<p class="btnSpace"><input type="button" class="btn3" value="注册新账户"  onclick="RegisterNew()"/></p>
+</div>
+
+<div id="loadingimg"><img id="loadgif" src="http://wetennis.cn:86/Common/loading.gif" /></div>
+</body>
+</html>

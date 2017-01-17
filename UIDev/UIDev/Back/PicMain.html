@@ -1,0 +1,232 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+<title>华侨城网球精英赛图片评选活动</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="http://wetennis.cn:8081/Scripts/jquery-1.8.2.min.js"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script src="http://wetennis.cn/Scripts/jsCookie.js"></script>
+
+<script type="text/javascript">
+		var type=getQueryString("type");
+		var sys=getQueryString("sys");
+		var appid,timestamp,noncestr,signature;
+		var mem=getCookie("c_memsys");
+		var watchby;
+	$(document).ready(function(){
+		//初始化微信
+		//InitiateJSJDK();	
+		//如果是直接通过链接到微信进行访问后，则要先进行身份认证。		
+		if(mem==null||mem=='')
+		{
+			LoadMemInfo();
+		}
+		else
+		{
+		//加载作品			
+		LoadWorkMain();	
+		}
+	});
+	
+	function LoadMemInfo()
+	{
+		var code=getQueryString("code");
+		if(code==null||code=='')
+		{
+			var url=encodeURI(location.href);//û�б仯
+			url=escape(location.href);//ֻ�����ˣ�����Ϊ��%3A;
+			url=encodeURIComponent(location.href);//�ˣ�����Ϊ��%3A;"/"��Ϊ�ˡ�%2F��
+			location.href='https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxe90eba22e992ffba&redirect_uri='+url+'&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect';
+		}
+		else
+		{
+			url='http://wetennis.cn:83/WebService/WeChat.ashx?typename=GetAccessToken&jsoncallback=?';
+			$.getJSON(url,{code:code},function(data){
+				setCookie("c_userinfo",JSON.stringify(data),30);
+				if(data.EXT10=='1')
+				{
+					$("#btnBind").hide();
+					setCookie("c_headimg",data.EXT1,30);
+					setCookie("c_name",data.NAME,30);
+					setCookie("c_memsys",data.SYSNO,30);
+					setCookie("c_Openid",data.EXT3,30);
+					setCookie("c_IsMember",data.EXT3,30);
+				}
+				else
+				{					
+					setCookie("c_headimg",data.headimgurl,30);
+					setCookie("c_name",data.nickname,30);
+					setCookie("c_memsys",data.openid,30);
+					setCookie("c_Openid",data.openid,30);
+				}		
+				
+			});
+			watchby='1';
+			LoadWorkMain();				
+		}	
+	}	
+	
+	//load works info
+	function LoadWorkMain()
+	{				
+		if(watchby!='1')
+		{
+			if(type=='mem')
+			{
+				$("#delpic").show();
+			}
+		}
+		url='http://wetennis.cn:83/Webservice/Wetime.ashx?typename=GetTimeOfPic&jsoncallback=?';
+		$.getJSON(url,{sys:sys,type:type},function(data){
+			//alert(JSON.stringify(data));
+			document.getElementById('PicSys').value=data.SYS;
+			document.getElementById('lblWriter').innerHTML=data.EXT4;
+			document.getElementById('writerimg').src=data.EXT5;
+			document.getElementById('lblUpdateTime').innerHTML=data.UPDATETIME;
+			document.getElementById('lblName').innerHTML=data.EXT2;
+			document.getElementById('lblDesc').innerHTML=data.DESCRIPTION;
+			document.getElementById('PicMain').src=data.EXT3;
+			LoadLikeQty();
+		});
+	}
+	
+	//load like qty
+	function LoadLikeQty()
+	{
+		var picsys=document.getElementById('PicSys').value;
+		var url='http://wetennis.cn:83/WebService/WeNews.ashx?typename=GetPraiseQty&jsoncallback=?';
+		$.getJSON(url,{type:"pic",typesys:picsys},function(data){
+			document.getElementById('LikeQty').innerHTML=data.message;
+		});		
+	}
+	
+	//add a like 
+	function LikeThis()
+	{
+		var Memsys=getCookie("c_memsys");
+		//判断能否读到
+		var picsys=document.getElementById('PicSys').value;
+		var url='http://wetennis.cn:83/WebService/WeNews.ashx?typename=AddPraise&jsoncallback=?';
+		$.getJSON(url,{type:"pic",typesys:picsys,isgood:"1",memsys:Memsys},function(data){
+			if(data.message=="ok")
+			{
+				alert('点赞成功');
+				LoadLikeQty();
+			}
+			else
+			{
+				alert('每人每天只能进行一次点赞');
+			}			
+		});
+	}
+	
+	//删除作品
+	function DeletePic()
+	{
+		var picsys=document.getElementById('PicSys').value;
+		if(confirm('删除作品后可以重新上传作品，但之前所获得的支持将全部清零，确定要删除？'))
+		{
+			var url='http://wetennis.cn:83/WebService/WeTime.ashx?typename=DeletePicWork&jsoncallback=?';
+			$.getJSON(url,{sys:picsys},function(data){
+				if(data.message=='ok')
+				{
+					alert('删除成功！');
+					location.href='PicList.html';
+				}
+			});
+		}
+	}
+	
+	function returntolist()
+	{
+		location.href='PicList.html';
+	}
+	
+	function InitiateJSJDK(){
+		var url='http://wetennis.cn:83/WebService/WeChat.ashx?typename=GetWxConfigDetails&jsoncallback=?';
+		var urlstr=location.href;
+		$.getJSON(url,{url:urlstr.split("#")[0] },function(data){
+			var list = $.parseJSON(data);
+                appid = data.appid;
+                timestamp = data.timestamp;
+                noncestr = data.nonceStr;
+                signature = data.signature;
+		});
+			//begin               		
+	}
+
+	function ShareTime()
+	{
+		alert(signature);
+		//begin
+		wx.config({
+			debug: false,
+			appId: appid,
+			timestamp: timestamp,
+			nonceStr: noncestr,
+			signature: signature,
+			jsApiList: [
+					'checkJsApi',
+					'onMenuShareAppMessage',
+					'onMenuShareTimeline'
+				]
+		});
+		//check
+		wx.error(function(res){
+			alert(JSON.stringify(res));
+		});
+		
+		wx.checkJsApi({
+		  jsApiList: [
+			'onMenuShareAppMessage'
+		  ],
+		  success: function (res) {
+			alert(JSON.stringify(res));
+		  }
+		});		
+	}
+</script>
+</head>
+
+<body>
+<div style="display:none">
+	<input type="text" id="PicSys" />
+</div>
+<ul class="MainHead">
+<!--<li class="leftbtnpos"><img  src="http://wetennis.cn:86/Common/arrow_left.png"  class="PngIcon" onclick="returntolist()"/></li>-->
+<li class="midpos">作品名称:<strong><label id="lblName"></label></strong></li>
+<!--<li class="alignRight"><span id="sharetime" onclick="ShareTime()">分享</span></li>-->
+</ul>
+<p class="workDescript"><label id="lblDesc"></label></p>
+<img src="" alt="作品图片" id="PicMain" class="imgMain" />
+
+<ul class="workDesc">
+	<li class="imgpos"><img class="logo" id="writerimg" src="" /></li>
+	<li class="Nameli">作者：<label id="lblWriter"></label><br />上传时间：<label id="lblUpdateTime"></label></li>
+	<li class="ReturnHome ColorGreen">支持率：<label id="LikeQty"></label></li>
+</ul>
+
+<ul class="PraiseUl">
+	<li class="PraiseBtn"><span class="btn2" onclick="LikeThis()">支持该作品</span> </li>
+	<!--<li class="PraiseBtn"><input type="button" class="btn2" value="支持该作品" onclick="LikeThis()"/> </li>-->
+	<li class="PraiseBtn">	   <span id="delpic" class="btn2 BackRed hidden" style="background-color:#f00" type="button" onclick="DeletePic()">删除作品</span></li>	
+</ul>
+
+<div class="LookMore" onclick="location.href='piclist.html'">查看更多作品</div>
+
+<div class="FloatBack hidden">
+<ul>
+	<li><ul>
+		<li><img src="" /></li>
+		<li>发送给朋友</li>
+	</ul></li>
+	<li><ul>
+		<li><img src="" /></li>
+		<li>分享到朋友圈</li>
+	</ul></li>
+<div>
+
+</body>
+</html>

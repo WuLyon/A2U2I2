@@ -1,0 +1,40 @@
+<html>
+<head>
+<title>微信支付</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+<script type="text/javascript" src="js/jquery-1.4.1.min.js"></script>
+<script type="text/javascript" src="js/wechatpay.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function(){	
+		alert(location.href);	
+		//从url获取参数
+		var orderCode=getQueryString("orderNum");
+		alert(orderCode);
+
+		localStorage.setItem("orderNum",orderCode);
+		
+		var callbackUrl=getQueryString("redirectUrl");
+		alert(callbackUrl);
+		localStorage.setItem("returl",callbackUrl);
+		//加载时调用接口，获取用户openid
+		//GetOpenId();
+
+		//获取准备支付的信息
+		//LoadWeChatPay();
+	});
+</script>
+
+</head>
+<body>
+	<h3>订单支付确认</h3>
+	<ul>
+		<li>订单号：<label id="orderNum">123123<label></li>
+		<li>订单描述：<label id="orderDesc">testpay</label></li>
+		<li>应付金额：<label id="money">1</label></li>
+		<li><input type="button" value="确认支付" onclick="SavePay()"/></li>
+	</ul>
+
+</body>
+</html>

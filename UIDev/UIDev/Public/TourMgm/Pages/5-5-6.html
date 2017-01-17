@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>裁判资源分配</title>
+<link rel="stylesheet" type="text/css" href="../css/LT_Form.css">
+<script type="text/javascript" src="../../JavarScriptLibrary/jquery-1.4.1.min.js"></script>
+	<script type="text/javascript" src="../../JavarScriptLibrary/tour_distribute.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+					
+		});
+	</script>
+</head>
+
+<body>
+<input type="button" value="保存修改" />
+
+<!---->
+<div id="UmpireSetting">
+<h3>2016-6-17</h3>
+<ul class="UpmpireUl">
+	<li><span>高新网球中心-1号场</span><span><a href="javascript:ChangeUmpire(1)">未分配裁判</a></span></li>
+	<li><span>高新网球中心-2号场</span><span><a href="javascript:ChangeUmpire(2)">张三,李四</a></span></li>	
+</ul>
+<h3>2016-6-18</h3>
+<ul class="UpmpireUl">
+	<li><span>高新网球中心-1号场</span><span><a href="javascript:ChangeUmpire(1)">未分配裁判</a></span></li>
+	<li><span>高新网球中心-2号场</span><span><a href="javascript:ChangeUmpire(2)">张三,李四</a></span></li>	
+</ul>
+</div>
+
+<!--添加新的种子-->
+	
+	<div id="Edit_Seed" class="hidden">
+		<div id="EditSeed_Back" onclick="hideEdit()"></div>
+		<div id="EditSeed_Left" >
+			
+		</div>
+		<div id="EditSeed_Right">
+			
+		</div>
+		
+		<input class="submitBtn" type="button" value="提交" onclick="SubmitSeed()"/>
+	</div>
+
+</body>
+</html>

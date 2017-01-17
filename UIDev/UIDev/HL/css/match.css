@@ -1,0 +1,34 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{ margin:0; padding:0; }
+.all{ width:100%;}
+li{list-style-type:none;}
+img{border:0px;vertical-align:middle;}
+a{text-decoration:none;}
+.clear{clear:both;}
+.left{display:block;width:135px;background:#54a7a3;position:fixed;top:0px;left:0px; float:left; z-index:5; height:100%;}
+.right{ width:100%; background:#5a5a5a; height:93px;position:fixed;top:0px;}
+.right ul{ margin-left:100px;}
+.logo{ background:url(logo.png)  no-repeat ; width:92px; height:72px; position:absolute; right:20px; top:5px;}
+.right ul li{ float:left;  display:block; width:105px; text-align:center; height:30px;  }
+.right ul li a{ font-size:14px; color:#FFF; line-height:35px;}
+.right h4{ color:#FFF; margin-left:30px;}
+.right .hv{  background:#f0e5e5;}
+.right .hv a{color:#087c69; font-weight:bold;}
+.right li:hover{ background:#f0e5e5;}
+.right li a:hover{ color:#087c69; font-weight:bold;}
+.left ul{ position:relative; right:40px; top:150px;}
+.left li{width:135px; height:70px;}
+.left li a{color:#FFF; font-size:16px; margin-left:10px;}
+.left li  .hv1{ background:url(home.png) no-repeat; padding:0px 35px 15px 43px; position:relative; left:0px; top:15px;}
+.left li  .hv2{ background:url(cy.png) no-repeat; padding:0px 35px 15px 43px;position:relative; left:0px; top:15px;}
+.left li  .hv3{ background:url(cg.png) no-repeat;padding:0px 35px 15px 43px; position:relative; left:0px; top:15px;}
+.left li  .hv4{ background:url(ss.png) no-repeat;padding:0px 35px 15px 43px;position:relative; left:0px; top:15px;}
+.left li  .hv5{ background:url(pm.png) no-repeat; padding:0px 35px 15px 43px; position:relative; left:0px; top:15px;}
+.left li  .hv6{ background:url(lm.png) no-repeat;padding:0px 35px 15px 43px;position:relative; left:0px; top:15px;}
+.left li  .hv7{ background:url(xx.png) no-repeat;padding:0px 35px 15px 43px;position:relative; left:0px; top:15px;}
+.left1{ background:url(hoverbg.png) no-repeat; position:relative; right:0px; font-weight:bold; color:#077260;}
+.left1 .hv1{ font-weight:bold; color:#077260; }
+.left li:hover{ background:url(hoverbg.png) no-repeat; position:relative; right:0px; font-weight:bold; color:#077260;}
+.left a:hover{ font-weight:bold; color:#077260;}

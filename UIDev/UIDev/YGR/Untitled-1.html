@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link href="Untitled-2.css" rel="stylesheet" type="text/css" />
+<script src="http://wetennis.cn:8081/Scripts/jquery-1.8.2.min.js"></script>
+
+<script type="application/javascript">
+	window.onload=function(){
+		alert('first');
+		var url='http://wetennis.cn:83/WebService/WeNews.ashx?typename=LoadNews&jsoncallback=?';
+		$.getJSON(url,{type:"Pro",pagesize:"5",page:"1",status:""},function(data){
+				alert('haha');
+				alert(JSON.stringify(data));
+				var yy=data.content;//将新闻内容导出//
+				var gg='';
+				for(var i=0;i<yy.length;i++) {
+					  gg='<ul><li class="a1"><img src="'+yy[i].SMALLURL+'" width="50" height="50" /> </li><li  class="a2"> 墨西哥赛蒂姆横扫迪米 携米托奇晋级四强  </li><li class="a3">发布时间：2016-2-27 11:23:30；  </li><li class="a4">来源：新浪</li><li class="a5">状态：已发布</li></ul>';
+					  
+				}//结束for循环
+					$("#container").html(gg);//转div的html复位
+			});
+		}
+</script>
+
+</head>
+
+
+
+
+
+
+<body>
+<div id="container">
+
+</div>
+
+</body>
+</html>

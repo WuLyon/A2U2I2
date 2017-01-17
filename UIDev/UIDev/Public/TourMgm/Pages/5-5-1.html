@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link rel="stylesheet" type="text/css" href="../css/LT_Form.css">
+<script type="text/javascript" src="../../JavarScriptLibrary/jquery-1.4.1.min.js"></script>
+	<script type="text/javascript" src="../../JavarScriptLibrary/tour_distribute.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			GetTourGyms();
+			GetClubGyms();
+		});
+	</script>
+</head>
+
+<body>
+<!--子功能导航-->
+<div class="FloatR_Tabs">
+		<ul>
+		<li><strong>场馆资源</strong></li>
+		<li><a href="5-5-2.html">日期资源</a></li>
+		<li><a href="5-5-3.html">分配策略</a></li>
+		<li><a href="5-5-4.html">秩序册</a></li>		
+		</ul>
+	</div>
+
+<input type="button" value="添加场馆" onclick="showEdit()" />
+<div id="ChooseGyms">
+	
+</div>
+
+<div id="Edit_Seed" class="hidden">
+		<div id="EditSeed_Back" onclick="hideEdit()"></div>
+		<div class="ContentMid">
+			<h3>请选择场馆</h3>
+			<div id="selGyms">
+			
+			</div>
+			<p>注意：当赛事为俱乐部赛事和全网公开赛的时候，只能从俱乐部已经添加的场馆资源中选择。当赛事为联盟赛时，可以从联盟俱乐部的场馆中进行选择</p>
+			<input class="submitBtn" type="button" value="提交" onclick="SubmitSelGym()"/>
+		</div>
+	</div>
+	
+
+</body>
+</html>

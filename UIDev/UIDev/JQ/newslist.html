@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Newslist</title>
+<link href="css/Css.css" rel="stylesheet" type="text/css">
+<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() {
+ //alert('haha');
+ url = 'http://wetennis.cn:83/WebService/WeNews.ashx?typename=LoadNews&jsoncallback=?';
+ $.getJSON(url,{type:"Pro",pagesize:"5",page:"1",status:""},function(result){
+  //alert(JSON.stringify(result));
+  var data=result.content;
+  var xixi='';
+  //alert(data.length);
+  for(var i=0; i<data.length; i++){
+	 xixi+='<ul class="nav"><li><img src="'+data[i].SMALLURL+'" class="logo"></li><li> <ul class="new">  <li class="no1">'+data[i].TITLE+'</li><li>'+data[i].ISSUETIME+';'+data[i].WRITER+'</li> <li>状态:已发布</li></ul></li> </ul>';
+	  }
+	  //alert(xixi);
+   $("#nav").html(xixi);
+  });
+ }); 
+</script>
+</head>
+
+<body>
+ <div id="nav">
+ </div>
+ </body>
+</html>

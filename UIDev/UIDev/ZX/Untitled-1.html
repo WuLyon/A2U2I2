@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link href="Untitled-2.css" rel="stylesheet" type="text/css" />
+<script src="http://wetennis.cn:8081/Scripts/jquery-1.8.2.min.js"></script>
+
+<script type="application/javascript">
+	window.onload=function(){
+		alert('first');
+		var url='http://wetennis.cn:83/WebService/WeNews.ashx?typename=LoadNews&jsoncallback=?';
+		$.getJSON(url,{type:"Pro",pagesize:"5",page:"1",status:""},function(data){
+				alert('haha');
+				alert(JSON.stringify(data));
+				var la=data.content;
+				var  uis='';
+				for(var i=0;i<la.length;i++){
+					uis+='<ul style="position:relative;left:0px;top:0px"><li  class="a"><img src="'+la[i].SMALLURL+'" width="50" height="50" /></li><li  class="b">'+la[i].WRITER+'</li>  <li class="al">'+la[i].ISSUETIME+'</li><li class="d">	'+la[i].TITLE+'</li> </ul>';				}
+					$("#qq").html(uis);
+			})
+		}
+</script>
+</head>
+
+<body>
+     
+<div id="qq">
+  
+      </div>
+
+    
+    
+</body>
+</html>

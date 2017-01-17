@@ -1,0 +1,440 @@
+@charset "utf-8";
+/* CSS Document */
+
+html body{ margin:0; padding:0; }
+.all{ width:100%;}
+li{list-style-type:none;}
+img{border:0px;vertical-align:middle;}
+a{text-decoration:none;}
+.clear{clear:both;}
+.left{display:block;width:135px;background:#54a7a3;position:fixed;top:0px;left:0px; float:left; z-index:15; height:100%;}
+.right{ width:100%; background:#5a5a5a; height:90px;position:fixed;top:0px; z-index:10;}
+.logo{ background:url(../img/logo.png)  no-repeat ; width:92px; height:72px; position:absolute; right:20px; top:10px;}
+.right .right_dh li{ float:left;  display:block; width:105px;text-align:center; height:30px;  }
+.right .right_dh li a{ font-size:14px; color:#FFF; line-height:35px;}
+.right h4{ color:#FFF; margin-left:30px;}
+.right .hv{  background:#f0e5e5;}
+.right .right_dh .hv a{color:#087c69; font-weight:bold;}
+.right .right_dh li:hover{ background:#f0e5e5;}
+.right .right_dh li a:hover{ color:#087c69; font-weight:bold;}
+.right_top{ height:95px;}
+.left ul{ position:relative; right:40px; top:130px;}
+.left li{width:135px; height:70px;}
+.left li a{color:#FFF; font-size:16px; margin-left:10px;}
+.left li  .hv1{ background:url(../img/sy.png) no-repeat; padding:0px 35px 15px 43px; position:relative; left:0px; top:15px;}
+.left li  .hv2{ background:url(../img/cy.png) no-repeat; padding:0px 35px 15px 43px;position:relative; left:0px; top:15px;}
+.left li  .hv3{ background:url(../img/cg.png) no-repeat;padding:0px 35px 15px 43px; position:relative; left:0px; top:15px;}
+.left li  .hv4{ background:url(../img/ss1.png) no-repeat;padding:0px 35px 15px 43px;position:relative; left:0px; top:15px;}
+.left li  .hv5{ background:url(../img/pm.png) no-repeat; padding:0px 35px 15px 43px; position:relative; left:0px; top:15px;}
+.left li  .hv6{ background:url(../img/lm.png) no-repeat;padding:0px 35px 15px 43px;position:relative; left:0px; top:15px;}
+.left li  .hv7{ background:url(../img/xx.png) no-repeat;padding:0px 35px 15px 43px;position:relative; left:0px; top:15px;}
+.left4{ background:url(../img/hoverbg.png) no-repeat; position:relative; right:0px; font-weight:bold; color:#077260;}
+.left1 .hv4{ font-weight:bold; color:#077260; }
+.left li:hover{ background:url(../img/hoverbg.png) no-repeat; position:relative; right:0px; font-weight:bold; color:#077260;}
+.left a:hover{ font-weight:bold; color:#077260;}
+.top_button input{background:url(../img/anniu.png) no-repeat;  line-height:25px;  color:#FFF;  text-align:center;  border:none;position:relative; top:-20px; right:50px; float:right;}
+
+.container{position:absolute; width:100%; height:100%; background:#f0e5e5;  }
+.right .container{position:absolute; width:100%; height:100%; background:#f0e5e5; }
+.search{ float:right; height:50px; position:relative; right:30px; top:40px;}
+.search li{ float:left;}
+.search1 input{ background:url(../img/search.png) no-repeat; width:181px; height:40px; border:none; position:relative; top:-20px; right:10px; text-indent:35px;}
+.search_btn input{ background:url(../img/searh_btn.png) no-repeat; width:73px; height:31px; position:relative; right:25px; top:-18px; color:#333; font-size:12px; border:none; }
+
+.container1{width:90%; height:89px; border:solid 1px #087c69; position:absolute; top:80px; left:40px; background:#FFF;}
+.container1 .tp{ background:url(../img/tb1.png) no-repeat; width:57px; height:55px;}
+.tp1{ background:url(../img/lms.png) no-repeat; width:51px; height:40px; position:absolute; top:14px; left:35px;}
+.con1{ position:relative; left:40px; top:-75px; width:100px; height:55px;}
+.con1 li{ display:block;}
+.con1 li a{ color:#333; font-size:12px; line-height:20px;}
+.con1 li a:hover{ color:#077260; font-weight:bold;}
+.con2{ position:relative; left:45%; top:-135px;width:100px; height:55px;}
+.con2 li{ display:block;}
+.con2 li a{ color:#333; font-size:12px; line-height:20px;}
+.con2 li a:hover{ color:#077260; font-weight:bold;}
+.an_btn{ width:74px; height:34px; position:absolute; margin-top:-170px;}
+.an_btn input{ background:url(../img/an_btn.png) no-repeat; width:80px; height:40px; border-style:none; font-size:12px; text-align:center; text-indent:0.6em;}
+.an_btn input:hover{ color:#077260; font-weight:bold;}
+
+.container2{width:90%; height:89px; border:solid 1px #087c69; position:absolute; top:190px; left:40px;background:#FFF;}
+.container2 .tp{ background:url(../img/tb1.png) no-repeat; width:57px; height:55px;}
+.tp2{ background:url(../img/gks.png) no-repeat; width:51px; height:40px; position:absolute; top:14px; left:35px;}
+.con3{ position:relative; left:40px; top:-75px; width:100px; height:55px;}
+.con3 li{ display:block;}
+.con3 li a{ color:#333; font-size:12px; line-height:20px;}
+.con3 li a:hover{ color:#077260; font-weight:bold;}
+.con4{ position:relative; left:45%; top:-135px;width:100px; height:55px;}
+.con4 li{ display:block;}
+.con4 li a{ color:#333; font-size:12px; line-height:20px;}
+.con4 li a:hover{ color:#077260; font-weight:bold;}
+.an_btn{ width:74px; height:34px; position:absolute; left:975px; margin-top:-170px;}
+.an_btn input{ background:url(../img/an_btn.png) no-repeat; width:74px; height:34px; border-style:none; font-size:12px; text-align:center; text-indent:0.6em;}
+.an_btn input:hover{ color:#077260; font-weight:bold;}
+
+.container3{width:90%; height:89px; border:solid 1px #087c69; position:absolute; top:300px; left:40px;background:#FFF;}
+.container3 .tp{ background:url(../img/tb1.png) no-repeat; width:57px; height:55px;}
+.tp3{ background:url(../img/jlb.png) no-repeat; width:51px; height:40px; position:absolute; top:14px; left:35px;}
+.con5{ position:relative; left:40px; top:-75px; width:100px; height:55px;}
+.con5 li{ display:block;}
+.con5 li a{ color:#333; font-size:12px; line-height:20px;}
+.con5 li a:hover{ color:#077260; font-weight:bold;}
+.con6{ position:relative; left:45%; top:-135px;width:100px; height:55px;}
+.con6 li{ display:block;}
+.con6 li a{ color:#333; font-size:12px; line-height:20px;}
+.con6 li a:hover{ color:#077260; font-weight:bold;}
+.an_btn{ width:74px; height:34px; position:absolute; left:975px; margin-top:-170px;}
+.an_btn input{ background:url(../img/an_btn.png) no-repeat; width:74px; height:34px; border-style:none; font-size:12px; text-align:center; text-indent:0.6em;}
+.an_btn input:hover{ color:#077260; font-weight:bold;}
+
+.container4{width:90%; height:89px; border:solid 1px #087c69; position:absolute; top:410px; left:40px;background:#FFF;}
+.container4 .tp{ background:url(../img/tb1.png) no-repeat; width:57px; height:55px;}
+.con7{ position:relative; left:40px; top:-75px; width:100px; height:55px;}
+.con7 li{ display:block;}
+.con7 li a{ color:#333; font-size:12px; line-height:20px;}
+.con7 li a:hover{ color:#077260; font-weight:bold;}
+.con8{ position:relative; left:45%; top:-135px;width:100px; height:45px;}
+.con8 li{ display:block;}
+.con8 li a{ color:#333; font-size:12px; line-height:20px;}
+.con8 li a:hover{ color:#077260;}
+.an_btn{ width:74px; height:40px; position:absolute; left:975px; margin-top:-165px;}
+.an_btn input{ background:url(../img/an_btn.png) no-repeat; width:74px; height:34px; border-style:none; font-size:12px; text-align:center; text-indent:0.6em;}
+.an_btn input:hover{ color:#077260; font-weight:bold;}
+
+.footer{ width:400px; height:10px; position:absolute; top:530px; left:700px;}
+.footer ul li{ float:left; display:block; width:40px;}
+.footer ul li a{ font-size:12px; color:#333;}
+.footer ul li a:hover{ color:#999;}
+.footer ul .f1 a{ color:#999;}
+
+.tcy{ width:100%; height:100%; border-right-style: 1px solider #087c69;}
+.tanchu{ width:615px; margin:0; padding:0; position:absolute; height:100%; background:#FFF; position:absolute; z-index:30; }
+.tanchu li a{ font-size:14px; color:#333;}
+.tanchu_top { width:550px; height:23px; border-bottom:#087c69 1px solid;}
+.tanchu_top li a{ font-size:16px; }
+.tanchu_top li{ float:left; display:block; width:90px; margin-top:0px; margin-left:15px;}
+.tanchu_top p{ background:url(../img/fanhui.png) no-repeat; width:25px; height:14px; position:absolute; top:5px; left:10px;}
+.tanchu_top .hv8 a{ color:#087c69; font-weight:bold;}
+.tanchu_top .hv9{ width:140px;}
+.tanchu_top .hv9 a{ color:#087c69; font-weight:bold;}
+.tanchu_top .hv10{ width:180px;}
+.tanchu_top .hv10 a{ color:#087c69; font-weight:bold;}
+
+.tanchu_top li a:hover{ color:#087c69; font-weight:bold;}
+.tanchu_btn{ float:right;}
+.tanchu_btn input{ background:url(../img/an_btn.png) no-repeat; width:80px; height:32px; position:absolute; top:8px; border-style:none; font-size:12px;}
+.tanchu_btn input:hover{color:#087c69;}
+
+.tanchu_btn1{ float:right;}
+.tanchu_btn1 select{ background:url(../img/an_btn.png) no-repeat; width:80px; height:32px; position:absolute; top:8px; border-style:none; font-size:12px; text-indent:0.2em;}
+
+.tanchu_con li{ display:block; line-height:30px; float:left; }
+.tanchu_con li{ font-size:13px;}
+.tanchu_con .tanchu_l{ width:20%;}
+.tanchu_con .tanchu_r{ width:70%;}
+.tanchu_con .tanchu_r input{ border-style:none; border:#087c69 1px solid; width:99%; height:20px;}
+.tanchu_con .tanchu_r select{ border-style:none; border:#087c69 1px solid; width:100%; height:25px;}
+tanchu_e form input{ width:100%;} 
+.tanchu_con .tanchu_e{ width:70%;}
+.tanchu_con .tanchu_r .tc_e1{ width:99%; height:40px;}
+.tanchu_con .tanchu_r .tc_e2{ position:absolute; left:50px; top:-20px;}
+.tanchu_con .tanchu_r .sc{ width:80px; height:32px; border-style:none; background:url(../img/an_btn.png) no-repeat; font-size:12px; margin-left:40%;}
+.tanchu_con .tanchu_r .sc:hover{ color:#087c69;}
+.tanchu_bot{ position:absolute; top:90%; left:52%; width:80px; height:40px; border-bottom:0px; }
+.tanchu_bot input{ background:url(../img/an_btn.png) no-repeat; width:80px; height:30px; border-style:none; font-size:12px;}
+.tanchu_bot input:hover{ color:#077260; }
+
+
+.md1{ width:90%; border:1px solid #087c69; margin-top:20px; height:80px;}
+.md1 p a{ font-size:12px; color:#333;}
+.md1 ul li{ display:block; width:180px; margin-top:-10px;}
+.md1 ul li a{ font-size:12px; color:#333;}
+.md1 p input{ background:url(../img/an_btn.png) no-repeat; width:80px; height:32px; border-style:none; position:relative; top:-30px; left:25px;}
+.md1 p input:hover{ color:#087c69;}
+
+.md2{ width:90%; border:1px solid #087c69; margin-top:20px; height:80px;}
+.md2 p a{ font-size:12px; color:#333;}
+.md2 ul li{ display:block; width:180px; margin-top:-10px;}
+.md2 ul li a{ font-size:12px; color:#333;}
+.md2 p input{ background:url(../img/an_btn.png) no-repeat; width:80px; height:32px; border-style:none; position:relative; top:-30px; left:25px;}
+.md2 p input:hover{ color:#087c69;}
+
+.md3{ width:90%; border:1px solid #087c69; margin-top:20px; height:80px;}
+.md3 p a{ font-size:12px; color:#333;}
+.md3 ul li{ display:block; width:180px; margin-top:-10px;}
+.md3 ul li a{ font-size:12px; color:#333;}
+.md3 p input{ background:url(../img/an_btn.png) no-repeat; width:80px; height:32px; border-style:none; position:relative; top:-30px; left:25px;}
+.md3 p input:hover{ color:#087c69;}
+
+.sk{ width:550px;}
+.sk h4{ margin-left:100px;}
+.sk h5{ margin-left:170px;}
+.sk1 table { margin-top:20px; margin-left:40px;}
+
+.dy_btn input{ background:url(../img/an_btn.png) no-repeat; width:80px; height:30px; border-style:none; font-size:12px; position:absolute; top:90%; left:40%;}
+
+.md4{ width:90%; border:1px solid #087c69; margin-top:20px; height:100px; }
+.md4 li{ clear:both;}
+.md4 ul li{ margin-top:-20px; }
+.md4 li a{ font-size:12px; line-height:50px;}
+.feiyong{ font-size:12px; color:#333; position:absolute;left:45%; line-height:50px; }
+.md4 input{ background:url(../img/an_btn.png) no-repeat; width:80px; height:30px; border-style:none; position:absolute;}
+.bj_btn { position:absolute; left:75%;}
+
+.md5{ width:90%; border:1px solid #087c69; margin-top:20px; height:100px; }
+.jlb a{ font-size:12px; color:#333;}
+.md5 ul li{ display:block; width:120px;}
+.md5 ul li a{ font-size:12px;}
+.jlb_btn input{ background:url(../img/an_btn.png) no-repeat; width:80px; height:30px; border-style:none; position:absolute; right:70px; margin-top:-20px;}
+.jlb_btn input:hover{ color:#087c69;}
+
+.md6{  width:90%; border:1px solid #087c69; margin-top:20px; height:100px; }
+.ddmd{ background:url(../img/touxiang.png) no-repeat; width:50px; height:50px; position:relative; left:10px; }
+.md6 ul{ margin-left:30px; }
+.md6 li{ float:left; font-size:12px; display:block; margin-left:20px;margin-top:10px; position:relative; top:-70px;}
+.md6 input{ position:relative; right:-25px; top:-70px; background:url(../img/an_btn.png) no-repeat;width:80px; height:30px;}
+.md6 input{ border-style:none;}
+.md6 input:hover{ color:#087c69;}
+.md6 .sc{ position:relative; right:-50px; top:-70px; color:#F00; font-size:14px;}
+
+.md7{  width:90%; border:1px solid #087c69; margin-top:20px; height:150px; }
+.sdmd{ background:url(../img/touxiang.png) no-repeat; width:50px; height:50px; position:relative; left:10px; }
+.md7 ul{ margin-left:30px; }
+.md7 li{ float:left; font-size:12px; display:block; margin-left:20px;margin-top:10px; position:relative; top:-120px;}
+.md7 input{ position:relative; right:-25px; top:-120px; background:url(../img/an_btn.png) no-repeat;width:80px; height:30px;}
+.md7 input{ border-style:none;}
+.md7 input:hover{ color:#087c69;}
+.md7 .sc{ position:relative; right:-50px; top:-120px; color:#F00; font-size:14px;}
+
+.md8{  width:40%; border:1px solid #087c69; margin-top:20px; height:80px; }
+.sdmd{ background:url(../img/touxiang.png) no-repeat; width:50px; height:50px; position:relative; left:10px; }
+.md8 ul{ margin-left:30px; }
+.md8 li{ float:left; font-size:12px; display:block; margin-left:20px;margin-top:10px; position:relative; top:-120px;}
+.md8 input{ position:relative; right:-50px; top:-120px; background:url(../img/an_btn.png) no-repeat;width:80px; height:30px;}
+.md8 input{ border-style:none;}
+.md8 input:hover{ color:#087c69;}
+.md8 .sc{ position:relative; right:-80px; top:-120px; color:#F00; font-size:14px;}
+
+.ddbm{ width:40%; height:60px; border:#087c96 1px solid; margin-top:20px; float:left;}
+.ddbm p{ background:url(../img/touxiang.png) no-repeat; width:50px; height:50px; position:relative; top:-23px; right:30px; float:left;}
+.ddbm li{ font-size:12px; display:block; width:40px; }
+.ddbm .sc1{ margin-left:70px; color:#F00; }
+
+.ddbm1{ width:40%; height:60px; border:#087c96 1px solid; margin-top:20px; float:right; margin-right:30px;}
+.ddbm1 p{ background:url(../img/touxiang.png) no-repeat; width:50px; height:50px; position:relative; top:-23px; right:30px; float:left;}
+.ddbm1 li{ font-size:12px; display:block; width:40px; }
+.ddbm1 .sc1{ margin-left:70px; color:#F00; }
+
+
+
+.sdbm{ width:40%; height:140px; border:#087c96 1px solid; margin-top:20px; float:left;}
+.sdbm p{ background:url(../img/touxiang.png) no-repeat; width:50px; height:50px; position:relative; top:-23px; right:30px; float:left;}
+.sdbm li{ font-size:12px; display:block; width:70px; line-height:50px; }
+.sdbm .sc1{ margin-left:150px; color:#F00; position:relative; top:-150px; }
+
+.sdbm1{ width:40%; height:140px; border:#087c96 1px solid; margin-top:20px; float:right; margin-right:30px;}
+.sdbm1 p{ background:url(../img/touxiang.png) no-repeat; width:50px; height:50px; position:relative; top:-23px; right:30px; float:left;}
+.sdbm1 li{ font-size:12px; display:block; width:70px; line-height:50px; }
+.sdbm1 .sc1{ margin-left:150px; color:#F00; position:relative; top:-150px; }
+
+
+.tanchu1{ background:#CCC;}
+.tanchu1 li a{ font-size:14px; color:#333;}
+.tanchu_top1 { width:550px; height:50px; border-bottom:#087c69 1px solid;}
+.tanchu_top1 li a{ font-size:16px; }
+.tanchu_top1 li{ float:left; display:block; width:90px; margin-top:20px; margin-left:15px;}
+.tanchu_top1 p{ background:url(../img/fanhui.png) no-repeat; width:25px; height:14px; position:absolute; top:5px; left:10px; background-color:#FFF; width:25px; height:15px;}
+.tanchu_top1 .hv8 a{ color:#087c69; font-weight:bold;}
+.tanchu1 .tanchu_btn input{ margin-top:20px;}
+
+
+.tanchu_con2 li{ display:block; line-height:50px; float:left; }
+.tanchu_con2 li{ font-size:13px;}
+.tanchu_con2 .tanchu_l{ width:20%;}
+.tanchu_con2 .tanchu_r{ width:70%;}
+.tanchu_con2 .tanchu_r input{ border-style:none; border:#087c69 1px solid; width:99%; height:20px;}
+.tanchu_con2 .tanchu_r select{ border-style:none; border:#087c69 1px solid; width:100%; height:25px;}
+tanchu_e form input{ width:100%;} 
+.tanchu_con2 .tanchu_e{ width:70%;}
+
+.tanchu_con2 .tjxm{ font-size:14px; color:#333; border-bottom:1px solid #087c69; background:none; width:90%;
+margin-top:20px; font-size:16px; text-align:center;}
+.tanchu_bot1{ position:absolute; top:90%; left:45%; width:80px; height:40px; border-bottom:0px; }
+.tanchu_bot1 input{ background:url(../img/an_btn.png) no-repeat; width:80px; height:30px; border-style:none; font-size:12px;}
+.tanchu_bot1 input:hover{ color:#077260; }
+
+.sk2{ height:100%;}
+.sk2{ font-size:12px;}
+
+.md9{ background:url(../img/zz1.png) no-repeat; width:180px; height:180px; margin-top:20px;}
+.md10 { margin-top:20px;}
+.md10 li{ float:left; display:block; width:140px;}
+.zz2{ background:url(../img/zz2.png) no-repeat; width:120px; height:91px;}
+.zz3{ background:url(../img/zz3.png) no-repeat; width:120px; height:109px;}
+.zz4{ background:url(../img/zz4.png) no-repeat; width:120px; height:91px;}
+.zz5{ background:url(../img/zz5.png) no-repeat; width:120px; height:83px;}
+
+.md11{ height:60px; border:#087c69 1px solid; margin-top:20px; width:550px;}
+.md11 li{ display:block; width:180px;}
+.md11 li a{ font-size:12px; line-height:10px; }
+.md11 input{ background:url(../img/an_btn.png) no-repeat; width:80px; height:32px; border-style:none;margin-left:40px;}
+.md11 input:hover{ color:#087c69;}
+.rq select{ width:470px; margin-left:20px; height:30px;}
+.rq{ font-size:12px; color:#333; margin-top:40px;}
+.md11 .cp1 a{ font-size:12px; color:#F00;}
+
+.fp{ background:#CCC;}
+
+.fp1{ height:30px; border-bottom:1px solid #087c69; margin-top:40px;}
+.fp1 li{ float:left; display:block; width:100px; height:30px; text-align:center;}
+.fp1 li a{ font-size:14px; color:#333;}
+.fp1 li a:hover{ color:#087c69; font-weight:bold;}
+.fp1 .hv11 a{ color:#087c69; font-weight:bold;}
+
+.fp2 li{ border-bottom:solid 1px #087c69; line-height:40px; clear:both; }
+.fp2 {width:350px; }
+.fp2 li a{ font-size:12px;}
+.fp2 input{ margin-left:100px;}
+.tanchu_bot2 p input{ background:url(../img/an_btn.png) no-repeat; width:80px; height:32px; border-style:none;margin-left:25%; margin-top:50px;}
+.tanchu_bot2 p input:hover{ color:#087c69;}
+.fp2.ff{ border:none;}
+
+.fp3{ margin-top:20px;}
+.fp3 li{ float:left; display:block; width:130px;}
+.search2{ float:right; height:40px; position:relative; right:230px; top:40px; }
+.search2 li{ float:left;}
+.search3 input{ background:url(../img/search.png) no-repeat; width:181px; height:40px; border:none; position:relative; top:-20px; right:10px; text-indent:35px;}
+.search_btn1 input{ background:url(../img/searh_btn.png) no-repeat; width:73px; height:31px; position:relative; right:25px; top:-18px; color:#333; font-size:12px; border:none; }
+
+
+.fp4{ margin-top:20px; position:absolute; top:29%; left:0px;}
+.fp4 li{ float:left; display:block; width:130px;}
+
+.cs1{ width:50%;  text-align:center;}
+.cs2{  text-align:center;}
+.cs3{ height:40%; }
+td{ font-size:14px;}
+.ry1 input{ border-style:none;}
+tr li input{ border-style:none;}
+.ry2 td li { border-style:none;}
+.CollapsiblePanelTab{ text-align:center; height:20px;}
+.csry{ margin-top:10px;}
+.CollapsiblePanel {
+	margin: 0px;
+	padding: 0px;
+	border-left: solid 1px #CCC;
+	border-right: solid 1px #999;
+	border-top: solid 1px #999;
+	border-bottom: solid 1px #CCC;
+}
+.tanchu_con h4{ text-align:center;}
+.CollapsiblePanel{ clear:both;}
+.CollapsiblePanel p{ font-size:14px;}
+.CollapsiblePanel .co{ font-size:16px; font-weight:bold; margin-left:41%;}
+.CollapsiblePanel li input{ border-style:none;}
+.tanchu_bot4 p input{ background:url(../img/an_btn.png) no-repeat; width:80px; height:32px; border-style:none;margin-left:45%; margin-top:50px;}
+.tanchu_bot4 p input:hover{ color:#087c69;}
+
+/* This is the selector for the CollapsiblePanelTab. This container houses
+ * the title for the panel. This is also the container that the user clicks
+ * on to open or close the panel.
+ *
+ * The name of the class ("CollapsiblePanelTab") used in this selector is not necessary
+ * to make the widget function. You can use any class name you want to style an
+ * CollapsiblePanel panel tab container.
+ */
+.CollapsiblePanelTab {
+	font: bold 0.7em sans-serif;
+	background-color: #DDD;
+	border-bottom: solid 1px #CCC;
+	margin: 0px;
+	padding: 2px;
+	cursor: pointer;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+}
+
+/* This is the selector for a CollapsiblePanel's Content area. It's important to note that
+ * you should never put any padding on the content area element if you plan to
+ * use the CollapsiblePanel's open/close animations. Placing a non-zero padding on the content
+ * element can cause the CollapsiblePanel to abruptly grow in height while the panels animate.
+ *
+ * The name of the class ("CollapsiblePanelContent") used in this selector is not necessary
+ * to make the widget function. You can use any class name you want to style a
+ * CollapsiblePanel content container.
+ */
+.CollapsiblePanelContent {
+	margin: 0px;
+	padding: 0px;
+}
+
+/* An anchor tag can be used inside of a CollapsiblePanelTab so that the
+ * keyboard focus ring appears *inside* the tab instead of around the tab.
+ * This is an example of how to make the text within the anchor tag look
+ * like non-anchor (normal) text.
+ */
+.CollapsiblePanelTab a {
+	color: black;
+	text-decoration: none;
+}
+
+/* This is an example of how to change the appearance of the panel tab that is
+ * currently open. The class "CollapsiblePanelOpen" is programatically added and removed
+ * from panels as the user clicks on the tabs within the CollapsiblePanel.
+ */
+.CollapsiblePanelOpen .CollapsiblePanelTab {
+	background-color: #EEE;
+}
+
+/* This is an example of how to change the appearance of the panel tab when the
+ * CollapsiblePanel is closed. The "CollapsiblePanelClosed" class is programatically added and removed
+ * whenever the CollapsiblePanel is closed.
+ */
+
+.CollapsiblePanelClosed .CollapsiblePanelTab {
+ /* background-color: #EFEFEF */
+}
+
+/* This is an example of how to change the appearance of the panel tab as the
+ * mouse hovers over it. The class "CollapsiblePanelTabHover" is programatically added
+ * and removed from panel tab containers as the mouse enters and exits the tab container.
+ */
+.CollapsiblePanelTabHover,  .CollapsiblePanelOpen .CollapsiblePanelTabHover {
+	background-color: #CCC;
+}
+
+/* This is an example of how to change the appearance of all the panel tabs when the
+ * CollapsiblePanel has focus. The "CollapsiblePanelFocused" class is programatically added and removed
+ * whenever the CollapsiblePanel gains or loses keyboard focus.
+ */
+.CollapsiblePanelFocused .CollapsiblePanelTab {
+	background-color: #3399FF;
+}
+
+
+
+.leftiframe{ width:135px; height:100%;}
+iframe{
+	positon:relative;top:0px;left:0px;width:100%;height:99.8%;bottom:0px;border:0px;
+	}
+	
+.hl_maincontent
+{
+	position:absolute;top:0px;bottom:0px;left:135px;right:0px
+	}
+	
+.hl_functionbody
+{
+	position: absolute;
+	top: 90px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	background: #f0e5e5;
+	width:100%;
+	}
+
+.hl_floatright
+{
+	position:fixed;min-width:600px;width:50%;top:0px;bottom:0px;right:0px;
+	z-index:400;
+	}

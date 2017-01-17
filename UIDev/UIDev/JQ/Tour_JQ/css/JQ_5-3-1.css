@@ -1,0 +1,149 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{
+	 margin:0; 
+	 
+	 padding:0; 
+	 
+	 width:100%;
+
+	 }
+	 
+li{
+	list-style-type:none;
+	
+	}
+	
+img{
+	
+	border:0px;
+	
+	vertical-align:middle;
+	
+	}
+	
+a{
+	
+	text-decoration:none;
+	
+	}
+	
+
+.content{ 
+	
+	width: 100%;
+	
+	background-color:#fff;
+	
+	}
+	
+.top{
+	
+	text-align: center;
+	
+	color:#242424;
+	
+	margin-bottom: 30px;
+	
+	border-bottom: solid #077260 1px;
+	
+	}
+	
+.top li{
+	
+	margin-bottom: 20px;
+	
+	}
+	
+.top .close{
+	
+	float:left;
+	
+	}
+	
+.list{
+	
+	border:solid #077260 1px; 
+	
+	width: 90%;
+	
+	height:50px;
+	
+	margin:0 auto;
+	
+	margin-bottom: 20px;
+	
+	}
+	
+.list .finish{
+	
+	float:left;
+	
+	margin-top: 17px;
+	
+	}
+	
+.list .listone{
+	
+	font-size:14px;
+	
+	float:left;
+	
+	margin-left: 20px;
+	
+	margin-top: 8px;
+	
+	}
+	
+.list .listtwo{
+	
+	margin-left:34px;
+	
+	margin-top:27px;
+	
+	word-spacing: 50px;
+	
+	font-size:14px; 
+	
+	width:100%;
+	
+	}
+	
+.list .buttom1{
+	
+	float:right;
+	
+	margin-top: -40px;
+	
+	margin-right:20px;
+	
+	}
+	
+.list .listthree{
+	
+	float:right;
+	
+	margin-right: -66px;
+	
+	font-size:12px; 
+	
+	margin-top:-24px;
+	
+	}
+	
+.save{
+	
+	text-align: center;
+	
+	margin-top: 350px;
+	
+	font-size: 12px;
+	
+	}
+	
+.save .saveword{
+	
+	margin-top:-27px;
+	
+	}

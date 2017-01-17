@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>微网球互联网时代的网球赛事管理方式</title>
+<link rel="stylesheet" type="text/css" href="../../Styles/newindex.css">
+<script src="../JavarScriptLibrary/jquery-1.4.1.min.js" type="text/javascript"></script>
+<script src="../JavarScriptLibrary/wetennis.js" type="text/javascript"></script>
+<script src="../JavarScriptLibrary/cookie.js" type="text/javascript"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		//页面加载的时候，读取cookie的登陆信息
+		init_logininfo();
+	});
+
+	function Register()
+	{
+		location.href='Register.html';
+	}
+</script>
+</head>
+
+<body class="loginBack">
+<div class="loginPos">
+	<ul class="Loginbox">
+		<li class="LoginTitle">欢迎登陆微网球赛事管理系统</li>
+		<li><input id="user" type="text" autocomplete="off" placeholder='请输入用户名,或注册时填写的电话号码' /></li>
+		<li><input id="pwd" type="password" autocomplete="off" placeholder='请输入密码' /></li>
+		<li><input type="button" class="btnLogin" onclick="Login()" value="登陆" /></li>
+		<li><hr /></li>
+		<li>
+			<ul class="TwoEven"><li>忘记密码？</li><li onclick="Register()">注册账号</li></ul>
+		</li>
+	</ul>
+	</div>
+</body>
+</html>

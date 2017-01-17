@@ -1,0 +1,29 @@
+﻿.scores-draw-table-wrapper{padding:40px 0px}
+.scores-draw-entry-box-wrapper{float:left;margin-top:10px;width:-webkit-calc(100% - 10px)}
+.scores-draw-entry-box{border:1px solid red;position:relative;width:100%;padding:10px;top:50%;min-height:10px;font-size:13px}
+.scores-draw-entry-box-table{width:100%;font-size:13px}
+.scores-draw-entry-box-table tr:first-child td{padding-bottom:10px}
+.scores-draw-entry-box-table tr:first-child td:last-child{border-bottom:1px dotted #c7c8c8}
+.scores-draw-entry-box-table tr:last-child td{padding-top:10px}
+.scores-draw-entry-box-table td{}
+.scores-draw-entry-box-table td:first-child{color:#1f2223;width:15px}
+.scores-draw-entry-box-table td:nth-child(2){padding-left:5px;padding-right:10px;text-align:center;width:35px}
+.scores-draw-entry-box-table td:nth-child(2) span{display:block;line-height:13px;position:relative;width:20px}
+.scores-draw-entry-box-table td:last-child{padding-left:0px;padding-right:0px}
+.scores-draw-entry-box-players-item{display:block;font-family:'roboto_condensedregular';font-size:13px;letter-spacing:-0.25px;line-height:1;margin-top:5px}
+.scores-draw-entry-box-players-item:first-child{margin-top:0px}
+.scores-draw-entry-box-table .scores-draw-entry-box-players-item{padding-left:30px;position:relative}
+.scores-draw-entry-box-players-item.not-in-system{color:#1f2223}
+.scores-draw-entry-box-players-item-flag{height:auto;width:20px;border:1px solid #c7c8c8;left:0px;position:absolute;top:-webkit-calc(50% - 2px);-webkit-transform:translateY(-50%);-moz-transform:translateY(-50%);-ms-transform:translateY(-50%);-o-transform:translateY(-50%)}
+.scores-draw-entry-box-players-item-flag.ghost-flag{border:none}
+.scores-draw-entry-box-score{font-family:'roboto_condensedregular';font-size:13px;letter-spacing:-0.25px;position:absolute;left:10px;top:100%;top:-webkit-calc(100% + 5px);}
+.scores-draw-h2h-link{background-color:#00aeef;color:#ffffff;display:block;font-family:'roboto_condensedregular';font-size:12px;position:relative;text-align:center;cursor:pointer;float:left;margin-top:10px;line-height:1;width:10px}
+
+.bye-bracket .scores-draw-h2h-link{cursor:auto}
+.bye-bracket .scores-draw-h2h-link:hover{background-color:#00aeef}
+.scores-draw-h2h-link:hover{background-color:#1f2223;color:#ffffff}
+.scores-draw-h2h-link span{display:block;left:50%;padding-top:4px;position:absolute;top:50%;-webkit-transform:translate(-50%, -50%);-moz-transform:translate(-50%, -50%);-ms-transform:translate(-50%, -50%);-o-transform:translate(-50%, -50%)}
+.scores-draw-table-wrapper{padding:40px 0px;width:100%;}
+td:first-child .scores-draw-entry-box{padding-left:10px}
+.scores-draw-table th:first-child span{padding-left:10px}
+.stats-listing-wrapper{padding:0px 30px 30px}

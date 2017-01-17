@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html  xmlns:ng="http://angularjs.org" lang="zh-cmn-Hans" id="ng-app" data-ng-app="wtOuterApp" class="h100">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>微网球互联网时代的网球赛事管理方式</title>
+<link rel="stylesheet" type="text/css" href="Styles/newindex.css">
+ <script src="Public/JavarScriptLibrary/Wetennis.js" type="text/javascript"></script>
+ <script src="Public/JavarScriptLibrary/jquery-1.4.1.min.js" type="text/javascript"></script>
+ <script type="text/javascript">
+ 	window.onload=function(){		
+		if(GetBrowserType())
+		{
+			//转到手机页面，暂时转到1.0的首页
+			location.href='Default.htm';
+		}
+	}
+	
+	$(document).ready(function(){
+		$("#login").hover(function(){
+			$("#LogOption").show();
+		},
+			function(){
+			$("#LogOption").hide();
+			}
+		);
+		
+		
+		$("#product").hover(function(){
+			$("#ProOption").show();
+		},
+			function(){
+			$("#ProOption").hide();
+			}
+		);
+	});
+ </script>
+</head>
+
+<body>
+	<div id="background">
+	</div>
+	<div id="webContent">
+	<ul class="Desc">
+			<li class="oneword">互联网时代的网球赛事管理方式</li>
+			<li class="subDesc">提供网球赛事从筹备，报名，签表，签到，裁判计分，积分排名的全流程管理</li>
+			<li class="trdDesc">已累计解决5000+人次的业余网球赛事；单赛事参赛规模达1000+人次</li>
+			<li  class="btnPos"><input type="button" value="注册免费版" class="RegBtn" onclick="location.href='Public/NewFront/Register.html'"/></li>
+		</ul>
+	</div>
+	
+	<ul class="logoarea">
+	<li><img src="http://wetennis.cn/Lib/img/logo.png" class="logoimg"/></li>
+	<li class="logotitle">微网球</li>
+	</ul>
+	
+	<ul class="loginarea">
+		<li id="product">
+			<ul>
+				<li class="LoginTitle"><a href="javascript:none;">产品介绍</a></li>
+				<li> 
+				<ul id="ProOption" class="ProOpt">
+				<li><a href="Public/NewFront/Pro-TourM.html">赛事管理</a></li>
+				<li><a href="Public/NewFront/Pro-Umpire.html" >裁判计分</a></li>
+				<li><a href="Public/NewFront/Pro-MemberCenter.html" >会员中心</a></li>
+			</ul></li>
+				</li>
+			</ul>
+		</li>
+		<li class="LoginTitle"><a href="Public/NewFront/Price.html">服务价格</a></li>		
+		<li class="LoginTitle"><a href="Public/NewFront/AboutUs.html">关于我们</a></li>
+		<li id="login">
+		<ul><li class="LogBtn">登陆</li>
+			<li><!--登陆选项-->
+			<ul id="LogOption" class="LogOpt">
+				<li><a href="Public/NewFront/Login.html">俱乐部登陆</a></li>
+				<li><a href="http://wetennis.cn/Login/Login.aspx" >会员登陆</a></li>
+			</ul></li>
+		</ul>
+		</li>
+	</ul>
+	
+	
+</body>
+</html>

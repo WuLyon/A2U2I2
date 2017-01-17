@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>为项目添加种子</title>
+	<link rel="stylesheet" type="text/css" href="../css/LT_Form.css">
+	<link rel="stylesheet" type="text/css" href="../../JavarScriptLibrary/jquery.autocomplete.css">
+	<script type="text/javascript" src="../../JavarScriptLibrary/jquery-1.4.1.min.js"></script>
+	<script type="text/javascript" src="../../JavarScriptLibrary/jquery.autocomplete.min.js"></script>
+	<script type="text/javascript" src="../../JavarScriptLibrary/tour_sign.js"></script>
+	<script type="text/javascript" src="../../JavarScriptLibrary/weTennis_AutoComp.js"></script>
+	<script type="text/javascript" src="../../JavarScriptLibrary/Wetennis.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			LoadUnseedApp();
+		});
+	</script>
+</head>
+
+<body>
+<a href="5-3-nav.html"><h3>返回项目列表</h3></a>
+<div class="FloatR_Tabs">
+		<ul>
+		<li><a href="5-3-1.html">项目信息</a></li>
+		<li><strong>种子设置</strong></li>
+		<li><a href="5-3-3.html">签表设置</a></li>
+		<li><a href="5-3-4.html">比赛</a></li>		
+		</ul>
+	</div>
+
+	<p>
+		说明：种子数量为正签数量的1/4。系统按照报名者的排名来设置种子，管理员可在此基础上修正种子选手
+	</p>	
+	<input type="button" onclick="showEdit()" value="添加种子" />
+	<input type="button" onclick="RandomSeed_Click()" value="随机产生种子" />
+	<!--已添加种子-->
+	<div id="ContSeed_List">
+		<ul class="ListView_Ul">
+			<li class="ListView_left_Seed">1</li>
+			<li class="ListView_left_img"><img src="" class="headimg"/></li>
+			<li class="ListView_left_Desc">player</li>
+		</ul>
+	</div>
+	
+	<!--添加新的种子-->
+	
+	<div id="Edit_Seed" class="hidden">
+		<div id="EditSeed_Back" onclick="hideEdit()"></div>
+		<div id="EditSeed_Left" >
+			
+		</div>
+		<div id="EditSeed_Right">
+			
+		</div>
+		
+		<input class="submitBtn" type="button" value="提交" onclick="SubmitSeed()"/>
+	</div>
+</body>
+</html>

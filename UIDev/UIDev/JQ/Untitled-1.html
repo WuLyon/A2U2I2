@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+<style type="text/css">
+div
+{
+border:thin solid green;
+width:200px;
+height:200px;
+}
+</style>
+<script type="text/javascript">
+function hideOverflow()
+{
+document.getElementById("div1").style.overflow="hidden";
+}
+</script>
+</head>
+<body>
+
+<div id="div1">
+<img src="images/1-1.jpg" />
+</div>
+<br />
+<input type="button" onclick="hideOverflow()"
+value="Hide overflow" />
+
+</body>
+</html>

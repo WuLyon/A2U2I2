@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>EXCEL导入报名</title>
+<script type="text/javascript">
+	window.onload=function(){
+		var toursys=localStorage.getItem("Current_TourSys");
+		//alert(toursys);
+		document.getElementById('tbtousys').value=toursys;
+
+		var url='http://wetennis.cn:8080/public/TourMgm/Pages/5-4-2.html?sysno='+toursys;
+		document.getElementById('backUrl').value=url;
+	}
+</script>
+</head>
+
+<body>
+	<a href="http://wetennis.cn:86/Excel/%E5%BE%AE%E7%BD%91%E7%90%83%E7%BA%BF%E4%B8%8B%E6%8A%A5%E5%90%8D%E6%A8%A1%E6%9D%BF.xlsx">下载模板</a>
+	<form method = 'post'  action = 'http://wetennis.cn:83/BackService/TourMgm.ashx?typename=ExcelApplicants'  enctype="multipart/form-data">
+	<div>
+		<input type="text" name="toursys" id="tbtousys" />		
+		<input type="file" name="upload" />
+		<input type="submit" />
+		<br/>
+		<input type="text" name="backUrl" id="backUrl">
+	</div>
+	<h2>团体赛报名<h2/>
+		<a href="">下载团体赛模板</a>
+		
+	</form>
+</body>
+</html>

@@ -1,0 +1,190 @@
+@charset "utf-8";
+/* CSS Document */
+ul{padding:0;margin:0}
+li{list-style:none}
+.hidden{display:none;}
+.shown{display:block;}
+.fontsmall{font-size:small}
+
+body{
+font-size:small;
+}
+
+table {
+	font-family: verdana,arial,sans-serif;
+	font-size:11px;
+	color:#333333;
+	border-width: 1px;
+	border-color: #666666;
+	border-collapse: collapse;
+	width:100%;
+}
+table th {
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #666666;
+	background-color: #dedede;
+}
+table td {
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #666666;
+	background-color: #ffffff;
+}
+
+.FloatR_Tabs ul
+{
+	height:30px;
+}
+
+.FloatR_Tabs ul li{
+	float:left;
+	margin:0px 20px;
+	font-size:small;
+}
+
+.frmNewTour p
+{
+	float:left;
+}
+
+.TourBackimg
+{
+	width:300px;
+}
+
+.Tour_applicants
+{
+position:fixed;top:0px;height:100%;left:0px;right:0px;
+background-color:#fff;overflow:scroll;}
+
+#TourApp_Applicants
+{
+	
+}
+
+/*签表*/
+.ListView_Ul{width:94%; height:60px; border:solid 1px #087c69; position:relative; top:0px; left:3%; background:#FFF;margin-top:10px;}
+.ListView_Ul li{float:left;margin:5px;}
+.ListView_left_img{height:50px;width:50px; }
+.ListView_left_Desc{height:50px;width:50px; }
+.ListView_left_Seed{height:50px;width:50px;background-color:#00FF99;text-align:center;}
+.ListView_right_btn{position:absolute;right:5px;top:15px;}
+.ListView_mid_body{position:absolute;left:55px;top:15px;}
+.ListView_mid_body p{ min-width:50px;float:left;border:1px solid #ccc;margin:0px 5px;text-align:center;padding:5px 5px}
+.verticlAlign{padding-top:20px;}
+
+
+#Edit_Seed{position:fixed;bottom:0px;left:0px;height:350px;width:100%;background-color:#fff}
+#EditSeed_Back{position:fixed;bottom:350px;left:0px;top:0px;width:100%;background-color:#ccc;opacity:0.5}
+#EditSeed_Left{position:absolute;top:10px;left:10px;height:300px;width:45%;background-color:#fff; border:1px solid #ccc;}
+#EditSeed_Right{position:absolute;top:10px;right:10px;height:300px;width:45%;background-color:#fff; border:1px solid #ccc;}
+
+.AppUl{margin:5px}
+.AppUl li{float:left;border:1px solid #ccc;padding:5px;width:50px;text-align:center;margin-right:5px;margin-bottom:5px;}
+.submitBtn{position:absolute;bottom:5px;left:45%;}
+
+.headimg{width:50px;height:50px;border-radius:100%;}
+
+/*比赛列表*/
+.Match_Ul
+{
+width:240px; height:40px; border:solid 1px #087c69; position:relative; top:0px; left:3%; background:#FFF;margin-top:10px;
+}
+.MatchCell{overflow:hidden;margin-right:5px}
+.MatchCell li{float:left;margin-right:5px}
+
+.Match_Ul li{float:left;margin-top:15px; width:50px;text-align:center;}
+
+
+
+/*资源分配*/
+.ContentMid
+{padding:20px 20%;}
+
+.ContentMid select{width:100%;padding:5px;}
+
+#GymCourts li {border:1px solid #ccc; width:200px;float:left; margin:5px}
+
+.RoundCheck{padding-left:20px}
+
+/*比赛秩序册*/
+
+
+
+.courtMDs
+{
+	border:1px solid #ccc;
+	width:260px;
+	float:left;
+	padding:5px;
+	margin:3px;
+}
+
+.matchul
+{
+	border:1px solid #ccc;
+	text-align:center;
+	margin:3px 0px;
+}
+
+.matchul li
+{
+	margin:3px 0px;
+}
+
+/*赛事积分奖励*/
+#RoundScore ul li
+{
+	margin:5px 20px;
+}
+#RoundScore input[type="text"]
+{
+	width:50px;
+}
+
+#RoundScore span
+{
+	width:100px;
+	display:inline-block;
+}
+
+/*赛事裁判分配*/
+.UpmpireUl
+{
+	margin-left:10px;
+}
+
+.UpmpireUl li
+{
+	border:1px solid #ccc;
+	padding:5px;
+	margin:5px 0px;
+}
+
+.UpmpireUl li span
+{
+	width:50%;
+	display:inline-block;
+}
+
+/*表单样式*/
+
+.form_label
+{
+	width:20%;
+	text-align: center;
+	line-height: 30px;
+}
+
+.form_control
+{
+	width:75%;
+}
+
+.temp_hide
+{
+	display: none;
+}

@@ -1,0 +1,167 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>全部赛事</title>
+<link href="../css/HL_style.css" rel="stylesheet" type="text/css">
+<script type="application/javascript">
+function a(){
+ window.open("Tour_hl_xiugaisaishixinxi.html",'_blank') 
+}
+
+
+
+//弹出隐藏层
+function ShowDiv(show_div,bg_div){
+document.getElementById(show_div).style.display='block';
+var bgdiv = document.getElementById(bg_div);
+bgdiv.style.width = document.body.scrollWidth;
+// bgdiv.style.height = $(document).height();
+$("#"+bg_div).height($(document).height());
+};
+//关闭弹出层
+function CloseDiv(show_div)
+{
+document.getElementById(show_div).style.display='none';
+};
+
+</script>
+
+</head>
+
+</head>
+
+<body>
+<div class="all">
+
+
+<div class="right">
+<div class="right_top">
+<ul class="right_dh">
+<h4>赛事</h4>
+<li class="hv"><a href="">全部赛事</a></li>
+<li><a href="Tour_hl_choubeisaishi.html">筹备赛事</a></li>
+<li><a href="Tour_hl_saishibaoming.html">赛事报名</a></li>
+<li><a href="../../JQ/Tour_JQ/kuangjia2.html?type=1">赛事签表</a></li>
+<li><a href="../../JQ/Tour_JQ/kuangjia2.html?type=2">资源分配</a></li>
+<li><a href="Tour_hl_caipanziyuanfenpei.html">指派裁判</a></li>
+<li><a href="#">赛事签到</a></li>
+</ul>
+<ul class="top_button">
+<li><a href="#"><input name="" type="button" value="创建赛事"></a></li>
+</ul>
+</div>
+</div>
+<div class="container">
+<div class="search">
+<li class="search1"><a href="#"><input name="" type="text"></a></li>
+<li class="search_btn"><a href="#"><input name="" type="button" value="搜索"></a></li>
+</div>
+
+<div class="container1">
+<ul class="con">
+<p class="tp"></p>
+<li class="tp1"></li>
+<ul class="con1">
+<li><a href="#">赛事名称</a></li>
+<li><a href="#">比赛日期</a></li>
+<li><a href="#">状态：筹备中</a></li>
+</ul>
+<ul class="con2">
+<li><a href="#">赛事名称</a></li>
+<li><a href="#">比赛日期</a></li>
+<li><a href="#">状态：筹备中</a></li>
+</ul>
+<p class="an_btn"><input name="" type="button" value="报名" style="line-height:30px;" onclick="ShowDiv('ss3')" ></p>
+</ul>
+</div>
+
+
+<div class="container2">
+<ul class="con">
+<p class="tp"><li class="tp2"></li>
+</p>
+<ul class="con3">
+<li><a href="#">赛事名称</a></li>
+<li><a href="#">比赛日期</a></li>
+<li><a href="#">状态：筹备中</a></li>
+</ul>
+<ul class="con4">
+<li><a href="#">赛事名称</a></li>
+<li><a href="#">比赛日期</a></li>
+<li><a href="#">状态：筹备中</a></li>
+</ul>
+<p class="an_btn"><input name="" id="click_event" type="button" value="报名" style="line-height:30px;"></p>
+</ul>
+</div>
+
+
+<div class="container3">
+<ul class="con">
+<p class="tp"><li class="tp3"></li>
+</p>
+<ul class="con5">
+<li><a href="#">赛事名称</a></li>
+<li><a href="#">比赛日期</a></li>
+<li><a href="#">状态：筹备中</a></li>
+</ul>
+<ul class="con6">
+<li><a href="#">赛事名称</a></li>
+<li><a href="#">比赛日期</a></li>
+<li><a href="#">状态：筹备中</a></li>
+</ul>
+<p class="an_btn"><input name="" type="button" value="报名" style="line-height:30px;"></p>
+</ul>
+</div>
+
+
+<div class="container4">
+<ul class="con">
+<p class="tp"><li class="tp1"></li></p>
+<ul class="con7">
+<li><a href="#">赛事名称</a></li>
+<li><a href="#">比赛日期</a></li>
+<li><a href="#">状态：筹备中</a></li>
+</ul>
+<ul class="con8">
+<li><a href="#">赛事名称</a></li>
+<li><a href="#">比赛日期</a></li>
+<li><a href="#">状态：筹备中</a></li>
+</ul>
+<p class="an_btn"><input name="" type="button" value="报名" style="line-height:30px;"></p>
+</ul>
+</div>
+</div>
+
+<div class="footer">
+  <ul>
+  <li><a href="#"><上1页</a></li>
+    <li class="f1"><a href="#">&nbsp;&nbsp;&nbsp;1</a></li>
+      <li><a href="#">&nbsp;&nbsp;&nbsp;2</a></li>
+  <li><a href="#">&nbsp;&nbsp;&nbsp;3</a></li>
+  <li><a href="#">&nbsp;&nbsp;&nbsp;......</a></li>
+  <li><a href="#">&nbsp;&nbsp;&nbsp;8</a></li>
+    <li><a href="#">&nbsp;&nbsp;&nbsp;9</a></li>
+  <li><a href="#"><下1页</a></li>
+  </ul>
+
+</div>
+</div>
+
+<div class="ss1" id="ss3" >
+<p><a href="#">×</a></p>
+<ul>
+<li class="ss2"><a href="#">修改赛事内容</a></li>
+<li><a href="#">报名</a></li>
+<li><a href="#">管理报名</a></li>
+<li><a href="#">赛事签表</a></li>
+<li><a href="#">分配资源</a></li>
+<li><a href="#">比赛结果</a></li>
+<li><a href="#">删除</a></li>
+
+
+</ul>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+<title>上传作品</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="http://wetennis.cn:8081/Scripts/jquery-1.8.2.min.js"></script>
+<script src="http://wetennis.cn/Scripts/jsCookie.js"></script>
+<script type="text/javascript">
+	function setImagePreview()
+	{
+		var docObj = document.getElementById("doc");
+            var imgObjPreview = document.getElementById("imgPre");
+			imgObjPreview.onload=function(){
+				var newurl=DrawPictureInCanvas();				
+			}	
+			
+            if (docObj.files && docObj.files[0]) {               
+                imgObjPreview.src = window.URL.createObjectURL(docObj.files[0]);
+            }
+            else {
+                docObj.select();
+                var imgSrc = document.selection.createRange().text;
+                var localImagId = document.getElementById("newsImg");
+                try {
+                    localImagId.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale)";
+                    localImagId.filters.item("DXImageTransform.Microsoft.AlphaImageLoader").src = imgSrc;
+                }
+                catch (e) {
+                    alert("上传失败，请重试!");
+                    return false;
+                }
+                imgObjPreview.style.display = 'none';
+                document.selection.empty();
+            }	
+				
+            return true;
+	}
+	
+	
+	var Max_Width=500;//定义最高图片宽度为400，大于该值就进行压缩。
+	//将文件绘制到canvas上
+	function DrawPictureInCanvas()
+	{
+	//使用现有图片把文件转换到canvas上
+		var imgpre=document.getElementById("imgPre");	
+		var imgnew=new Image();			
+		imgnew.src=imgpre.src;
+		//压缩图片		
+		 if (imgnew.width > Max_Width) {
+			// 宽度等比例缩放 *=
+			imgnew.height *= Max_Width/imgnew.width;
+			imgnew.width = Max_Width;			
+        }
+		var canvas=document.getElementById('myCanvas');
+		canvas.width=imgnew.width;
+		canvas.height=imgnew.height;
+		var can=canvas.getContext("2d");
+		can.clearRect(0, 0, canvas.width, canvas.height);		
+		can.drawImage(imgnew,0,0,imgnew.width,imgnew.height);	
+		can.restore();
+		//将canvas内容传回img对象
+		var src=canvas.toDataURL("image/png");
+		src=src.split(',')[1];
+		return src;
+		
+	}
+	
+	function LeftrotateCan()
+	{
+		//使用现有图片把文件转换到canvas上
+		var imgpre=document.getElementById("imgPre");	
+		var imgnew=new Image();	
+		imgnew.onload=function(){
+		//压缩图片		
+		 if (imgnew.width > Max_Width) {
+			// 宽度等比例缩放 *=
+			imgnew.height *= Max_Width/imgnew.width;
+			imgnew.width = Max_Width;			
+        }
+		var canvas=document.getElementById('myCanvas');
+		canvas.width=imgnew.width;
+		canvas.height=imgnew.height;
+		//旋转参数
+		 var xpos = canvas.width/2;
+         var ypos = canvas.height/2;
+		
+		var can=canvas.getContext("2d");
+		can.clearRect(0, 0, canvas.width, canvas.height);		
+		can.drawImage(imgnew, xpos - imgnew.width / 2, ypos - imgnew.height / 2);
+		//旋转图片
+		can.save();
+		can.translate(xpos, ypos);//根据指定坐标移动坐标系
+		can.rotate(90 * Math.PI / 180);			
+		can.translate(-xpos, -ypos);//按照坐标移回原来的位置
+		can.drawImage(imgnew, xpos - imgnew.width / 2, ypos - imgnew.height / 2);//重新绘制图片
+		can.restore();			
+		}
+				
+		imgnew.src=imgpre.src;
+		
+	}	
+	
+	function SendFormData()
+	{				
+		//var Memsys=window.parent.document.getElementById('tbMemSys').value;//从父窗体获取员工编号
+		Memsys=getCookie("c_memsys");
+		//var Memsys='city02';
+		var canvas=document.getElementById('myCanvas');
+		//将canvas转化成dataurl
+        src = canvas.toDataURL("image/png");//将canvas内容保存为图片
+		
+        var start = src.indexOf('base64,');		
+        var base64str = src.substr(start + 7);		
+		
+		var ImageName=document.getElementById("tbName").value;		
+		var ImageDesc=document.getElementById("tbDesc").value;	
+		
+		//使用CORS
+		var xhr=new XMLHttpRequest();
+		var url="http://wetennis.cn:83/webservice/picupload2.ashx?typename=UploadPicSelCORS";
+		xhr.open("POST",url,true);
+		xhr.setRequestHeader("CONTENT-TYPE", "application/x-www-form-urlencoded");
+		xhr.onloadstart=function(){
+			$("#loadingimg").show();
+		};		
+		xhr.send("imgstr="+base64str+"&Memsys="+Memsys+"&ImgName="+ImageName+"&ImgDesc="+ImageDesc);
+		
+		xhr.onreadystatechange=function(){
+			//alert(xhr.responseText);			
+			if(xhr.readyState==4)
+			{
+				//alert(xhr.responseText);
+				location.href='PicMain.html?type=pic&sys='+xhr.responseText;
+			}			
+		}
+	}
+	
+	function returntolist()
+	{
+		location.href='PicList.html';
+	}
+	
+</script>
+
+</head>
+
+<body>
+<ul class="MainHead">
+<!--<li class="leftbtnpos"><img  src="http://wetennis.cn:86/Common/arrow_left.png"  class="PngIcon" onclick="returntolist()"/></li>-->
+<li class="midpos">请上传你的作品</li>
+</ul>
+
+<ul class="typeline">
+<li class="typelabel">请上传作品</li><li class="typectr"><input type="file" name="doc" id="doc" onchange="setImagePreview();" /></li>
+</ul>
+<ul class="typeline">
+<li class="typelabel"></li><li class="typectr"><img class="imgpreview" src="" id="imgPre" /><canvas id="myCanvas" style="display:none" width="200" height="200"></canvas></li>
+</ul>
+<ul class="typeline">
+<li class="typelabel">作品名称</li><li class="typectr"><input type="text"  class="typeinput" id="tbName"/></li>
+</ul>
+
+<ul class="typeline">
+<li class="typelabel">作品描述</li><li class="typectr"><textarea class="typeinput"  rows="5" id="tbDesc"></textarea></li>
+</ul>
+
+<div class="btnSpace"><input type="button" class="btn3" value="提交作品"  onclick="SendFormData()"/>
+
+
+<!--<input type="button" value="旋转" onclick="LeftrotateCan()" />-->
+</div>
+<div id="loadingimg"><img id="loadgif" src="http://wetennis.cn:86/Common/loading.gif" /></div>
+</body>
+</html>

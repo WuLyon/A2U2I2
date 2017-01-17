@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>日期资源分配</title>
+<link rel="stylesheet" type="text/css" href="../css/LT_Form.css">
+<script type="text/javascript" src="../../JavarScriptLibrary/jquery-1.4.1.min.js"></script>
+	<script type="text/javascript" src="../../JavarScriptLibrary/tour_distribute.js"></script>
+	<script type="text/javascript" src="../../My97DatePicker/WdatePicker.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			 LoadTourDate();
+		});
+	</script>
+</head>
+
+<body>
+<h3>赛事比赛数量</h3>
+<p>本次赛事共<label id="TourTotalMatch"></label>场比赛</p>
+<!--子功能导航-->
+<div class="FloatR_Tabs">
+		<ul>
+		<li><a href="5-5-1.html">场馆资源</a></li>
+		<li><strong>日期资源</strong></li>
+		<li><a href="5-5-3.html">分配策略</a></li>
+		<li><a href="5-5-4.html">秩序册</a></li>		
+		</ul>
+	</div>
+
+<input type="button" value="添加比赛日期" onclick="showEdit3()" />
+<div id="ChoosedDate">
+	
+</div>
+
+<div id="Edit_Seed" class="hidden">
+		<div id="EditSeed_Back" onclick="hideEdit()"></div>
+		<div class="ContentMid">
+			<h3>请选择比赛日期</h3>
+			<div id="selGyms">
+				<input type="text" id="tbDatePick" class="Wdate" onFocus="WdatePicker({lang:'zh-cn'})"/>
+			</div>
+			
+			<input class="submitBtn" type="button" value="提交" onclick=" AddTourDate()"/>
+		</div>
+	</div>
+	
+</body>
+</html>

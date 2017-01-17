@@ -1,0 +1,492 @@
+@charset "utf-8";
+/* CSS Document */
+html body{ 
+
+    margin:0; 
+	
+	padding:0; 
+	
+	background-color:#f0e5e5; 
+	
+	}
+	
+.all{
+	
+	width:100%;
+	
+	}
+	
+li{
+	
+	list-style-type:none;
+	
+	}
+	
+img{
+	
+	border:0px;
+	
+	vertical-align:middle;
+	
+	}
+	
+a{
+	
+	text-decoration:none;
+	
+	}
+	
+.clear{
+	
+	clear:both;
+	
+	}
+
+.container{
+	
+	position:absolute;
+	
+	width:100%; 
+	
+	height:100%; 
+	
+	background:#f0e5e5; 
+	
+	}
+	
+.search{ 
+
+    float:right; 
+	
+	height:50px;
+	
+	position:relative; 
+	
+	right:30px; 
+	
+	top:40px;
+	
+	}
+	
+.search li{ 
+
+    float:left;
+	
+	}
+	
+.search1 input{ 
+
+    background:url(../img/ssk.png) no-repeat; 
+	
+	width:140px; 
+	
+	height:25px; 
+	
+	border:none; 
+	
+	position:relative; 
+	
+	top:-20px; 
+	
+	right:10px; 
+	
+	text-indent:35px;
+	
+	}
+	
+.search_btn input{ 
+
+    background:url(../img/anniu.png) no-repeat; 
+	
+	width:85px; 
+	
+	height:43px; 
+	
+	position:relative; 
+	
+	right:25px; 
+	
+	top:-30px; 
+	
+	color:#333; 
+	
+	font-size:12px;
+	
+	border:none; 
+	
+	}
+
+.container1{
+	
+	width:90%; 
+	
+	height:89px; 
+	
+	border:solid 1px #087c69; 
+	
+	position:absolute; 
+	
+	top:80px; 
+	
+	left:40px; 
+	
+	background:#FFF;
+	
+	background-color:#CCC;
+	
+	}
+	
+.tp1{ 
+
+    background:url(../img/lianmengsai.png) no-repeat; 
+	
+	width:51px; 
+	
+	height:40px; 
+	
+	position:absolute; 
+	
+	top:15px; 
+	
+	left:39px;
+	
+	}
+	
+.con1{ 
+
+    position:relative; 
+	
+	left:40px; 
+	
+	width:30%;
+	
+	top:-75px; 
+	
+	height:55px;
+	
+	}
+	
+.con1 li{ 
+
+    display:block;
+	
+	}
+	
+.con1 li a{ 
+
+    color:#333; 
+	
+	font-size:12px; 
+	
+	line-height:20px;
+	
+	}
+	
+.con1 li a:hover{ 
+
+    color:#077260; 
+	
+	font-weight:bold;
+	
+	}
+	
+.con2{ 
+
+    position:relative; 
+	
+	left:45%;  
+	
+	width:30%;
+	
+	top:-135px; 
+	
+	height:55px;
+	
+	}
+	
+.con2 li{ 
+
+    display:block;
+	
+	}
+	
+.con2 li a{ 
+
+    color:#333; 
+	
+	font-size:12px;
+	
+	line-height:20px;
+	
+	}
+	
+.con2 li a:hover{ 
+
+    color:#077260; 
+	
+	font-weight:bold;
+	
+	}
+	
+.an_btn{ 
+
+    width:74px;
+	
+	height:34px; 
+	
+	position:absolute; 
+	
+	margin-top:-170px;
+	
+	}
+	
+.an_btn input{ 
+
+    background: url(../img/anniu.png); 
+	
+	width:80px; 
+	
+	height:40px; 
+	
+	border-style:none; 
+	
+	font-size:12px; 
+	
+	text-align:center; 
+	
+	text-indent:0.6em;
+	
+	}
+	
+.an_btn input:hover{ 
+    
+	color:#077260; 
+	
+	font-weight:bold;
+	
+	}
+
+.container2{
+	
+	width:90%; 
+	
+	height:89px; 
+	
+	border:solid 1px #087c69; 
+	
+	position:absolute; 
+	
+	top:190px; 
+	
+	left:40px;
+	
+	background:#FFF;
+	
+	}
+	
+.tp2{ 
+
+    background:url(../img/gongkaisai.png) no-repeat; 
+	
+	width:51px; 
+	
+	height:40px; 
+	
+	position:absolute; 
+	
+	top:13px; 
+	
+	left:37px;
+	
+	}
+	
+.con3{ 
+    position:relative; 
+	
+	left:40px; 
+	
+	width:30%;
+	
+	top:-75px; 
+	
+	height:55px;
+	
+	}
+	
+.con3 li{ 
+    
+	display:block;
+	
+	}
+	
+.con3 li a{ 
+    
+	color:#333; 
+	
+	font-size:12px; 
+	
+	line-height:20px;
+	
+	}
+	
+.con3 li a:hover{ 
+
+    color:#077260; 
+	
+	font-weight:bold;
+	
+	}
+	
+.con4{ 
+    
+	position:relative; 
+	
+	left:45%; 
+	
+	width:30%;
+	
+	top:-135px;
+	
+	height:55px;
+	
+	}
+	
+.con4 li{ 
+
+    display:block;
+	
+	}
+	
+.con4 li a{ 
+
+    color:#333; 
+	
+	font-size:12px; 
+	
+	line-height:20px;
+	
+	}
+	
+.con4 li a:hover{ 
+    
+	color:#077260; 
+	
+	font-weight:bold;
+	
+	}
+	
+.an_btn{ 
+
+    width:74px; 
+	
+	height:34px; 
+	
+	position:absolute; 
+	
+	left:975px; 
+	
+	margin-top:-170px;
+	
+	}
+	
+.an_btn input{
+	
+	border-style:none; 
+	
+	font-size:12px; 
+	
+	text-align:center;
+	
+	text-indent:0.6em;
+	
+	}
+	
+.an_btn input:hover{ 
+
+    color:#077260; 
+	
+	font-weight:bold;
+	
+	}
+
+.footer{
+	
+	position:absolute; 
+	
+	margin-top:550px;
+	
+	margin-left:400px;
+	
+	}
+	
+.footer ul li{
+	
+	display:block;
+	
+	word-spacing:30px;
+	
+	}
+	
+.footer ul li a{ 
+
+    font-size:12px; 
+	
+	color:#333;
+	
+	}
+	
+.footer ul li a:hover{ 
+
+    color:#999;
+	
+	}
+
+.jq_functionbody{
+	
+	width:100%;
+	
+	top: 0px;
+	
+	visibility:hidden;
+	
+	height: 100%;
+	
+	bottom: 0px;
+	
+	left: 0px;
+	
+	right: 0px;
+	
+	z-index: 1000;
+	
+	background: #f0e5e5;
+	
+	}
+
+.jq_floatright{
+	
+	position:fixed;
+	 
+	background-color: #fff;
+	
+	width: 50%;
+	
+	top: 0;
+	
+	right: 0;
+	
+	bottom: 0;
+	
+	padding: 0;
+	
+	z-index:1000;
+	
+	}
+	
+#jq_floatright{
+	
+	width: 100%;
+	
+	height: 100%;
+	
+	}

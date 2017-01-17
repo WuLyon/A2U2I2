@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>微网球赛事管理系统</title>
+<link href="TourMgm/css/HL_style.css" rel="stylesheet" type="text/css">
+<script src="JavarScriptLibrary/jquery-1.4.1.min.js" type="text/javascript"></script>
+<script src="JavarScriptLibrary/tourmanage.js" type="text/javascript"></script>
+<script type="text/javascript">
+	window.onload=function(){
+		validatLoginTime();
+		loadMemberInfo();
+	}
+
+	function Goto(obj)
+	{		
+		var gotourl;
+		switch(obj.innerHTML)
+		{
+			case "首页":
+				gotourl='http://www.baidu.com';
+				$("#navpal").children().removeClass();
+				obj.parentNode.className='navactive';
+			break;
+			case "成员":
+				gotourl='http://www.sina.com';
+				$("#navpal").children().removeClass();
+				obj.parentNode.className='navactive';
+				break;
+			case "资源":
+				gotourl='http://www.sina.com';
+				$("#navpal").children().removeClass();
+				obj.parentNode.className='navactive';
+				break;
+			case "赛事":
+				gotourl='TourMgm/index.html';
+				$("#navpal").children().removeClass();
+				obj.parentNode.className='navactive';
+				break;
+			case "排名":
+				gotourl='../ZX/untitled.html';
+				$("#navpal").children().removeClass();
+				obj.parentNode.className='navactive';
+				break;
+			case "联盟":
+				gotourl='../ZX/untitled.html';
+				$("#navpal").children().removeClass();
+				obj.parentNode.className='navactive';
+				break;
+		}
+		document.getElementById('mainbody').src=gotourl;
+	}
+	
+	function ModifyClub()
+{
+	document.getElementById('mainbody').src='TourMgm/Pages/ModifyClub.html';
+}
+</script>
+</head>
+
+<body>
+<div class="left">
+<!--当前俱乐部资料-->
+<div class="logo" >
+	<img id="Clubimg" class="logoimg" alt="Club Image" onClick="toggleFloatLeft()" />
+</div>
+<div class="floatleft_Back" onClick="toggleFloatLeft()" >
+	<div class="floatleft">
+		<div class="FL_Header">
+			<div class="FL_Header_Title"><label id="lbl_ClubName"></label></div>
+			<div class="FL_Header_Modify"><a href="javascript:none" onClick="ModifyClub()">基础信息设置</a></div>
+			<div class="FL_Header_Exit"><a href="NewFront/Login.html">退出登录</a></div>
+		</div>
+	</div>
+</div>
+
+
+<!--导航-->
+<ul id="navpal">
+  <li class=""> <a class="hv1" href="javascript:void" onClick="Goto(this)">首页</a> </li>
+  <li class=""> <a class="hv2" href="javascript:void" onClick="Goto(this)">成员</a></li>
+  <li class=""> <a class="hv3" href="javascript:void" onClick="Goto(this)">资源</a> </li>
+  <li class="navactive"> <a class="hv4 " href="javascript:void" onClick="Goto(this)">赛事</a> </li>
+  <li class=""> <a class="hv5" href="javascript:void" onClick="Goto(this)">排名</a> </li>
+  <li class=""> <a class="hv6" href="javascript:void" onClick="Goto(this)">联盟</a></li>
+  <li class=""> <a class="hv7" href="javascript:void" onClick="Goto(this)">消息</a></li>
+  </ul>
+</div>
+<!--内容-->
+<div class="hl_maincontent" >
+<iframe  id="mainbody" src=""></iframe>
+</div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>已完赛事的项目</title>
+<link rel="stylesheet" type="text/css" href="../css/LT_TourMg.css">
+<link rel="stylesheet" type="text/css" href="../css/LT_Form.css">
+	<script type="text/javascript" src="../../JavarScriptLibrary/jquery-1.4.1.min.js"></script>
+	<script type="text/javascript" src="../../JavarScriptLibrary/jquery.autocomplete.min.js"></script>
+	<script type="text/javascript" src="../../JavarScriptLibrary/tourmanage.js"></script>
+	<script type="text/javascript" src="../../JavarScriptLibrary/weTennis_AutoComp.js"></script>
+	<script type="text/javascript" src="../../JavarScriptLibrary/Wetennis.js"></script>
+	<script type="text/javascript">
+		var toursys=location.href.split('=')[1];
+		LoadFinishTourContents(toursys);
+	</script>
+</head>
+<div>
+	<p>赛事积分说明：</p>
+	<p><label id="tourName">chengdu Open</label>是一项联盟赛事，赛事级别为1000分赛事，每个项目的冠军可以对应获得1000个比赛积分。亚军和打入不同轮次的选手所获得积分，可以进入每个项目的积分页面进行设置。</p>
+	<p>赛事管理者还可以根据项目的水平程度，降低低水平项目的积分</p>
+</div>
+<div id="ContAppList">
+		
+</div>

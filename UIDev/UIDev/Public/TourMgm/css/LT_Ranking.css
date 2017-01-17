@@ -1,0 +1,83 @@
+@charset "utf-8";
+/* CSS Document */
+.GroupList
+{
+	height:30px;
+}
+.GroupList li
+{
+	float:left;
+	width:100px;
+	text-align:center;
+	padding:5px 0px;
+	border: 1px solid #ccc;
+    margin-left: 5px;
+}
+
+.GroupList li:hover
+{background-color:#00CCFF}
+
+.Sel
+{background-color:#00CCFF}
+
+#ContTypes
+{
+	margin-top:5px;
+}
+
+.ContentList
+{
+	height:30px;margin-left:1px;
+}
+.ContentList li
+{
+	float:left;
+	width:100px;
+	text-align:center;
+	padding:5px 0px;
+	margin-right:5px;
+}
+
+.ContentList li:hover
+{background-color:#00CCFF;font-weight:bold;}
+
+.MemRankCell li
+{
+	margin:5px 0px;
+	border:1px solid #ccc;
+	overflow:hidden;
+}
+
+.MemRankCell li img
+{
+	position:relative;
+	left:0px;
+	top:0px;
+	width:50px;
+	height:50px;
+	float:left;
+	margin:5px;
+}
+
+.RankName
+{width:150px;float:left;}
+
+.Ranknum
+{width:100px;float:left;text-align:center}
+
+h1,p
+{
+	padding:5px 0px 0px 0px;margin:0px;
+}
+
+.RankPts{
+float:left;
+}
+
+.clubName
+{
+	float:right;position:absolute;right:10px;padding: 0px 10px;
+    margin-top: 40px;
+}
+
+

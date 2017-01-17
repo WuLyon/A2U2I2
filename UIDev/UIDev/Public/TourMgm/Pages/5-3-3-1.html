@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>HTML5-Drag-Demo by 顽Shi</title>
+  <style>
+    .column {
+      height: 200px;
+      width: 200px;
+      float: left;
+      border: 2px solid black;
+      background-color: green;
+      margin-right: 5px;
+      text-align: center;
+      cursor: move;
+    }
+    .column header {
+      color: black;
+      text-shadow: #000 0 1px;
+      box-shadow: 5px;
+      padding: 5px;
+      background: red;
+      border-bottom: 1px solid black;
+    }
+  </style>
+  
+  <script>
+  var columns = document.querySelectorAll('#columns .column');
+  
+  [].forEach.call(columns,function(column){
+    column.addEventListener("dragstart",domdrugstart,false);
+  });
+  
+  function domdrugstart(e) {
+   e.target.style.opacity = '0.5';
+	 //e.target.style.background-Color='#ff0';
+  }
+</script>
+</head>
+<body>
+  <div id="columns">
+    <div draggable="true" class="column"><header>div1</header></div>
+    <div draggable="true" class="column"><header>div2</header></div>
+    <div draggable="true" class="column"><header>div3</header></div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,105 @@
+
+<!doctype html>
+<html >
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+<title>华侨城网球精英赛图片评选活动</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="http://wetennis.cn:8081/Scripts/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" >
+//
+function getQueryString(name) {
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+    var r = window.location.search.substr(1).match(reg);
+    if (r != null) return unescape(r[2]); return null;
+}
+
+$(document).ready(function(){
+	var code=getQueryString("code");
+	if(code==null||code=='')
+	{
+		var url=encodeURI(location.href);//û�б仯
+		url=escape(location.href);//ֻ�����ˣ�����Ϊ��%3A;
+		url=encodeURIComponent(location.href);//�ˣ�����Ϊ��%3A;"/"��Ϊ�ˡ�%2F��
+		//alert(url);
+		//��ȡcode
+		location.href='https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxe90eba22e992ffba&redirect_uri='+url+'&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect';
+	}
+	else
+	{
+		url='http://wetennis.cn:83/WebService/WeChat.ashx?typename=GetAccessToken&jsoncallback=?';
+		$.getJSON(url,{code:code},function(data){
+			//alert(JSON.stringify(data));
+			document.getElementById('tbUserInfo').value=JSON.stringify(data);
+			if(data.EXT10=='1')
+			{
+				$("#btnBind").hide();
+				document.getElementById('headimg').src=data.EXT1;
+				document.getElementById('lblName').innerHTML=data.NAME;
+				document.getElementById('tbMemSys').value=data.SYSNO;
+				document.getElementById('tbOpenid').value=data.EXT3;
+				document.getElementById('tbIsMember').value="1";
+			}
+			else
+			{
+				document.getElementById('headimg').src=data.headimgurl;
+				document.getElementById('lblName').innerHTML=data.nickname;
+				document.getElementById('tbMemSys').value=data.openid;
+				document.getElementById('tbOpenid').value=data.openid;
+			}		
+			
+			//默认显示主页
+			var sys=getQueryString("sys");
+			if(sys!=''&&sys!=null)
+			{
+				document.getElementById('content').src='PicMain.html?sys='+sys;
+			}
+			else
+			{
+				document.getElementById('content').src='PicList.html';
+			}
+		});
+	}	
+});
+
+function gohome()
+	{
+		document.getElementById('content').src='PicList.html';
+	}
+	
+	//绑定微信
+function BindWeChat()
+{
+	document.getElementById('content').src='BindWeChat.html';
+}
+
+function Returnhome()
+{
+	document.getElementById('content').src='PicList.html';
+}
+</script>
+</head>
+
+<body>
+ 
+<div >
+ <ul class="top">
+ <li class="imgpos"><img id="headimg" src="images/logo.png" class="logo" ></li>
+   <li class="Nameli"><span class="Name"><strong><label id="lblName"></label></strong></span></li>
+   <li class="Accountli" ><span id="btnBind" onClick="BindWeChat()">绑定微网球账户?</span></li>
+   <li class="ReturnHome"><span id="btnReturn" onClick="Returnhome()">返回首页</span></li>
+ </ul>
+ 
+ <div style="display:none">
+ 	<input type="text" id="tbMemSys" />
+ <input type="text" id="tbOpenid" />
+ <input type="text" id="tbUserInfo"/>
+  <input type="text" id="tbIsMember"/>
+ </div>
+ 
+ <div class="container">
+  	<iframe id="content" src=""></iframe>
+</div>
+</body>
+</html>

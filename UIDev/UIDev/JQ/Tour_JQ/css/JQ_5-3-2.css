@@ -1,0 +1,201 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{
+	 margin:0; 
+	 
+	 padding:0; 
+	 
+	 width:100%;
+
+	 }
+	 
+li{
+	list-style-type:none;
+	
+	}
+	
+img{
+	
+	border:0px;
+	
+	vertical-align:middle;
+	
+	}
+	
+a{
+	
+	text-decoration:none;
+	
+	}
+	
+
+.content{ 
+	
+	width: 100%;
+	
+	background-color:#fff;
+	
+	margin:0 auto;
+	
+	}
+	
+.top{
+	
+	text-align: center;
+	
+	color:#242424;
+	
+	margin-bottom: 30px;
+	
+	border-bottom: solid #077260 1px;
+	
+	}
+	
+.top li{
+	
+	margin-bottom: 10px;
+	
+	}
+	
+.top .return{
+	
+	float:left;
+	
+	}
+	
+.top .close{
+	
+	float:right;
+	
+	margin-right:40px;
+	
+	margin-top: -20px;
+	
+	}
+	
+.top .topnav{
+	
+	width:92%;
+	
+	text-align:left;
+	
+	word-spacing: 50px;
+	
+	}
+	
+.list{
+	
+	width: 80%;
+	
+	height:50px;
+	
+	margin:0 auto;
+	
+	}
+
+.list .listcontent{
+	
+	border:solid #077260 1px;
+	
+	margin-left: 90px;
+	
+	background-color:#ccc;
+	
+	line-height: 30px;
+	
+	margin-bottom: 20px;
+	
+	}
+		
+.list .listname{
+	
+	font-size:14px;
+	
+	line-height:30px;
+	
+	margin-bottom:-30px;
+	
+	float:left;
+	
+	}
+	
+.list select{
+	
+	width:80%;
+	
+	margin-left: 90px;
+	
+	height:30px;
+	
+	}
+	
+.list .saved{
+	
+	visibility: hidden;
+	
+	width:10%;
+	
+	margin:0 auto;
+	
+	text-align:center;
+	
+	line-height:40px;
+	
+	border:solid #077260 1px;
+	
+	}
+				
+.list .listname1{
+	
+	font-size:14px;
+	
+	width:60px;
+	
+	margin-top:10px;
+	
+	float:left;
+	
+	}
+	
+.list .listinput{
+	
+	margin-left:90px;
+	
+	margin-top:20px;
+	
+	margin-bottom:20px;
+	
+	}
+	
+.list .listhint{
+	
+	font-size:10px;
+	
+	margin-left:90px;
+	
+	margin-top:10px;
+	
+	}
+
+.buttom1{
+	
+	height:50px;
+	
+	margin-left:50%;
+	
+	margin-top:400px;
+	
+	background:url(../img/anniu.png) no-repeat;
+	
+	}
+	
+.buttom1 .save{
+	
+	font-size:12px;
+	
+	line-height:45px;
+	
+	margin-left:-20px;
+	
+	}

@@ -1,0 +1,138 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{
+	 margin:0; 
+	 
+	 padding:0; 
+	 
+	 width:100%;
+
+	 }
+	 
+li{
+	list-style-type:none;
+	
+	}
+	
+img{
+	
+	border:0px;
+	
+	vertical-align:middle;
+	
+	}
+	
+a{
+	
+	text-decoration:none;
+	
+	}
+	
+
+.content{ 
+	
+	width: 100%;
+	
+	background-color:#fff;
+	
+	}
+	
+.top{
+	
+	text-align: center;
+	
+	color:#242424;
+	
+	margin-bottom: 30px;
+	
+	border-bottom: solid #077260 1px;
+	
+	}
+	
+.top li{
+	
+	margin-bottom: 20px;
+	
+	}
+	
+.top .close{
+	
+	float:left;
+	
+	}
+	
+.list{
+	
+	border:solid #077260 1px; 
+	
+	width: 90%;
+	
+	height:50px;
+	
+	margin:0 auto;
+	
+	margin-bottom: 20px;
+	
+	}
+	
+.list .finish{
+	
+	float:left;
+	
+	line-height: 50px;
+	
+	}
+	
+.list .listone{
+	
+	float:left;
+	
+	margin-left: 20px;
+	
+	line-height: 50px;
+	
+	}
+
+.list .listtwo{
+	
+	float:right;
+	
+	margin-right: 30px;
+	
+	line-height: 50px;
+	
+	}
+
+.list1 .saved{
+	
+	visibility: hidden;
+	
+	width:10%;
+	
+	margin:0 auto;
+	
+	text-align:center;
+	
+	line-height:40px;
+	
+	border:solid #077260 1px;
+	
+	}
+	
+.save{
+	
+	text-align: center;
+	
+	margin-top: 300px;
+	
+	font-size: 12px;
+	
+	}
+	
+.save .saveword{
+	
+	margin-top:-27px;
+	
+	}
+	

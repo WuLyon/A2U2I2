@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+<title>无标题文档</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="http://wetennis.cn:8081/Scripts/jquery-1.8.2.min.js"></script>
+<style type="text/css">
+ #piclist{
+border:thin solid green;
+width:200px;
+height:150px;
+}
+</style>
+<script type="text/javascript">
+function hideOverflow()
+{
+document.getElementById("piclist").style.overflow="hidden";
+}	
+	var pagesize=5;
+	var page=1;
+	var curtype='';
+	$(document).ready(function(){
+		LoadPicList('HOT');
+		LoadCheckdata();
+	});
+	
+	function LoadCheckdata()
+	{
+		var mem=window.parent.document.getElementById('tbMemSys').value;
+		//alert(mem);
+		//var mem='cf78642d-0829-4c16-b998-0ec43f5d3204';
+		//判断是否是作品发起人登录
+		var url='http://wetennis.cn:83/WebService/WeTime.ashx?typename=CheckIfUploader&jsoncallback=?';
+		$.getJSON(url,{memsys:mem},function(data){
+			//alert(JSON.stringify(data));
+			if(data.message=='yes')
+			{
+				$("#Modify").show();
+				$("#AddNew").hide();
+			}
+			else
+			{
+				$("#Modify").hide();
+				$("#AddNew").show();
+			}
+		});
+	}
+	
+	function LoadPicList(a)
+	{
+		if(a!=curtype)
+		{
+			//更换颜色
+			$("#btnhot").toggleClass('choose');	
+			$("#btnhot").toggleClass('notchoose');
+			$("#btnTime").toggleClass('choose');	
+			$("#btnTime").toggleClass('notchoose');			
+			curtype=a;
+			page=1;
+			var url='http://wetennis.cn:83/WebService/WeTime.ashx?typename=GetPicContextList&jsoncallback=?';
+		$.getJSON(url,{pagesize:pagesize,page:page,type:a},function(data){
+			//alert(JSON.stringify(data));
+			var html='';
+			if(data.length==0)
+			{
+				$("#loadmore").html('没有更多数据');
+			}
+			else
+			{
+			for(var i=0;i<data.length;i++)
+			{
+				html+='<ul class="picul" onclick="openPic(\''+data[i].SYS+'\')"><li><img src="'+data[i].EXT3+'" class="PicPositon"  alt="" /></li>	<li class="titlepanel"><li><li class="titlepos"><ul class="panelletter"><li class="panellititle">'+data[i].EXT2+'</li> <li class="panelPraiseimg"><img src="http://wetennis.cn:8080/JQ/huaqiaocheng/images/dianzan.png" class="praisImg"/></li><li class="panelPraseqty">'+data[i].EXT4+'</li></ul><li></ul>';
+			}
+			$("#piclist").html(html);
+			page+=1;
+			}
+		});
+		}
+	}
+	
+	function LoadMorePicList()
+	{	
+		var url='http://wetennis.cn:83/WebService/WeTime.ashx?typename=GetPicContextList&jsoncallback=?';
+		$.getJSON(url,{pagesize:pagesize,page:page,type:curtype},function(data){
+			//alert(JSON.stringify(data));
+			var html='';
+			if(data.length==0)
+			{
+				$("#loadmore").html('没有更多数据');
+			}
+			else
+			{
+			for(var i=0;i<data.length;i++)
+			{
+				html+='<ul class="picul" onclick="openPic(\''+data[i].SYS+'\')"><li><img src="'+data[i].EXT3+'" class="PicPositon"  alt="" /></li>	<li class="titlepanel"><li><li class="titlepos"><ul class="panelletter"><li class="panellititle">'+data[i].EXT2+'</li> <li class="panelPraiseimg"><img src="http://wetennis.cn:8080/JQ/huaqiaocheng/images/dianzan.png" class="praisImg"/></li><li class="panelPraseqty">'+data[i].EXT4+'</li></ul><li></ul>';
+			}
+			$("#piclist").append(html);
+			page+=1;
+			}
+		});
+	}
+	
+	
+	function openPic(sys)
+	{
+		location.href='PicMain.html?type=pic&sys='+sys;
+	}
+	
+	function SeeMyWork()
+	{
+		location.href='PicMain.html?type=mem';
+	}
+	
+	function CreateNew()
+	{
+		//先判断是否是会员，还是微信用户
+		var IsMember=window.parent.document.getElementById('tbIsMember').value;
+		if(IsMember=="1")
+		{
+			location.href='AddPic.html';
+		}
+		else
+		{
+			location.href='BindWeChat.html';
+		}		
+	}
+
+</script>
+</head>
+
+<body>
+   <!--<div class="title">2016年华侨城网球赛图片评选</div> -->
+   <div >
+   <ul class="content">
+   <li>活动规则：</li>
+   <li>1.选择自己要上传的照片（每人只能上传一张）</li>
+   <li>2.3月20号绵阳分站赛开始即可上传。</li>
+   <li>3.4月9号成都赛开始后投票系统正式开始，投票截止日期为4月24日。获奖情况及领奖方式将在4月25日通过微网球发布</li>
+   <li>奖品:</li>
+   <li>1.第一名奖励Head网球拍一个(价值2480德约科维奇网球拍L5)</li>
+   <li>2.第二名奖励Wilson双肩包一个（价值690）</li>
+   <li>3.第三名奖励Head网球包一个（价值480）</li>
+   </li>
+  </ul>
+  </div>
+  
+   <ul class="banner">
+   <li class="bottom-left"><strong>参赛作品</strong></li>
+   <!--<li class="filter"><input id="btnhot" type="button" value="热门" class="notchoose" onclick="LoadPicList('Hot')" /><input id="btnTime" type="button" value="最新" class="choose" onclick="LoadPicList('Time')" /></li>-->
+   
+   <li class="filter"><span id="btnhot"  class="notchoose" onclick="LoadPicList('Hot')">热门</span><span id="btnTime" class="choose" onclick="LoadPicList('Time')">最新</span></li>
+   
+   <li id="AddNew" class="bottom-right"><input type="button"  class="btn1" onclick="CreateNew()" value="添加作品"/></li>
+   <li id="Modify" class="bottom-right"><input type="button"  class="btn1" onclick="SeeMyWork()" value="查看作品"/></li>
+  </ul>
+ <input type="button" onclick="hideOverflow()"
+value="Hide overflow" />
+<div id="piclist"></div>
+
+  <!--图片-->
+  <div id="loadmore"><input type="button" class="btn2" value="加载更多" onclick="LoadMorePicList()" /></div>
+</div>
+  
+  
+
+</body>
+</html>

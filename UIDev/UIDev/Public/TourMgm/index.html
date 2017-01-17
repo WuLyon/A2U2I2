@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<link rel="stylesheet" type="text/css" href="css/HL_style.css">
+<script src="../JavarScriptLibrary/jquery-1.4.1.min.js" type="text/javascript"></script>
+<script src="../JavarScriptLibrary/tourmanage.js" type="text/javascript"></script>
+<script type="text/javascript">
+	
+	
+	//清除右边浮动窗体
+	function CloseFR()
+	{
+		$("#FunctFRight").hide();
+	}
+
+</script>
+
+</head>
+
+<body>
+<div class="right">
+<div class="right_top">
+<h4>赛事</h4>
+<ul class="right_dh" id="navpal" >
+<li class="hv"><a href="javascript:void" ><span id="nav_all" onClick="Goto(this)">全部赛事</span></a></li>
+<li><a href="javascript:void" ><span id="nav_status0" onClick="Goto(this)">筹备赛事</span></a></li>
+<li><a  href="javascript:void"><span id="nav_status1" onClick="Goto(this)">赛事报名</span></a></li>
+<li><a  href="javascript:void"><span id="nav_status2" onClick="Goto(this)">结束报名</span></a></li>
+<li><a href="javascript:void"  ><span id="nav_status3" onClick="Goto(this)">赛事签表</span></a></li>
+<li><a href="javascript:void"><span id="nav_status4" onClick="Goto(this)">资源分配</span></a></li>
+<li><a  href="javascript:void" ><span id="nav_status5" onClick="Goto(this)">正在进行</span></a></li>
+<li><a  href="javascript:void" ><span id="nav_status6" onClick="Goto(this)">已完成</span></a></li>
+</ul>
+
+</div>
+
+</div>
+<div class="hl_functionbody">
+	<iframe  id="hl_functionbody" src="Pages/5-1.html"></iframe>
+</div>
+
+<div class="hl_floatright" id="FunctFRight">
+	<div class="FR_Header">
+		<div class="FR_Header_Title" ><label id="fr_title"></label></div>
+		<div class="FR_Header_Close"><a href="javascript:void" onClick="CloseFR()">X</a></div>
+	</div>
+	<div class="FR_Content">
+		<iframe id="FR_Content_frm" src="Pages/JQ_5-3-1.html"></iframe>
+	</div>
+</div>
+</body>
+</html>

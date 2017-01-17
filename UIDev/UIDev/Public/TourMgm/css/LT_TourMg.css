@@ -1,0 +1,160 @@
+@charset "utf-8";
+/* CSS Document */
+.floatleft_Back{display:none;position:fixed;top:0px;left:0px;;width:100%;height:100%;z-index:200;}
+.floatleft{width:400px;position:fixed;top:0px;left:135px;height:100%;background-color:#ccc;}
+.FL_Header
+{
+	postion:relative;
+	left:0px;
+	top:0px;
+	height:50px;
+	
+}
+
+.FL_Header_Title
+{
+	position:absolute;
+	top:20px;
+	left:5px;
+	color:#fff;
+	font-weight:600;
+}
+
+.FL_Header_Exit
+{
+	position:absolute;
+	bottom:10px;
+	right:5px;
+}
+
+.FL_Header_Modify
+{
+	position:absolute;
+	top:50px;
+	right:5px;
+	font-size:small;
+}
+
+.hidden{display:none;}
+.shown{display:block;}
+.fontsmall{font-size:small}
+
+/*修改俱乐部信息*/
+.EntityItem
+{
+	width:100%;
+	height:50px;
+	font-size:small;
+}
+.EntityItem li
+{	
+	width:200px;
+	float:left;
+}
+
+.EntityItem li:nth-child(2)
+{
+	width:400px;
+}
+
+
+/*ul 样式整体设置*/
+ul{padding:0px;margin:0px;list-style:none;}
+ul li{padding:0px;margin:0px;}
+/*赛事cell*/
+.search{ position:relative; left:0px; top:0px; height:50px}
+.searchbox{width:50%;}
+
+.tourlist{position:relative;top:0px;left:0px;}
+.tourcell{width:94%; height:90px; border:solid 1px #087c69; position:relative; top:0px; left:3%; background:#FFF;margin-top:20px;}
+
+.tp1{ background:url(../img/lms.png) no-repeat; width:51px; height:40px; position:absolute; top:14px; left:35px;}
+.tourimgpos{position:absolute;left:30px; top:5px;width:60px;height:80px; }
+.tourimgul{position:relative;top:0px;left:0px;background-color:#999999;width:60px;height:80px;}
+.levelimgpos{position:absolute;left:24px; top:4px}
+.tourlevelimg{width:60px;height:80px;}
+.con1{ position:absolute; left:120px; top:5px; width:300px; height:55px; font-size:small;}
+.con1ul{width:100%;padding:0px;}
+.con1ul li{margin-bottom:5px;}
+.con1ul li:nth-child(1){font-size:large;height:40px}
+.fontimg{width:15px;height:15px;margin-right:10px;}
+.con2{ position:absolute; left:500px; top:5px;width:300px; height:55px;font-size:small}
+.con2ul{width:100%;padding:0px;}
+.con2ul li{margin-bottom:5px;}
+.toursetbtn{position:absolute;top:30px;right:100px;}
+.toursetbtn_a{position:absolute;top:20px;right:150px;z-index:200}
+
+
+/*全部赛事*/
+.PageBtnPos
+{
+	position:relative;top:0px;left:0px;
+	padding:10px 20px;
+}
+
+.Setting_Btn
+{
+	background-color:#fff;
+	border:1px solid #ccc;
+	padding:5px;
+}
+
+.Setting_Btn li
+{
+text-align:center;
+	padding:5px 10px;
+	border-bottom:1px solid #eee;
+}
+
+/*赛事项目*/
+.contcell{width:94%; height:60px; border:solid 1px #087c69; position:relative; top:0px; left:3%; background:#FFF;margin-top:10px;}
+.contDesc{ position:absolute; left:20px; top:5px; width:300px; height:55px; font-size:small;}
+#Tour_AddCont_Back
+{
+	position:fixed;top:0px;left:0px;
+	width:100%;height:100%;
+	background-color:#ccc;opacity:0.5;
+}
+#Tour_AddCont_Form
+{
+position:fixed;left:0px;bottom:0px;
+width:100%;background-color:#fff;
+z-index:100;
+}
+
+/*比赛结果维护页面*/
+
+.roundNav
+{
+	height: 50px;
+	line-height: 50px;
+	font-size: small;
+}
+
+.roundNav li
+{
+	float:left;
+	width:100px;
+	text-align: center;
+}
+
+.matchMain
+{
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	border: 1px solid #ccc;
+	margin: 5px 0px;
+}
+
+.matchMain li{
+	width:33%;
+	float: left;
+	text-align: center;
+}
+
+.matchMain input[type=text]
+{
+	width: 30px;
+	text-align: right;
+}

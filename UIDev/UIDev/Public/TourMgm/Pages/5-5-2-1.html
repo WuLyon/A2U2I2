@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>轮次设置</title>
+<link rel="stylesheet" type="text/css" href="../css/LT_Form.css">
+<script type="text/javascript" src="../../JavarScriptLibrary/jquery-1.4.1.min.js"></script>
+	<script type="text/javascript" src="../../JavarScriptLibrary/tour_distribute.js"></script>
+	<script type="text/javascript" src="../../My97DatePicker/WdatePicker.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			 LoadTourRoundsDate()
+		});
+	</script>
+</head>
+
+<body>
+<a href="5-5-2.html">返回</a>
+<p>说明：
+       当为赛事设置多个比赛日的时候，需要指定项目的比赛轮次.例如：可以把男子单打和男子双打放在不同的日期进行</p>
+<!--Tour cont Round-->
+<p><h3><input type="checkbox" onclick="selectAll(this)" id="SelAll"/>选择所有项目所有轮次</h3></p>
+<div id="TourRouns">
+
+</div>
+
+<div>
+	<input type="button" value="保存" onclick="submitTourRound()"
+</div>
+</body>
+</html>

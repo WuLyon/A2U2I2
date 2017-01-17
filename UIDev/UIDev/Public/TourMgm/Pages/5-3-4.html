@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+    
+<html lang="zh">
+    <head>        
+   <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />     
+	<title>比赛列表</title>
+	<link rel="stylesheet" type="text/css" href="../css/LT_TourMg.css">
+	<link rel="stylesheet" type="text/css" href="../css/LT_Form.css">
+	<script type="text/javascript" src="../../JavarScriptLibrary/jquery-1.8.2.min.js"></script>
+	<script type="text/javascript" src="../../JavarScriptLibrary/tour_sign.js"></script>
+
+	<script type="text/javascript">
+	$(document).ready(function(){
+			GetMatchesData();
+			//LoadMatches();
+		});
+	</script>
+</head>
+
+<body>
+<a href="5-3-nav.html"><h3>返回项目列表</h3></a>
+<div class="FloatR_Tabs">
+		<ul>
+		<li><a href="5-3-1.html">项目信息</a></li>
+		<li><a href="5-3-2.html">种子设置</a></li>
+		<li><a href="5-3-3.html">签表设置</a></li>
+		<li><strong>比赛</strong></li>		
+		</ul>
+	</div>
+	
+	<!--比赛情况-->
+	<div id="TourMatches">
+		<div data-role="collapsible" >
+			<h5>决赛</h5>
+			<ul class="ListView_Ul">
+				<li>1</li>
+				<li>vs</li>
+				<li>2</li>
+			</ul>
+		</div>
+		
+		<div data-role="collapsible" data-collapsed="false">
+			<h5>半决赛</h5>
+			this　is　 the final
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,603 @@
+@charset "utf-8";
+/* CSS Document */
+ul,ol
+{
+margin:0;
+padding:0;
+list-style:none;
+}
+#background
+{
+min-height:800px;
+with:100%;
+background:url(http://wetennis.cn:86/common/indexback.jpg);
+background-repeat:no-repeat;
+background-size:100%;
+-webkit-filter: blur(10px); 
+}
+
+#webContent
+{
+	position:absolute;
+	top:300px;	
+	left:0px;
+	height:300px;
+	width:100%;
+	text-align:center;
+	color:#fff;
+	font-family:"微软雅黑";
+	background-color:0f0;
+}
+
+.oneword
+{
+	font-size:30px;
+	margin-bottom:15px;
+}
+
+.subDesc
+{
+	font-size:22px;
+	margin-bottom:15px;
+}
+
+.trdDesc
+{
+	font-size:16px;
+}
+
+.btnPos
+{
+	margin-top:15px;
+}
+
+.RegBtn
+{
+	border:1px solid #fff;
+	padding:10px 20px;
+	border-radius:5px;
+	background-color:#00CC33;
+	color:#fff;	
+}
+
+/*商标*/
+.logoarea
+{
+	position:absolute;
+	top:20px;
+	left:30px;
+	color:#fff;
+	font-family:"微软雅黑";
+}
+
+.logoarea li
+{ float:left;
+}
+
+.logotitle
+{
+	margin:10px 20px;
+	font-size:18px;
+}
+
+ .logoimg
+{width:50px;height:50px;}
+
+/*登陆区域*/
+.loginarea
+{ position:absolute;top:20px;right:20px;color:#fff;z-index:200;font-family:"微软雅黑";
+}
+
+.loginarea li
+{float:left; width:120px; text-align:center;}
+
+.LogBtn
+{
+	border:2px solid #fff;
+	padding:5px 0px;
+	border-radius:5px;
+	color:#fff;		
+}
+
+/*链接样式*/
+a
+{
+	color:#fff;
+	text-decoration:none;
+}
+
+a:hover
+{
+	color:#fff;
+	font-weight:600;
+	text-decoration:underline;
+}
+
+/*登陆*/
+.loginBack
+{
+background-color:#f8f6f2}
+
+.loginPos
+{
+position:absolute;
+top:150px;
+width:100%;
+height:300px;
+text-align:center;
+font-family:"微软雅黑";
+}
+
+.LoginTitle
+{
+	color:#000;
+	font-size:18px;
+}
+
+.Loginbox
+{
+	padding:10px 33%;
+	backgound-color:#ff0;
+	text-align:center;
+}
+
+.Loginbox li
+{
+	padding:10px 20px;
+	width:500px;
+}
+
+input[type=text],[type=password]
+{
+	width:100%;
+	padding:5px 1px;
+}
+
+.btnLogin
+{
+	width:100%;
+	padding:5px 0px;
+	background-color:#00CC99;
+	color:#fff;
+	border:0;
+	border-radius:5px;
+}
+
+.TwoEven
+{
+	width:100%;
+}
+
+.TwoEven li
+{
+	float:left;
+	width:49%;
+	padding:0px;
+}
+
+/*注册*/
+
+.Telephone
+{
+padding:5px 1px;
+width:390px;
+}
+
+
+
+.ValidateCode
+{
+	width:100px;
+	border:1px solid #339900;
+	padding:6px 1px;
+	text-align:center;
+}
+
+.txtSmall
+{
+	font-size:small;
+}
+
+
+
+.LogOpt
+{
+	display:none;	
+	width:120px;
+	height:60px;
+	background-color:#4E6A3D;
+	border:2px solid #fff;
+	border-radius:5px;
+	color:#fff;
+}
+
+.LogOpt li
+{
+text-align:center;
+padding:5px 0px;
+}
+
+.ProOpt
+{
+display:none;	
+	width:120px;
+	height:92px;
+	background-color:#4E6A3D;
+	border:2px solid #fff;
+	border-radius:5px;
+	color:#fff;	
+text-align:center;
+}
+
+.ProOpt li
+{
+padding:5px 0px;
+}
+
+/*关于我们*/
+.DescMain
+{
+	position:absolute;
+	left:10%;
+	right:10%;	
+	background-color:#eee;
+}
+
+.header
+{
+	height:60px;
+	background-color:#999999;
+	color:#fff;
+	font-size:20px;
+	text-align:center;
+	padding-top:40px;
+}
+
+.ab-Section
+{
+	position:relative;
+	left:0px;
+	top:0px;	
+}
+
+ .logoimgx1
+{width:100px;height:100px;}
+
+.Ab-Logoul
+{
+	position:relative;
+	top:10px;
+	left:10px;
+	text-align:center;
+	font-size:16px;
+	font-family:"微软雅黑";
+	width:100px;
+	margin-bottom:30px;
+}
+
+.ab-Contanct
+{
+	position:absolute;
+	top:10px;
+	left:150px;
+}
+
+.ab-Contanct li
+{
+	padding:5px 0px;
+}
+
+.ab-Contanct li h3
+{
+	margin:0px;
+	padding:0px;
+}
+
+.ab-MemDesc
+{
+	position:relative;
+	top:0px;
+	left:0px;	
+	height:260px;	
+}
+
+.headimg
+{
+width:200px;
+height:250px;
+}
+
+.ab-memimg
+{
+position:absolute;left:10px;top:10px;
+}
+
+.ab-memname
+{
+position:absolute;left:250px;top:10px;
+}
+
+.ab-memdesc
+{
+position:absolute;left:250px;top:50px;
+}
+
+/*服务价格*/
+table{
+ border-top:1px solid #000;
+ border-left:1px solid #000;
+ width:100%;
+ border-collapse: collapse;
+}
+
+th
+{
+border-right:1px solid #000;
+border-bottom:1px solid #000;
+font-size:18px;
+padding:20px 0px;
+}
+
+td
+{
+border-right:1px solid #000;
+border-bottom:1px solid #000;
+text-align:center;
+padding:5px;
+}
+
+.colorGreen
+{
+background-color:#8BCE90;
+}
+
+.colorMidGreen
+{
+background-color:#CCFF00;
+}
+
+.colorGold
+{
+background-color:#FFCC00;
+}
+
+/*产品介绍*/
+.pro-left
+{
+	position:absolute;
+	top:10px;
+	bottom:10px;
+	left:10px;
+	width:200px;
+	background-color:#fff;
+}
+
+.pro-right
+{
+	position:absolute;
+	top:10px;
+	bottom:10px;
+	right:10px;
+	left:220px;	
+	background-color:#fff;
+}
+
+.Pro-nav
+{
+	position:fixed;
+	top:10px;
+	left:10px;
+	width:200px;
+	text-align:center;
+	background-color:#ccc;
+	font-size:18px;
+	font-family:"微软雅黑";
+}
+
+.Pro-nav li
+{
+	padding:10px 0px;
+}
+
+.pro-maindes
+{
+	width:100%;
+	height:300px;
+	position:relative;
+	top:30px;
+	left:0px;
+}
+
+.pro-fst-sec
+{
+	position:absolute;
+	left:5%;
+	top:0px;
+}
+
+.pro-snd-sec
+{
+	position:absolute;
+	left:30%;
+	top:0px;
+}
+
+.pro-trd-sec
+{
+	position:absolute;
+	left:55%;
+	top:0px;
+}
+
+.pro-fou-sec
+{
+	position:absolute;
+	left:80%;
+	top:0px;
+}
+
+.pro-descell
+{
+	background-color:#fff;
+	width:200px;
+	font-family:"微软雅黑";
+	height:310px;
+}
+
+.pro-descell li
+{
+	background-color:#fff;
+	float:none;
+}
+
+.prosec-top
+{
+	paosition:relative;
+	top:0px;
+	left:0px;
+	height:500px;
+	width:100%;
+	background-color:#8BCE90;
+	font-family:"微软雅黑";	
+}
+
+.pro-title
+{
+	text-align:center;
+	padding-top:50px;
+	font-size:24px;
+	color:#fff;
+	
+}
+.pro-imgpos
+{
+	padding:10px;
+	width:160px;
+	height:180px;
+	border-bottom:1px solide #ccc;
+}
+
+.pro-desimg
+{
+	width:180px;
+	height:180px;
+}
+
+.pro-des-title
+{
+	text-align:center;
+	font-size:18px;
+	width:100%;
+	border-top:1px solid #ccc;
+	padding-top:5px;
+	margin-top:5px;
+}
+
+.pro-des-detail
+{
+	margin:10px 5px;
+	font-size:small;
+	text-indent:2em;
+	padding-bottom:5px;
+}
+
+.pro-detail-cell
+{
+	position:relative;
+	top:0px;
+	left:0px;
+	height:300px;
+	background-color:#F2F2F2;
+}
+
+.pro-detail-cella
+{
+	position:relative;
+	top:0px;
+	left:0px;
+	height:300px;
+	background-color:#D7D7D7;
+}
+
+.pro-detail-leftpic
+{
+	position:absolute;
+	left:100px;
+	top:50px;
+}
+
+.pro-detail-rightpic
+{
+	position:absolute;
+	right:100px;
+	top:50px;
+}
+
+.pro-detail-img
+{
+	width:300px;
+	height:200px;
+}
+
+.pro-detail-rightdes
+{
+	position:absolute;
+	right:100px;
+	top:50px;
+	width:300px;
+	height:200px;
+}
+
+.pro-detail-leftdes
+{
+	position:absolute;
+	left:100px;
+	top:50px;
+	width:300px;
+	height:200px;
+}
+
+.pro-detail-bullet
+{
+	font-size:18px;
+}
+
+.pro-detail-bullet li
+{
+	margin:20px 0px;
+	list-style:square;
+}
+
+.alicenter
+{
+	text-align:center;
+}
+
+.marginmid
+{
+	margin:30px 50px;
+}
+
+.nav-header
+{
+	background-color:#fff;
+	text-align:left;
+	font-size:small;
+}
+
+.nav-header a
+{
+	color:#000;
+}
+
+.hidden
+{
+	display:none;
+}
+
+.responsetxt
+{
+	text-align:left;
+	font-size:small;
+	text-indent:2em;
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>收款对账</title>
+<link rel="stylesheet" type="text/css" href="../css/LT_TourMg.css">
+<link rel="stylesheet" type="text/css" href="../css/LT_Form.css">
+	<script type="text/javascript" src="../../JavarScriptLibrary/jquery-1.4.1.min.js"></script>
+	<script type="text/javascript" src="../../JavarScriptLibrary/jquery.autocomplete.min.js"></script>
+	<script type="text/javascript" src="../../JavarScriptLibrary/tourmanage.js"></script>
+	<script type="text/javascript" src="../../JavarScriptLibrary/weTennis_AutoComp.js"></script>
+	<script type="text/javascript" src="../../JavarScriptLibrary/Wetennis.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+		    GetTourApplyFee();
+			GetTourApplyCon();
+		});
+	</script>
+</head>
+
+<body>
+	<div class="FloatR_Tabs">
+		<ul>
+		<li><a href="javascript:void" onclick="GotoTourMod(this)">报名名单</a></li>
+		<li><strong>收款对账</strong></li>
+		</ul>
+	</div>
+	<div>
+		<h3>报名收款汇总信息</h3>
+		<ul>
+			<li>微网球报名缴费费用总计:￥<label id="lblWeTennisPay"></label>元</li>
+			<li>报名未缴费费用总计:￥<label id="lblUnpaidFee"></label>元</li>
+			<li>报名费用总计：￥<label id="lblTotalFee"></label>元</li>
+		</ul>
+		
+		<h3>各项目报名情况</h3>
+		 <table id="tableApplyTotal" class="table table-bordered">
+		 </table>
+	</div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+ul{
+	list-style:none;
+    padding:0;
+    margin:0; 
+	position:relative;
+	left:0px;
+	top:0px;
+	height:80px;
+
+	} 
+
+.a1{ position:absolute;
+     top:15px;
+	 left:40px;}
+	 
+.a2{
+	position:absolute;
+    top:14px;
+	left:100px;
+	color:#f00;
+	font-size:18px;}	 
+	
+.a3{position:absolute;
+    color:#090;
+	top:37px;
+	left:102px;
+	font-size:12px;}
+		
+.a4{position:absolute;
+    color:#090;
+	top:38px;
+	left:280px;
+	font-size:12px;}
+	
+.a5{position:absolute;
+    color:#090;
+	top:55px;
+	left:102px;
+	font-size:12px;		
