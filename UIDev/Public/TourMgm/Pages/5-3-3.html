@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
@@ -26,13 +26,13 @@
 	</div>
 	
 	<!--提示未分配签位信息-->
-	<p>
-		<label id="SignDistri"></label><input type="button" id="GenerateBtn" class="hidden" value="生成比赛" onClick="GenerateMatch()"/>
-	</p>
-	
+    <p>
+        <label id="SignDistri"></label>
+        <input type="button" id="GenerateBtn" class="hidden" value="生成比赛" onclick="GenerateMatch()" />
+        <input type="button" id="DisatribureSignBtn" class="" value="分配签表" onclick="RandomDistributeSign()" />
 	<!--项目签位展示-->
 	<div id="ContSignDisplay">
-		
+       
 	</div>
 	
 	<input type="button" value="保存签表" onClick="SaveSign()"/>
@@ -40,12 +40,12 @@
 	<!--编辑签位-->	
 	<div id="Edit_Seed" class="hidden">
 		<div id="EditSeed_Back" onClick="hideEdit()"></div>
-		<div id="EditSeed_Left" >
-			
-		</div>
-		<div id="EditSeed_Right">
-			
-		</div>
+        <div id="EditSeed_Left" style="overflow:auto">
+
+        </div>
+        <div id="EditSeed_Right" style="overflow:auto">
+
+        </div>
 		
 		<input class="submitBtn" type="button" value="提交" onClick="HideSign()"/>
 	</div>

@@ -482,7 +482,7 @@ function submitTourRound()
 function RandowmDistri()
 {
 	var tour_sys=localStorage.getItem('Current_TourSys');
-		var ser_url='http://localhost:46755/BackService/TourMgm.ashx?typename=Dis_TourResource';
+	var ser_url = ServiceUrl + "?typename=Dis_TourResource";
 		$.ajax({
 			type:'POST',
 			url:ser_url,
@@ -508,11 +508,12 @@ function LoadCourtMatches()
 
 function CourtMatch_Render()
 {
-	var pageh='';
+    var pageh = '';
 	for(var i=0;i<CourtMatches.length;i++)
 	{
+	    pageh += '<div style="float:left;">';
 		//add date header
-		pageh+='<h3>'+CourtMatches[i].matchDate+'(共'+CourtMatches[i].dateMatchQty+'场比赛)<a href="javascript:top.window.open(\'http://wetennis.cn:3000/program/'+TourSys+'/'+CourtMatches[i].matchDate+'\')" >修改赛程</a></h3>';
+		pageh+='<h2>'+CourtMatches[i].matchDate+'(共'+CourtMatches[i].dateMatchQty+'场比赛)<a href="javascript:top.window.open(\'http://wetennis.cn:3000/program/'+TourSys+'/'+CourtMatches[i].matchDate+'\')" >修改赛程</a></h2>';
 		
 		//add date court match distribution
 		var dateMatches=CourtMatches[i].dateMatches;
@@ -531,9 +532,10 @@ function CourtMatch_Render()
 				pageh+='</ul>';	
 			}
 			
-			pageh+='</div>';
+			pageh += '</div>';
 			
 		}
+		pageh += '</div>';
 	}
 	
 	//将构造的html赋值到div

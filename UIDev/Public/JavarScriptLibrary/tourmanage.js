@@ -1120,3 +1120,7 @@ function modifyfth()
 
 	}
 	
+
+	function selectContentType(e) {
+	    alert(this.Options[0]);
+	}

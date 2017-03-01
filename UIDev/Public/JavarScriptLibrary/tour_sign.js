@@ -144,12 +144,23 @@
 				var html='';
 				for(var i=0;i<list.length;i++)
 				{
-					//展示种子
-					html+='<ul class="ListView_Ul">';
-					html+='<li class="ListView_left_Seed"><h1>'+(i+1)+'</h1></li>';
-					html+='<li class="ListView_left_img"><img src="'+list[i].P1LIMGURL+'" class="headimg"/></li>';
-					html+='<li class="ListView_left_Desc">'+list[i].P1LNAME+'</li>';
-					html+='</ul>';					
+				    if (list[i].MEMBERSYS.indexOf(",") > 0)
+				    {
+				        //展示种子
+				        html += '<ul class="ListView_Ul">';
+				        html += '<li class="ListView_left_Seed"><h1>' + (i + 1) + '</h1></li>';
+				        html += '<li class="ListView_left_img"><img src="' + list[i].P1LIMGURL + '" class="headimg"/></li>';
+				        html += '<li class="ListView_left_Desc">' + list[i].P1LNAME + '/' + list[i].P2LNAME + '</li>';
+				        html += '</ul>';
+				    }
+				    else {
+				        //展示种子
+				        html += '<ul class="ListView_Ul">';
+				        html += '<li class="ListView_left_Seed"><h1>' + (i + 1) + '</h1></li>';
+				        html += '<li class="ListView_left_img"><img src="' + list[i].P1LIMGURL + '" class="headimg"/></li>';
+				        html += '<li class="ListView_left_Desc">' + list[i].P1LNAME + '</li>';
+				        html += '</ul>';
+				    }
 				}				
 				
 				$("#ContSeed_List").html(html);
@@ -179,7 +190,12 @@
 		var html='<ul class="AppUl">';
 		for(var i=0;i<Unseed.length;i++)
 		{
-			html+='<li ondblclick="chooseSeed(\''+i+'\')">'+Unseed[i].MemberName+'</li>';
+		    if (Unseed[i].ParName.length > 0) {
+		        html += '<li ondblclick="chooseSeed(\'' + i + '\')">' + Unseed[i].MemberName + '/' + Unseed[i].ParName + '</li>';
+		    }
+		    else {
+		        html += '<li ondblclick="chooseSeed(\'' + i + '\')">' + Unseed[i].MemberName + '</li>';
+		    }
 		}
 		html+='<ul>';
 		$("#EditSeed_Left").html(html);
@@ -191,7 +207,13 @@
 		var html='<ul class="AppUl">';
 		for(var i=0;i<Seeded.length;i++)
 		{
-			html+='<li ondblclick="unchooseSeed(\''+i+'\')">'+Seeded[i].MemberName+'</li>';
+		    if (Seeded[i].ParName.length > 0) {
+		        html += '<li ondblclick="unchooseSeed(\'' + i + '\')">' + Seeded[i].MemberName + '/' + Seeded[i].ParName + '</li>';
+		    }
+		    else
+		    {
+		        html += '<li ondblclick="unchooseSeed(\'' + i + '\')">' + Seeded[i].MemberName + '</li>';
+		    }
 		}
 		html+='<ul>';
 		$("#EditSeed_Right").html(html);
@@ -308,7 +330,8 @@
 	//展示未分配到签表的报名
 	function ShowUnSignedApp()
 	{
-		//根据未分配签表报名人员来显示信息
+	    //根据未分配签表报名人员来显示信息
+	    $("#DisatribureSignBtn").show();
 		if(UnSignedApp.length==0)
 		{
 			$("#SignDistri").html('所有报名人员已全部分配到签表。');	
@@ -413,6 +436,12 @@
 		});
 	}
 	
+	function RandomDistributeSign() {
+	    $.post(ServiceUrl, { typename: "RandomDistributeSign", contid: Sign_Contid }, function (data) {
+	        alert(data);
+	        SignPageLoad();
+	    });
+	}
 	
 	//5-3-4.html
 	//项目比赛列表
@@ -458,9 +487,9 @@
 				htm+='<li>'
 				htm+='<ul class="Match_Ul">';
 				htm+='<li>'+RoundMatch[j].matchOrder+'</li>';
-				htm+='<li >'+RoundMatch[j].p1name+'</li>';
+				htm += '<li class="fightSide">' + RoundMatch[j].p1name + '</li>';
 				htm+='<li>vs</li>';
-				htm+='<li>'+RoundMatch[j].p2name+'</li>';
+				htm += '<li class="fightSide">' + RoundMatch[j].p2name + '</li>';
 				htm+='</ul>';
 				htm+='</li>'
 			}

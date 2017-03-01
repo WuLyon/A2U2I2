@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -48,8 +48,12 @@
 			</p>
 			<p>
 				<label class="form_label">项目类型：</label>
-				<select name="selType" id="type" class="form_control"><option value="-1">--请选择--</option><option value="男单">男单</option><option value="男双">男双</option><option value="女单">女单</option><option value="女双">女双</option><option value="混双">混双</option><option value="团体">团体</option></select>
+                <select name="selType" id="type" class="form_control" onchange="selectContentType(this)"><option value="-1">--请选择--</option><option value="男单">男单</option><option value="男双">男双</option><option value="女单">女单</option><option value="女双">女双</option><option value="混双">混双</option><option value="团体">团体</option></select>
 			</p>
+            <p id="minAmountAge">
+                <label for="tbMinAmountAge" class="form_label">双打最小年龄和：</label>
+                <input type="text" id="tbMinAmountAge" name="tbMinAmountAge" class="form_control" />
+            </p>
 			<p>
 				<label class="form_label">报名费（元/人）：</label>
 				<input type="text" id="tbApplyFee" name="applyfee" class="form_control"/>
@@ -62,10 +66,11 @@
 				<label class="form_label">是否设置小组赛：</label>
 				<select name="allowgroup" id="selAllowGroup" class="form_control"><option value="-1">--请选择--</option><option value="1">是</option><option value="0">否</option></select>
 			</p>
-			<p id="groupQty" calss="temp_hide" >
+			<p id="groupQty" class="temp_hide" >
 				<label for="grouptype" class="form_label">小组人数：</label>
 				<select name="grouptype" id="selGroupQty" class="form_control"><option value="-1">--请选择--</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select>
 			</p>
+            
 			<input type="button" value="保存" onclick="TourContent_Save()"/>
 			<input type="button" value="删除" onclick="TourContent_Delete()"/>
 		</form>
