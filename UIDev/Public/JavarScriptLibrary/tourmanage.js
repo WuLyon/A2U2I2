@@ -178,7 +178,7 @@ function savefst()
 	$.ajax({
 		   type:"POST",
 		   async:"false",
-		   url:"http://localhost:46755/WebService/WeClub.ashx",
+		   url:"http://localhost:46755///WebService/WeClub.ashx",
 		   data:{typename:"UpdateClubField",fieldname:"ClubName",keyvalue:NewName,clubsys:ClubInfo.SYSNO},
 		   success:function(data){
 			   	//alert(JSON.stringify(data));
@@ -224,7 +224,7 @@ function savesnd()
 	$.ajax({
 		 type:"POST",
 		   async:"false",
-		   url:"http://localhost:46755/WebService/WeClub.ashx",
+		   url:"http://localhost:46755///WebService/WeClub.ashx",
 		   data:{typename:"UpdateClubField",fieldname:"Description",keyvalue:NewDesc,clubsys:ClubInfo.SYSNO},	  
 		   success:function(data){
 				var res=eval("("+data+")");   
@@ -267,7 +267,7 @@ function savetrd()
 	$.ajax({
 		type:"POST",
 		async:"false",
-		url:"http://localhost:46755/WebService/WeClub.ashx",
+		url:"http://localhost:46755///WebService/WeClub.ashx",
 		data:{typename:"UpdateClubField",fieldname:"EXT1",keyvalue:NewAddr,clubsys:ClubInfo.SYSNO},
 		success:function(data){
 			var res=eval("("+data+")");	
@@ -311,7 +311,7 @@ function modifyfth()
 				$.ajax({
 					type:"POST",
 					async:"false",
-					url:"http://localhost:46755/WebService/WeClub.ashx",
+					url:"http://localhost:46755///WebService/WeClub.ashx",
 					data:{typename:"UpdateClubField",fieldname:"EXT2",keyvalue:imgurl,clubsys:ClubInfo.SYSNO},
 					success:function(data){
 						var res=eval("("+data+")");
@@ -354,8 +354,8 @@ function modifyfth()
 		$.ajax({
 			type:"GET",
 			async:"true",
-			//url:"http://localhost:46755/WebService/TourMgm.ashx",
-			url:"http://localhost:46755/BackService/TourMgm.ashx",
+			//url:"http://localhost:46755///WebService/TourMgm.ashx",
+			url:"http://localhost:46755///BackService/TourMgm.ashx",
 			data:{typename:"GetTourList",ClubSys:ClubInfo.SYSNO,status:_status,tourtype:"Club"},
 			success:function(data){	
 				//alert(data);
@@ -431,7 +431,7 @@ function modifyfth()
 		if(confirm('删除赛事之后，将无法恢复！请确认是否删除赛事？'))
 		{
 			var url=location.href;
-			$.get('http://localhost:46755/BackService/TourMgm.ashx',{typename:"UpdateTourStatus",sysno:toursys,status:"99"},function(data){
+			$.get('http://localhost:46755///BackService/TourMgm.ashx',{typename:"UpdateTourStatus",sysno:toursys,status:"99"},function(data){
 				location.href=url;
 			});	
 		}
@@ -440,7 +440,7 @@ function modifyfth()
 	function Enable(toursys)
 	{
 		var url=location.href;
-		$.get('http://localhost:46755/BackService/TourMgm.ashx',{typename:"UpdateTourStatus",sysno:toursys,status:"1"},function(data){
+		$.get('http://localhost:46755///BackService/TourMgm.ashx',{typename:"UpdateTourStatus",sysno:toursys,status:"1"},function(data){
 			location.href=url;
 		});		
 	}
@@ -450,7 +450,7 @@ function modifyfth()
 		if(confirm('请确认是否禁用赛事？'))
 		{
 			var url=location.href;
-			$.get('http://localhost:46755/BackService/TourMgm.ashx',{typename:"UpdateTourStatus",sysno:toursys,status:"-1"},function(data){
+			$.get('http://localhost:46755///BackService/TourMgm.ashx',{typename:"UpdateTourStatus",sysno:toursys,status:"-1"},function(data){
 				location.href=url;
 			});	
 		}	
@@ -475,7 +475,7 @@ function modifyfth()
 	//结束签表分配
 	function EndSign(toursys)
 	{
-			$.get('http://localhost:46755/BackService/TourMgm.ashx',{typename:"UpdateTourStatus",sysno:toursys,status:"4"},function(data){
+			$.get('http://localhost:46755///BackService/TourMgm.ashx',{typename:"UpdateTourStatus",sysno:toursys,status:"4"},function(data){
 			GotobyName('资源分配');
 		});	
 	}
@@ -488,7 +488,7 @@ function modifyfth()
 		{
 			//alert(toursys);
 			var url=location.href;
-			$.get('http://localhost:46755/BackService/TourMgm.ashx',{typename:"RollBackTour",sysno:toursys},function(data){
+			$.get('http://localhost:46755///BackService/TourMgm.ashx',{typename:"RollBackTour",sysno:toursys},function(data){
 				//alert(data);
 				var res=eval("("+data+")");
 				if(res.code==0)
@@ -502,7 +502,7 @@ function modifyfth()
 	//开始报名
 	function StartApply(toursys)
 	{
-		$.get('http://localhost:46755/BackService/TourMgm.ashx',{typename:"UpdateTourStatus",sysno:toursys,status:"1"},function(data){
+		$.get('http://localhost:46755///BackService/TourMgm.ashx',{typename:"UpdateTourStatus",sysno:toursys,status:"1"},function(data){
 			GotobyName('赛事报名');
 		});		
 	}
@@ -548,7 +548,7 @@ function modifyfth()
 	{
 		if(confirm('是否结束赛事？'))
 		{			
-			$.get('http://localhost:46755/BackService/TourMgm.ashx',{typename:"UpdateTourStatus",sysno:toursys,status:"6"},function(data){
+			$.get('http://localhost:46755///BackService/TourMgm.ashx',{typename:"UpdateTourStatus",sysno:toursys,status:"6"},function(data){
 				GotobyName('已完成');
 			});	
 		}
@@ -559,7 +559,7 @@ function modifyfth()
 	{
 		if(confirm('是否结束报名？'))
 		{			
-			$.get('http://localhost:46755/BackService/TourMgm.ashx',{typename:"UpdateTourStatus",sysno:toursys,status:"2"},function(data){
+			$.get('http://localhost:46755///BackService/TourMgm.ashx',{typename:"UpdateTourStatus",sysno:toursys,status:"2"},function(data){
 				GotobyName('赛事签表');
 			});	
 		}
@@ -578,7 +578,7 @@ function modifyfth()
 	{
 		if(confirm('是否开始抽签？'))
 		{			
-			$.get('http://localhost:46755/BackService/TourMgm.ashx',{typename:"UpdateTourStatus",sysno:toursys,status:"3"},function(data){
+			$.get('http://localhost:46755///BackService/TourMgm.ashx',{typename:"UpdateTourStatus",sysno:toursys,status:"3"},function(data){
 				GotobyName('赛事签表');
 			});	
 		}
@@ -613,7 +613,7 @@ function modifyfth()
 	{
 		if(confirm('是否开始比赛？'))
 		{			
-			$.get('http://localhost:46755/BackService/TourMgm.ashx',{typename:"UpdateTourStatus",sysno:toursys,status:"5"},function(data){
+			$.get('http://localhost:46755///BackService/TourMgm.ashx',{typename:"UpdateTourStatus",sysno:toursys,status:"5"},function(data){
 				GotobyName('正在进行');
 			});	
 		}
@@ -665,7 +665,7 @@ function modifyfth()
 		$.ajax({
 				type:"POST",
 				async:"true",
-				url:"http://localhost:46755/BackService/TourMgm.ashx?typename=CreateNewTour",
+				url:"http://localhost:46755///BackService/TourMgm.ashx?typename=CreateNewTour",
 				data:$("#frmNewTour").serialize()+'&ClubSys='+ClubInfo.SYSNO+'&memsys='+ClubInfo.EXT3,
 				success:function(data){
 					//alert(data);
@@ -688,7 +688,7 @@ function modifyfth()
 			//
 			sysno=prompt("请输入要修改赛事的sysno","");			
 		}
-		$.get('http://localhost:46755/BackService/TourMgm.ashx',{typename:'GetTourInfobySys',sysno:sysno},function(data){
+		$.get('http://localhost:46755///BackService/TourMgm.ashx',{typename:'GetTourInfobySys',sysno:sysno},function(data){
 																												  
 			var ret=eval("("+data+")");
 			if(ret.code==0)
@@ -722,7 +722,7 @@ function modifyfth()
 		$.ajax({
 			type:"POST",
 			async:"false",
-			url:'http://localhost:46755/BackService/TourMgm.ashx?typename=UpdateTourBasic',
+			url:'http://localhost:46755///BackService/TourMgm.ashx?typename=UpdateTourBasic',
 			data:$("#frmNewTour").serialize()+'&sysno='+sysno,
 			success:function(data){
 				//alert(data);
@@ -749,7 +749,7 @@ function modifyfth()
 		//alert(TourApp_toursys);
 		$.ajax({
 			type:"get",
-			url:"http://localhost:46755/BackService/TourMgm.ashx",
+			url:"http://localhost:46755///BackService/TourMgm.ashx",
 			data:{typename:"GetTourContents",sysno:TourApp_toursys},
 			success:function(data){
 				data=eval("("+data+")");
@@ -778,7 +778,7 @@ function modifyfth()
 		var res=JSON.stringify(Apply_PlayerArr);
 		//alert(res);
 		//alert(res);
-		$.get("http://localhost:46755/BackService/TourMgm.ashx",{typename:"AddDirectApply",ApplyList:res},function(data){			
+		$.get("http://localhost:46755///BackService/TourMgm.ashx",{typename:"AddDirectApply",ApplyList:res},function(data){			
 			//alert(data);
 			var res=eval("("+data+")");
 			if(res.code==0)
@@ -817,6 +817,9 @@ function modifyfth()
 			$("#tbSignQty").val("");
 			$("#selAllowGroup").val("-1");
 			$("#selGroupQty").val("-1");
+			$("#tbMinAmountAge").val("");
+			$("#tbMaxAge").val("");
+			$("#tbMinAge").val("");
 	}
 	
 	function HidAddCont()
@@ -832,12 +835,12 @@ function modifyfth()
 		if(id!='')
 		{
 			//已有id，修改信息
-			Requrl='http://localhost:46755/BackService/TourMgm.ashx?typename=UpdateTourContent';
+			Requrl='http://localhost:46755///BackService/TourMgm.ashx?typename=UpdateTourContent';
 		}
 		else
 		{
 			//无id，新增项目
-			Requrl='http://localhost:46755/BackService/TourMgm.ashx?typename=CreateTourContent';
+			Requrl='http://localhost:46755///BackService/TourMgm.ashx?typename=CreateTourContent';
 		}
 		
 		var Toursys=localStorage.getItem("Current_TourSys");
@@ -877,7 +880,7 @@ function modifyfth()
 				$.ajax({
 					type:"post",
 					async:"false",
-					url:"http://localhost:46755/BackService/TourMgm.ashx",
+					url:"http://localhost:46755///BackService/TourMgm.ashx",
 					data:{typename:"DeleteTourContent",id:id},
 					success:function(data){
 						//alert(data);
@@ -910,7 +913,7 @@ function modifyfth()
 	function GetTourContent()
 	{
 		var toursys=localStorage.getItem("Current_TourSys");
-		$.get("http://localhost:46755/BackService/TourMgm.ashx",{typename:"GetTourContents",sysno:toursys},function(data){
+		$.get("http://localhost:46755///BackService/TourMgm.ashx",{typename:"GetTourContents",sysno:toursys},function(data){
 
 			var res=eval("("+data+")");
 			var conts=res.data;
@@ -931,8 +934,19 @@ function modifyfth()
 	function UpdateCont(id)
 	{
 		$("#Tour_AddCont").show();
-		//加载信息
-		$.get("http://localhost:46755/BackService/TourMgm.ashx",{typename:"GetTourContentModel",id:id},function(data){
+	    //加载信息
+		$("#contid").val("");
+		$("#tbContName").val("");
+		$("#selGroup").val("-1");
+		$("#type").val("-1");
+		$("#tbApplyFee").val("");
+		$("#tbSignQty").val("");
+		$("#selAllowGroup").val("-1");
+		$("#selGroupQty").val("-1");
+		$("#tbMinAmountAge").val("");
+		$("#tbMaxAge").val("");
+		$("#tbMinAge").val("");
+		$.get("http://localhost:46755///BackService/TourMgm.ashx",{typename:"GetTourContentModel",id:id},function(data){
 			var res=eval("("+data+")");
 			var cont=res.data;
 			$("#contid").val(id);
@@ -943,6 +957,17 @@ function modifyfth()
 			$("#tbSignQty").val(cont.SignQty);
 			$("#selAllowGroup").val(cont.AllowGroup);
 			$("#selGroupQty").val(cont.GroupType);
+			$("#tbMinAmountAge").val(cont.ext5.split("|")[0]);
+			$("#tbMaxAge").val(cont.ext5.split("|")[1]);
+			$("#tbMinAge").val(cont.ext5.split("|")[2]);
+
+			if (cont.ContentType == "混双" || cont.ContentType == "男双" || cont.ContentType == "女双") {
+			    $("#minAmountAge").removeClass("temp_hide");
+			    $("#ageRestiction").addClass("temp_hide");
+			} else {
+			    $("#minAmountAge").addClass("temp_hide");
+			    $("#ageRestiction").removeClass("temp_hide");
+			}
 		});
 	}
 	
@@ -953,13 +978,13 @@ function modifyfth()
 	//赛事报名名单页面
 	function LoadTourApplicants(toursys)
 	{	
-	     $.get("http://localhost:46755/BackService/TourMgm.ashx",{typename:"TourApply_GetContentApplicant",toursys:toursys},function(data){
+	     $.get("http://localhost:46755///BackService/TourMgm.ashx",{typename:"TourApply_GetContentApplicant",toursys:toursys},function(data){
 			var res=eval("("+data+")");
 			var list=res.data;
 			var html='';
 			for(var i=0;i<list.length;i++)
 			{
-				html+='<ul class="contcell"><li class="contDesc"><strong>'+list[i].ContentName+'</strong><br />	<br />报名人数：'+list[i].ext1+'</li><li class="toursetbtn"><input type="button" value="查看" onclick="SeeApplicant(\''+list[i].id+'\')" /></li></ul>';
+			    html += '<ul class="contcell"><li class="contDesc"><strong>' + list[i].ContentName + '</strong><br />	<br />报名人数：' + list[i].ext1 + '</li><li class="toursetbtn"><input type="button" value="查看" onclick="SeeApplicant(\'' + list[i].id + '\')" /></li><li class="tourExport"><input type="button" value="导出Excel" onclick="ExportAppliedContentListToExcel(\'' + list[i].id + '\')" /></li></ul>';
 			}
 			$("#ContAppList").html(html);
 	    });	
@@ -972,40 +997,59 @@ function modifyfth()
 	{
 		Current_Cont=id;
 		$("#applistdiv").show();
-		$.get("http://localhost:46755/BackService/TourMgm.ashx",{typename:"TourApply_GetApplistbyContid",contid:id},function(data){
+		$.get("http://localhost:46755///BackService/TourMgm.ashx",{typename:"TourApply_GetApplistbyContid",contid:id},function(data){
 			
 			var res=eval("("+data+")");
 			var list=res.data;
 			var html='';
 			for(var i=0;i<list.length;i++)
 			{
-				var paystatus=list[i].STATUS=="1"?"未支付":"已支付";
-				html+='<ul class="contcell"><li class="contDesc">'+list[i].ApplyName+'<br />报名时间:'+list[i].APPLYDATE+'<br />'+paystatus+'</li><li class="toursetbtn"><input type="button" value="删除"  onclick="DeleteApply(\''+list[i].ID+'\')"/></li></ul>';	
+			    var paystatus = list[i].STATUS == "1" ? "未支付" : "已支付";
+			    var disabled = list[i].STATUS == "1" ? "" : "disabled";
+			    html += '<ul class="contcell"><li class="contDesc">' + list[i].ApplyName + '<br />报名时间:' + list[i].APPLYDATE + '<br />' + paystatus + '</li><li class="toursetbtn"><input type="button" value="删除" ' + disabled + ' onclick="DeleteApply(\'' + list[i].ID + '\')"/></li></ul>';
 			}
 			$("#TourApp_Applicants").html(html);
 		});		
 	}
+
+	function ExportAppliedContentListToExcel(contentId) {
+	    window.open("http://localhost:46755///BackService/ExportExcel.ashx?" + contentId);
+	    //$.get("http://localhost:46755///BackService/TourMgm.ashx", { typename: "TourApply_ExportAppliedListToExcel", contid: contentId }, function (data) {
+	    //    var res = eval("(" + data + ")");
+	    //});
+	}
+
+	function ExportAppliedTourListToExcel() {
+	    window.open("http://localhost:46755///BackService/ExportExcel.ashx?" + localStorage.getItem("Current_TourSys"));
+	    //var TourSys = localStorage.getItem("Current_TourSys");
+	    //$.get("http://localhost:46755///BackService/ExportExcel.ashx", { tourSys: TourSys }, function (data) {
+	    //    var res = eval("(" + data + ")");
+	    //});
+	}
 	
-	var BackServiceUrl='http://localhost:46755/BackService/TourMgm.ashx';
+
+
+	var BackServiceUrl='http://localhost:46755///BackService/TourMgm.ashx';
 	
 	//5-4-2
 	//删除报名
 	function DeleteApply(id)
 	{
-		$.ajax({
-			type:"POST",
-			async:"false",
-			url:BackServiceUrl,
-			data:{typename:"TourApp_DeleteApp",id:id},
-			success:function(data){
-				//alert(data);
-				var res=eval("("+data+")");
-				if(res.code=="0")
-				{
-					SeeApplicant(Current_Cont);	
-				}	
-			}
-		});	
+	    if (confirm('确定删除这条报名信息吗？')) {
+	        $.ajax({
+	            type: "POST",
+	            async: "false",
+	            url: BackServiceUrl,
+	            data: { typename: "TourApp_DeleteApp", id: id },
+	            success: function (data) {
+	                //alert(data);
+	                var res = eval("(" + data + ")");
+	                if (res.code == "0") {
+	                    SeeApplicant(Current_Cont);
+	                }
+	            }
+	        });
+	    }
 	}
 	
 	//5-4-2
@@ -1019,7 +1063,7 @@ function modifyfth()
 	//加载报名费统计情况
 	  function GetTourApplyFee() {
 		   var toursys=location.href.split('=')[1];
-           $.post("http://localhost:46755/BackService/Tourmgm.ashx?typename=TourApplyFeeInfo&toursys=" + toursys, function (data) {	
+           $.post("http://localhost:46755///BackService/Tourmgm.ashx?typename=TourApplyFeeInfo&toursys=" + toursys, function (data) {	
                var fees = data.split('|');
                document.getElementById("lblWeTennisPay").innerHTML = fees[0];
                document.getElementById("lblUnpaidFee").innerHTML = fees[1];
@@ -1031,7 +1075,7 @@ function modifyfth()
 	//报名费用收款对账
 	 function GetTourApplyCon() {
 		 var toursys=location.href.split('=')[1];
-           $.get("http://localhost:46755/BackService/Tourmgm.ashx",{typename:"GetTourApplyCon",toursys:toursys}, function (data) {																							   				
+           $.get("http://localhost:46755///BackService/Tourmgm.ashx",{typename:"GetTourApplyCon",toursys:toursys}, function (data) {																							   				
                //var items = $.parseJSON(data);
 			   var items=eval("("+data+")");
 			   if(items.code==0)
@@ -1102,7 +1146,7 @@ function modifyfth()
 	//赛事项目页面
 	function LoadFinishTourContents(toursys)
 	{	
-	     $.get("http://localhost:46755/BackService/TourMgm.ashx",{typename:"TourApply_GetContentApplicant",toursys:toursys},function(data){
+	     $.get("http://localhost:46755///BackService/TourMgm.ashx",{typename:"TourApply_GetContentApplicant",toursys:toursys},function(data){
 			var res=eval("("+data+")");
 			var list=res.data;
 			var html='';
@@ -1121,6 +1165,14 @@ function modifyfth()
 	}
 	
 
-	function selectContentType(e) {
-	    alert(this.Options[0]);
+	function selectContentType() {
+	    var objS = document.getElementById("type");
+	    var value = objS.options[objS.selectedIndex].value;
+	    if (value == "混双" || value == "男双" || value == "女双") {
+	        $("#minAmountAge").removeClass("temp_hide");
+	        $("#ageRestiction").addClass("temp_hide");
+	    } else {
+	        $("#minAmountAge").addClass("temp_hide");
+	        $("#ageRestiction").removeClass("temp_hide");
+	    }
 	}

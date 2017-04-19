@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -9,7 +9,7 @@
 		//alert(toursys);
 		document.getElementById('tbtousys').value=toursys;
 
-		var url='http://localhost:46755/public/TourMgm/Pages/5-4-2.html?sysno='+toursys;
+		var url = 'http://localhost:61728///public/TourMgm/Pages/5-4-2.html?sysno=' + toursys;
 		document.getElementById('backUrl').value=url;
 	}
 </script>
@@ -17,7 +17,7 @@
 
 <body>
 	<a href="http://wetennis.cn:86/Excel/微网球线下报名模板_团体赛.xlsx">下载模板</a>
-	<form method = 'post'  action = 'http://localhost:46755/BackService/TourMgm.ashx?typename=ExcelApplicants_group'  enctype="multipart/form-data">
+	<form method = 'post'  action = 'http://localhost:46755///BackService/TourMgm.ashx?typename=ExcelApplicants_group'  enctype="multipart/form-data">
 	<div>
 		<input type="text" name="toursys" id="tbtousys"  style="display:none"/>		
 		<input type="file" name="upload" />

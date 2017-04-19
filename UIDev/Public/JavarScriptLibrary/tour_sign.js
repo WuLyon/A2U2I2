@@ -1,5 +1,5 @@
 // JavaScript Document
-	var ServiceUrl='http://localhost:46755/BackService/TourMgm.ashx';
+	var ServiceUrl='http://localhost:46755///BackService/TourMgm.ashx';
 
 	//设置变量，签表功能范围内通用
 	var Sign_Contid=localStorage.getItem("Current_ContId");
@@ -9,7 +9,7 @@
 	function LoadTourContApply()
 	{	
 		var toursys=localStorage.getItem("Current_TourSys");
-	     $.get("http://localhost:46755/BackService/TourMgm.ashx",{typename:"TourApply_GetContentApplicant",toursys:toursys},function(data){
+	     $.get("http://localhost:46755///BackService/TourMgm.ashx",{typename:"TourApply_GetContentApplicant",toursys:toursys},function(data){
 			//alert(data);
 			var res=eval("("+data+")");
 			var list=res.data;
@@ -47,7 +47,7 @@
 	function LoadTourSign()
 	{	
 		var toursys=localStorage.getItem("Current_TourSys");
-	     $.get("http://localhost:46755/BackService/TourMgm.ashx",{typename:"TourApply_GetContentApplicant",toursys:toursys},function(data){
+	     $.get("http://localhost:46755///BackService/TourMgm.ashx",{typename:"TourApply_GetContentApplicant",toursys:toursys},function(data){
 			//alert(data);
 			var res=eval("("+data+")");
 			var list=res.data;
@@ -190,7 +190,7 @@
 		var html='<ul class="AppUl">';
 		for(var i=0;i<Unseed.length;i++)
 		{
-		    if (Unseed[i].ParName.length > 0) {
+		    if (Unseed[i].ParName) {
 		        html += '<li ondblclick="chooseSeed(\'' + i + '\')">' + Unseed[i].MemberName + '/' + Unseed[i].ParName + '</li>';
 		    }
 		    else {
@@ -207,7 +207,7 @@
 		var html='<ul class="AppUl">';
 		for(var i=0;i<Seeded.length;i++)
 		{
-		    if (Seeded[i].ParName.length > 0) {
+		    if (Seeded[i].ParName) {
 		        html += '<li ondblclick="unchooseSeed(\'' + i + '\')">' + Seeded[i].MemberName + '/' + Seeded[i].ParName + '</li>';
 		    }
 		    else
@@ -510,3 +510,12 @@
 		
 	}
 	
+
+//随机分配种子。
+	function RandomSeed_Click() {
+	    //根据项目id随机生成种子
+	    $.post(ServiceUrl, { typename: "GenerateSeedRandomly", contid: Sign_Contid }, function (data) {
+	        LoadUnseedApp();
+	        alert(data);
+	    });
+	}

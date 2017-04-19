@@ -1,7 +1,7 @@
 // JavaScript Document
 $(document).ready(function(){
 			//会员
-			$("#tbPlayer").autocomplete("http://localhost:46755/BackService/AutoComp.ashx?typename=Auto_Member", {//默认参数名为q
+			$("#tbPlayer").autocomplete("http://localhost:46755///BackService/AutoComp.ashx?typename=Auto_Member", {//默认参数名为q
                     width: 200,//指定下拉框的宽度. Default: input元素的宽度；
                     dataType: "json",		
 					parse: function (data) {//ajax 返回值是json需要重写
@@ -25,11 +25,12 @@ $(document).ready(function(){
                     }//对每一行数据使用此函数格式化需要查询的数据格式. 返回值是给内部搜索算法使用的                    
                 });			
 			 $("#tbPlayer").result(function (e, item) {
-                    $("#playerId").val(item.SYSNO);
+			     $("#playerId").val(item.EXT2);
+			     $("#playerPhone").val(item.TELEPHONE);
                 });
 
 		//搭档
-		$("#tbParterner").autocomplete("http://localhost:46755/BackService/AutoComp.ashx?typename=Auto_Member", {//默认参数名为q
+		$("#tbParterner").autocomplete("http://localhost:46755///BackService/AutoComp.ashx?typename=Auto_Member", {//默认参数名为q
                     width: 200,//指定下拉框的宽度. Default: input元素的宽度；
                     dataType: "json",	
 					parse: function (data) {//ajax 返回值是json需要重写
@@ -53,7 +54,8 @@ $(document).ready(function(){
                     }//对每一行数据使用此函数格式化需要查询的数据格式. 返回值是给内部搜索算法使用的                    
                 });
 				  $("#tbParterner").result(function (e, item) {
-                    $("#parternerId").val(item.SYSNO);
+				      $("#parternerId").val(item.EXT2);
+				      $("#parternerPhone").val(item.TELEPHONE);
                 });
 				
 				//从报名人员中添加种子

@@ -17,7 +17,7 @@
 		if(user!=''&&pass!='')
 		{
 		var xhr=new XMLHttpRequest();//定义HTTPrequest
-		var url='http://localhost:46755/WebService/WeMember.ashx?typename=ValideMemberInfo';
+		var url='http://localhost:46755///WebService/WeMember.ashx?typename=ValideMemberInfo';
 		xhr.open("POST",url,true);
 		xhr.setRequestHeader("CONTENT-TYPE", "application/x-www-form-urlencoded");
 		xhr.onloadstart=function(){
@@ -51,7 +51,7 @@
 		UserInfo=eval("("+UserInfo+")");
 		//注册新用户
 		var xhr=new XMLHttpRequest();
-		var url='http://localhost:46755/WebService/WeMember.ashx?typename=RegisterNewMember';
+		var url='http://localhost:46755///WebService/WeMember.ashx?typename=RegisterNewMember';
 		xhr.open("POST",url,true);
 		xhr.setRequestHeader("CONTENT-TYPE", "application/x-www-form-urlencoded");
 		xhr.onloadstart=function(){

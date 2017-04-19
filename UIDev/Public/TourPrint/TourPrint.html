@@ -34,7 +34,7 @@
        });
 
        function GetTourInfo() {
-           $.get("http://localhost:46755/backService/TourMgm.ashx?typename=GetTourInfobySys&sysno=" + toursys, function (data) {
+           $.get("http://localhost:46755///backService/TourMgm.ashx?typename=GetTourInfobySys&sysno=" + toursys, function (data) {
                 var item=eval("("+data+")");;
                 alert(item);
                 var tour=item.data;

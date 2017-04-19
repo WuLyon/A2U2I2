@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -30,14 +30,19 @@
 		<p>请选择组别项目</p>
 		<select id="selContent" onchange="Apply_SelectCont()" name="selContent"><option value="-1">--请选择项目--</option></select>
 		<p>请添加人员</p>
-		<input type="text" id="tbPlayer"  />
-		<span id="partner" class="hidden">搭档<input type="text" id="tbParterner" /></span>
-		<div class="hidden">
-			<input type="text" id="playerId" name="player" />
-				<input type="text" id="parternerId" name="paterner" />
-		</div>
-		<input type="button" value="添加" onclick="AddApply()" /> 
-		
+        <div style="margin-bottom:10px;">
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;姓名<input type="text" id="tbPlayer" /></span>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;身份证<input type="text" id="playerId" /></span>
+            <input class="hidden" type="text" id="playerPhone" />
+        </div>
+        <div id="partner" class="hidden" style="margin-bottom:10px;">
+            <span>搭档姓名<input type="text" id="tbParterner" /></span>
+            <span>搭档身份证<input type="text" id="parternerId" /></span>
+            <input class="hidden" type="text" id="parternerPhone" />
+        </div>
+        <div style="float:right; margin-top:-31px;margin-right:50px;">
+            <input type="button" value="添加" onclick="AddApply()" />
+        </div>
 		<div id="selres"></div>
 		<div id="BeforeSub">
 		<input type="button" value="提交" onclick="SubmitApplyList()" />

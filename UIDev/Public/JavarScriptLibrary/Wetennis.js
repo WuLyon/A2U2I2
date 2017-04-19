@@ -106,7 +106,7 @@ function pub_SendCodexml(phone)
 {
 	//配置函数所需参数
 	var para={
-		url:'http://localhost:46755/WebService/SMS.ashx?typename=GenerateCodeXML&userid=admin&secret=12837216371623',
+		url:'http://localhost:46755///WebService/SMS.ashx?typename=GenerateCodeXML&userid=admin&secret=12837216371623',
 		ready:function(){},
 		params:"tele="+phone
 	}		
@@ -127,7 +127,7 @@ function pub_SendCodexml(phone)
 function pub_validcodexml(tele,code)
 {
 	var para={
-			url:'http://localhost:46755/WebService/SMS.ashx?typename=ValidateCodeXML&userid=admin&secret=1234567',
+			url:'http://localhost:46755///WebService/SMS.ashx?typename=ValidateCodeXML&userid=admin&secret=1234567',
 			ready:function(){},
 			params:"tele="+tele+"&code="+code
 		}	
@@ -154,7 +154,7 @@ if(!(zh.test(sPhone))){
 function pub_ValidateLogin(username,pwd)
 {
 	var para={
-			url:'http://localhost:46755/WebService/WeMember.ashx?typename=ValidateClubLogin',
+			url:'http://localhost:46755///WebService/WeMember.ashx?typename=ValidateClubLogin',
 			ready:function(){},
 			params:{username:username,pass:pwd}
 		}
@@ -165,7 +165,7 @@ function pub_ValidateLogin(username,pwd)
 function pub_getNewsList()
 {
 	var para={
-			url:'http://localhost:46755/WebService/WeNews.ashx?typename=LoadNewsXml&userid='+pub_user+'&secret='+pub_pwd,
+			url:'http://localhost:46755///WebService/WeNews.ashx?typename=LoadNewsXml&userid='+pub_user+'&secret='+pub_pwd,
 			ready:function(){},
 			params:'type=Pro&pagesize=10&page=1&status=0'
 		}		
@@ -176,7 +176,7 @@ function pub_getNewsList()
 function pub_TestConne()
 {
 	var para={
-			//url:'http://localhost:46755/WebService/WeNews.ashx?typename=LoadNewsXml&userid='+pub_user+'&secret='+pub_pwd,
+			//url:'http://localhost:46755///WebService/WeNews.ashx?typename=LoadNewsXml&userid='+pub_user+'&secret='+pub_pwd,
 			url:'http://wetennis.cn:8082/api/News/GetNewsList',
 			ready:function(){},
 			params:'type=Pro&pagesize=10&page=1&status=0'
@@ -202,7 +202,7 @@ function pub_Register()
 	$.ajax({
 		async:"false",
 		type:"POST",
-		url:"http://localhost:46755/BackService/TourMgmJson.ashx?typename=RegisterClub",
+		url:"http://localhost:46755///BackService/TourMgmJson.ashx?typename=RegisterClub",
 		data:$("#registerDate").serialize(),
 		success:function(ret)
 		{
@@ -227,7 +227,7 @@ function pub_login(user,pwd)
 {
 	$.ajax({
 			type:"POST",
-			url:"http://localhost:46755/WebService/WeMember.ashx",
+			url:"http://localhost:46755///WebService/WeMember.ashx",
 			data:{typename:"ValidateClubLogin",username:user,pass:pwd},
 			success:function(data){
 				//alert(data);

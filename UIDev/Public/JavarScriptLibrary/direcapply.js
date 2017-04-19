@@ -9,7 +9,7 @@
 		//alert(TourApp_toursys);
 		$.ajax({
 			type:"get",
-			url:"http://localhost:46755/BackService/TourMgm.ashx",
+			url:"http://localhost:46755////BackService/TourMgm.ashx",
 			data:{typename:"GetTourContents",sysno:TourApp_toursys},
 			success:function(data){
 				data=eval("("+data+")");
@@ -35,10 +35,11 @@
 	function AddApply()
 	{
 		var playername=$("#tbPlayer").val();
-		var playersys=$("#playerId").val();
-		var parternername=$("EtbParterner").val();
-		var parterner=$("#parternerId").val();		
-		
+		var playersys = $("#playerId").val();
+		var parternername=$("#tbParterner").val();
+		var parternersys=$("#parternerId").val();		
+		var playerTelephone = $("#playerPhone").val();
+		var parternerTelephone = $("#parternerPhone").val();
 		//验证人员信息
 		if($("#selContent").val()=='-1')
 		{
@@ -46,18 +47,26 @@
 			return;
 		}
 		
-		if(playersys.length<=0)
+
+		if (playername.length == 0 || playersys.length == 0)
+		{
+		    alert('请输入队员名字和身份证');
+		    return;
+		}
+
+		if (playerTelephone.length <= 0)
 		{
 			if(confirm(playername+'还未注册，注册需要填写电话号码，是否为其注册新账号？'))
 			{
-				var Telephone=prompt("请输入用户电话号码！","");
-				if(checkPhone(Telephone))
+			    playerTelephone = prompt("请输入用户电话号码！", "");
+			    console.log("telephone", playerTelephone);
+			    if (checkPhone(playerTelephone))
 				{
 					$.ajax({
 						type:"post",
 						async:false,
 						url:"http:wetennis.cn:83/WebService/WeMember.ashx",
-						data:{typename:"RapidRegister",name:$("#tbPlayer").val(),tele:Telephone},
+						data: { typename: "RapidRegister", name: $("#tbPlayer").val(), tele: playerTelephone },
 						success:function(data){
 							alert(data);
 						}
@@ -77,52 +86,51 @@
 		var contName=$("#selContent").val();
 		if(contName.indexOf('双')>0)
 		{
-		if(parterner.length<=0)
-		{
-			if(confirm(parternername+'还未注册，注册需要填写电话号码，是否为其注册新账号？'))
-			{
-				var Telephone=prompt("请输入用户电话号码！","");
-				if(checkPhone(Telephone))
-				{
-					$.ajax({
-						type:"post",
-						async:false,
-						url:"http:wetennis.cn:83/WebService/WeMember.ashx",
-						data:{typename:"RapidRegister",name:$("#parternername").val(),tele:Telephone},
-						success:function(data){
-							alert(data);
-						}
-					});
-				}
-				else
-				{
-					alert('输入电话有误');
-					return;
-				}
-			}
-			else
-			{
-				return;
-			}
-		}
-		}
-		
-		//已json的形式来添加
-		var item={ 
-				   TOURSYS:TourApp_toursys,
-				   CONTENTID:$("#selContent").val(),
-				   contentName:$("#selContent").find("option:selected").text(),
-				   MEMBERID:$("#playerId").val(),
-				   playerName:$("#tbPlayer").val(),
-				   PATERNER:$("#parternerId").val(),
-				   parternerName:$("#tbParterner").val()
-				   //,EXT3: ClubInfo.EXT3
-		};
-		
-		Apply_PlayerArr.push(item);//添加已选择的信
-		
-		//localStorage.setItem("temp_Applier",JSON.stringify(Apply_PlayerArr));
+		   
+		    if (parternername.length == 0 || parternersys.length == 0) {
+		        alert('请输入搭档名字和身份证');
+		        return;
+		    }
 
+		    if (parternerTelephone.length <= 0) {
+		        if (confirm(parternername + '还未注册，注册需要填写电话号码，是否为其注册新账号？')) {
+		            parternerTelephone = prompt("请输入用户电话号码！", "");
+		            if (checkPhone(parternerTelephone)) {
+		                $.ajax({
+		                    type: "post",
+		                    async: false,
+		                    url: "http:wetennis.cn:83/WebService/WeMember.ashx",
+		                    data: { typename: "RapidRegister", name: $("#parternername").val(), tele: parternerTelephone },
+		                    success: function (data) {
+		                        alert(data);
+		                    }
+		                });
+		            }
+		            else {
+		                alert('输入电话有误');
+		                return;
+		            }
+		        }
+		        else {
+		            return;
+		        }
+		    }
+		}
+		
+	    //已json的形式来添加
+		var item={ 
+		           TourSys: TourApp_toursys,
+		           ContentId: $("#selContent").val(),
+		           ContentName: $("#selContent").find("option:selected").text(),
+		           PlayerIDCard: $("#playerId").val(),
+		           PlayerName: $("#tbPlayer").val(),
+		           PlayerTelePhone: playerTelephone,
+		           PartIDCard: $("#parternerId").val(),
+		           PartName: $("#tbParterner").val(),
+		           PartTelePhone: parternerTelephone,
+		};
+		Apply_PlayerArr.push(item);//添加已选择的信
+		//localStorage.setItem("temp_Applier",JSON.stringify(Apply_PlayerArr));
 		//添加人员信息		
 		loadPlayer();
 		
@@ -131,21 +139,23 @@
 		$("#playerId").val("");
 		$("#tbParterner").val("");
 		$("#parternerId").val("");
+	    $("#playerPhone").val("");
+	    $("#parternerPhone").val("");
 	}
 	
 	//加载选择结果
 	function loadPlayer()
 	{
-		var html='<table><tr><th>序号</th><th>项目</th><th>球员</th><th>操作</th></tr>';
+	    var html = '<table><tr><th>序号</th><th>项目</th><th>球员</th><th>身份证</th><th>电话</th><th>操作</th></tr>';
 		for(var i=0;i<Apply_PlayerArr.length;i++)
 		{			
-			if(Apply_PlayerArr[i].contentName.indexOf('双')>0)
+		    if (Apply_PlayerArr[i].ContentName.indexOf('双') > 0)
 			{
-			html+='<tr><td>'+(i+1)+'</td><td>'+Apply_PlayerArr[i].contentName+'</td><td>'+ Apply_PlayerArr[i].playerName+','+Apply_PlayerArr[i].parternerName+'</td><td><a href="javascript:void" onclick="DeleteApp(\''+i+'\')">删除</a></td></tr>';		
+		        html += '<tr><td>' + (i + 1) + '</td><td>' + Apply_PlayerArr[i].ContentName + '</td><td>' + Apply_PlayerArr[i].PlayerName + ',' + Apply_PlayerArr[i].PartName + '</td><td>' + Apply_PlayerArr[i].PartIDCard + '</td><td>' + Apply_PlayerArr[i].PartTelePhone + '</td><td><a href="javascript:void" onclick="DeleteApp(\'' + i + '\')">删除</a></td></tr>';
 			}
 			else
 			{
-			html+='<tr><td>'+(i+1)+'</td><td>'+Apply_PlayerArr[i].contentName+'</td><td>'+ Apply_PlayerArr[i].playerName+Apply_PlayerArr[i].playerName+'</td><td><a href="javascript:void" onclick="DeleteApp(\''+i+'\')">删除</a></td></tr>';	
+		        html += '<tr><td>' + (i + 1) + '</td><td>' + Apply_PlayerArr[i].ContentName + '</td><td>' + Apply_PlayerArr[i].PlayerName + '</td><td>' + Apply_PlayerArr[i].PlayerIDCard + '</td><td>' + Apply_PlayerArr[i].PlayerTelePhone + '</td><td><a href="javascript:void" onclick="DeleteApp(\'' + i + '\')">删除</a></td></tr>';
 			}	
 		}
 		html+='</table>';
@@ -155,16 +165,16 @@
 	//加载选择结果
 	function loadAddResult()
 	{
-		var html='<table><tr><th>序号</th><th>项目</th><th>球员</th><th>操作</th></tr>';
+	    var html = '<table><tr><th>序号</th><th>项目</th><th>球员</th><th>身份证</th><th>电话</th><th>操作</th></tr>';
 		for(var i=0;i<Apply_PlayerArr.length;i++)
 		{			
-			if(Apply_PlayerArr[i].contentName.indexOf('双')>0)
+		    if (Apply_PlayerArr[i].ContentName.indexOf('双') > 0)
 			{
-			html+='<tr><td>'+(i+1)+'</td><td>'+Apply_PlayerArr[i].contentName+'</td><td>'+ Apply_PlayerArr[i].playerName+','+Apply_PlayerArr[i].parternerName+'</td><td>'+Apply_Result[i].status+'</td></tr>';		
+		        html += '<tr><td>' + (i + 1) + '</td><td>' + Apply_PlayerArr[i].ContentName + '</td><td>' + Apply_PlayerArr[i].PlayerName + ',' + Apply_PlayerArr[i].PartName + '</td><td>' + Apply_PlayerArr[i].PartIDCard + '</td><td>' + Apply_PlayerArr[i].PartTelePhone + '</td><td>' + Apply_Result[i].status + '</td></tr>';
 			}
 			else
 			{
-			html+='<tr><td>'+(i+1)+'</td><td>'+Apply_PlayerArr[i].contentName+'</td><td>'+ Apply_PlayerArr[i].playerName+Apply_PlayerArr[i].playerName+'</td><td>'+Apply_Result[i].status+'</td></tr>';	
+		        html += '<tr><td>' + (i + 1) + '</td><td>' + Apply_PlayerArr[i].ContentName + '</td><td>' + Apply_PlayerArr[i].PlayerName + '</td><td>' + Apply_PlayerArr[i].PlayerIDCard + '</td><td>' + Apply_PlayerArr[i].PlayerTelePhone + '</td><td>' + Apply_Result[i].status + '</td></tr>';
 			}	
 		}
 		html+='</table>';
@@ -183,6 +193,7 @@
 	//选定项目
 	function Apply_SelectCont()
 	{
+	    Apply_PlayerArr = [];//清空数组
 		var seltxt=$("#selContent").find("option:selected").text();
 		var selval=$("#selContent").val();
 		//判断是否显示搭档
@@ -204,18 +215,13 @@ var Apply_Result;
 	//向服务器提交已经添加的人员信息
 	function SubmitApplyList()
 	{		
-		likeComment();
-		return;
-		var res=JSON.stringify(Apply_PlayerArr);
-		res='{"TOURSYS":"FA64C51C92474D7884F20A573BBDD6DB","CONTENTID":"5ed6782d91014331b150d230c685d463","contentName":"男子单打","MEMBERID":"9ef3d426-7e09-4bdb-87e3-e10eaddaa5b5","playerName":"门张茂","PATERNER":"","parternerName":""}';
-		res={"TOURSYS":"FA64C51C92474D7884F20A573BBDD6DB"}
-		
+	    var res = JSON.stringify(Apply_PlayerArr);
+	
 		$.ajax({
 			type:"POST",
-			contentType:"application/json;charset=utf-8",
-			//url:"http://localhost:46755/BackService/TourMgm.ashx?typename=AddDirectApply2",
-			url:"http://localhost:46755/API/FEservice.ashx?method=directApply",					
-			data:JSON.stringify(res),
+			async: "false",
+			url: "http://localhost:46755////BackService/TourMgm.ashx",
+			data: { typename: "AddDirectApply", ApplyList: res },
 			success:function(data)
 			{
 				alert(data);
@@ -224,7 +230,8 @@ var Apply_Result;
 				{
 					//$("#FunctFRight",window.parent.document).hide();	
 					//将添加结果返回到添加清单上面
-					Apply_Result=res.data;
+				    Apply_Result = res.data;
+				    console.log("ApplyZ_Result", Apply_Result);
 					loadAddResult();
 					$("#BeforeSub").hide();
 					$("#AfterSub").show();
@@ -239,7 +246,7 @@ var Apply_Result;
             $.ajax({
                 type: "POST",
                 contentType: "application/json;char-set=utf-8",
-                url: "http://localhost:46755/API/FEservice.ashx?method=eventCommentLike",
+                url: "http://localhost:46755////API/FEservice.ashx?method=eventCommentLike",
                 data: JSON.stringify(reqdata),
                 success: function (data) {
                     alert(data);

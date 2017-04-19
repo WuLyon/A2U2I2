@@ -6,7 +6,7 @@ function LoadContRound()
 	
 	$.ajax({
 		type:"GET",
-		url:"http://localhost:46755/BackService/TourMgm.ashx",
+		url:"http://localhost:46755///BackService/TourMgm.ashx",
 		data:{typename:"GetContentRounds",cont:content},
 		success:function(ret)
 		{
@@ -31,7 +31,7 @@ function LoadContMatches(round)
 {	
 	$.ajax({
 		type:"GET",
-		url:"http://localhost:46755/BackService/TourMgm.ashx",
+		url:"http://localhost:46755///BackService/TourMgm.ashx",
 		data:{typename:"GetMatchesByContRound",cont:content,round:round},
 		success:function(ret)
 		{
@@ -133,7 +133,7 @@ function SaveMatResult(sys,p1s,p2s)
 	$.ajax({
 		type:"POST",
 		contentType:"application/json",
-		url:"http://localhost:46755/BackService/TourMgm.ashx?typename=RecordMatchRes",
+		url:"http://localhost:46755///BackService/TourMgm.ashx?typename=RecordMatchRes",
 		data:JSON.stringify(results),
 		success:function(ret)
 		{
@@ -146,7 +146,7 @@ function SaveMatResult2(sys,p1s,p2s)
 {
 	$.ajax({
 		type:"GET",
-		url:"http://localhost:46755/BackService/TourMgm.ashx?typename=RecordMatchRes2",
+		url:"http://localhost:46755///BackService/TourMgm.ashx?typename=RecordMatchRes2",
 		data:{sys:sys,p1s:p1s,p2s:p2s},
 		success:function(ret)
 		{

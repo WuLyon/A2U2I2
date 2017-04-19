@@ -1,6 +1,6 @@
 // JavaScript Document
 //定义全局变量，服务访问地址
-var ServiceUrl='http://localhost:46755/BackService/TourMgm.ashx';
+var ServiceUrl='http://localhost:46755///BackService/TourMgm.ashx';
 //定义当前组别
 var _GroupType='';
 //定义当前项目

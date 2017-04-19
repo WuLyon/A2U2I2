@@ -28,7 +28,7 @@ $(document).ready(function(){
 	}
 	else
 	{
-		url='http://localhost:46755/WebService/WeChat.ashx?typename=GetAccessToken&jsoncallback=?';
+		url='http://localhost:46755///WebService/WeChat.ashx?typename=GetAccessToken&jsoncallback=?';
 		$.getJSON(url,{code:code},function(data){
 			//alert(JSON.stringify(data));
 			document.getElementById('tbUserInfo').value=JSON.stringify(data);

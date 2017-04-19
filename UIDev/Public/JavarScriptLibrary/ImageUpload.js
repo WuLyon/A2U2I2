@@ -14,7 +14,7 @@ function PictureUpload(fileid,imgid,canid)
 		
 		//使用CORS
 		var xhr=new XMLHttpRequest();
-		var url="http://localhost:46755/webservice/picupload2.ashx?typename=UploadPicRtnUrl";
+		var url="http://localhost:46755///webservice/picupload2.ashx?typename=UploadPicRtnUrl";
 		xhr.open("POST",url,false);
 		xhr.setRequestHeader("CONTENT-TYPE", "application/x-www-form-urlencoded");
 		xhr.onreadystatechange=function(){

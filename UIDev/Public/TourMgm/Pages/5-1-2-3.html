@@ -8,7 +8,7 @@
 	<script type="text/javascript" src="../../JavarScriptLibrary/jquery-1.4.1.min.js"></script>
 	<script type="text/javascript" src="../../JavarScriptLibrary/tourmanage.js"></script>
 	<script type="text/javascript">
-		GetTourContent();
+        GetTourContent();
 	</script>
 </head>
 
@@ -44,15 +44,21 @@
 			</p>
 			<p>
 				<label class="form_label">组别：</label>
-				<select name="group" id="selGroup" class="form_control"><option value="-1">--请选择--</option><option value="青年组">青年组</option><option value="中年组">中年组</option><option value="老年组">老年组</option><option value="青少年组">青少年组</option></select>
+				<select name="group" id="selGroup" class="form_control"><option value="-1">--请选择--</option><option value="精英A组">精英A组</option><option value="精英B组">精英B组</option><option value="青年组">青年组</option><option value="青少年组">青少年组</option><option value="同乐组">同乐组</option><option value="元老组">元老组</option></select>
 			</p>
 			<p>
 				<label class="form_label">项目类型：</label>
-                <select name="selType" id="type" class="form_control" onchange="selectContentType(this)"><option value="-1">--请选择--</option><option value="男单">男单</option><option value="男双">男双</option><option value="女单">女单</option><option value="女双">女双</option><option value="混双">混双</option><option value="团体">团体</option></select>
+                <select name="selType" id="type" class="form_control" onchange="selectContentType()"><option value="-1">--请选择--</option><option value="男单">男单</option><option value="男双">男双</option><option value="女单">女单</option><option value="女双">女双</option><option value="混双">混双</option><option value="混单">混单</option><option value="团体">团体</option></select>
 			</p>
-            <p id="minAmountAge">
+            <p id="minAmountAge" class="temp_hide">
                 <label for="tbMinAmountAge" class="form_label">双打最小年龄和：</label>
                 <input type="text" id="tbMinAmountAge" name="tbMinAmountAge" class="form_control" />
+            </p>
+            <p id="ageRestiction">
+                <label for="tbMinAge" class="form_label">最小年龄：</label>
+                <input type="text" style="width:100px" id="tbMinAge" name="tbMinAge" class="form_control" />
+                <label for="tbMaxAge" class="form_label">最大年龄：</label>
+                <input type="text" id="tbMaxAge" style="width:100px" name="tbMaxAge" class="form_control" />
             </p>
 			<p>
 				<label class="form_label">报名费（元/人）：</label>

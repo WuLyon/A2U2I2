@@ -4,7 +4,7 @@
 //5-5-1.html
 //场馆资源分配
 //全局变量定义
-var ServiceUrl='http://localhost:46755/BackService/TourMgm.ashx';
+var ServiceUrl='http://localhost:46755///BackService/TourMgm.ashx';
 //为赛事分配的场馆列表
 var Dist_TourGymList=[{"gymSys":"1","gymImgUrl":"","gymName":"莲花球场","courtInfo":"已选择0片场地"},{"gymSys":"1","gymImgUrl":"","gymName":"莲花球场","courtInfo":"已选择0片场地"}];
 var Dist_Gyms=[{"gymSys":"123","gymName":"莲花球场"},{"gymSys":"123","gymName":"榴莲球场"},{"gymSys":"123","gymName":"西瓜球场"}];

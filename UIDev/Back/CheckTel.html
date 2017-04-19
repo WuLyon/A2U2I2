@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -37,7 +37,7 @@
 		if(Tele.length==11)
 		{
 			//发送验证码
-			var url='http://localhost:46755/WebService/SMS.ashx?typename=GenerateCode&jsoncallback=?';
+			var url='http://localhost:46755///WebService/SMS.ashx?typename=GenerateCode&jsoncallback=?';
 			$.getJSON(url,{tele:Tele},function(data){
 				//alert(data.message);
 				if(data.message=='ok')
@@ -61,12 +61,12 @@
 	{
 		var Tele=document.getElementById("tbTele").value;
 		var code=document.getElementById("tbCode").value;
-		var url='http://localhost:46755/WebService/SMS.ashx?typename=ValidateCode&jsoncallback=?';
+		var url='http://localhost:46755///WebService/SMS.ashx?typename=ValidateCode&jsoncallback=?';
 		$.getJSON(url,{tele:Tele,code:code},function(data){
 			if(data.message=='ok')
 			{
 				//验证通过
-				url='http://localhost:46755/WebService/WeMember.ashx?typename=UpdateMemberTele&jsoncallback=?';
+				url='http://localhost:46755///WebService/WeMember.ashx?typename=UpdateMemberTele&jsoncallback=?';
 				$.getJSON(url,{username:user,openid:openid,Tele:Tele},function(data){
 					//alert(data.message);
 					if(data.message=='ok')
